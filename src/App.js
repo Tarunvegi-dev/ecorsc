@@ -3,7 +3,7 @@ import Homepage from './pages/homepage';
 import CentralOfficeBearers from './pages/CentralOfficeBearers';
 import Admin from './pages/Admin/'
 import 'bootstrap/dist/css/bootstrap.min.css'
-
+import './styles.css';
 
 function App() {
   return (

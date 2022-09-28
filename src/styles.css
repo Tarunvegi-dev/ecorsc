@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Dangrek&family=Nunito&family=Poppins:wght@700&display=swap");
+html,
+body {
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+html a,
+body a {
+  color: inherit;
+  text-decoration: none;
+}
+
+html .navbar,
+body .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px 0;
+  -webkit-box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+          box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+html .navbar .navbar-brand,
+body .navbar .navbar-brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: 700;
+  font-family: "Dangrek", cursive;
+}
+
+html .navbar .nav-link,
+body .navbar .nav-link {
+  font-size: 14px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  margin: 0 10px;
+  font-size: 14px;
+  /* text-transform: uppercase; */
+}
+
+html .navbar .nav-link:hover,
+body .navbar .nav-link:hover {
+  color: #000;
+  font-weight: bold;
+}
+
+html .Home,
+body .Home {
+  min-height: 100vh;
+  font-family: "Nunito", sans-serif;
+  /* FlashNews */
+  /* Banner */
+  /* welcome */
+  /* circulars */
+}
+
+html .Home .flash-news,
+body .Home .flash-news {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+html .Home .flash-news h5,
+body .Home .flash-news h5 {
+  color: #da9007;
+  font-family: "Dangrek", cursive;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+html .Home .flash-news p,
+body .Home .flash-news p {
+  color: #575a5e;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0 10px;
+}
+
+html .Home .banner,
+body .Home .banner {
+  width: 100%;
+  padding: 70px 0;
+  background: linear-gradient(47deg, #da9007 26%, white 50%, #1aab03 75%);
+  background-size: cover;
+  height: 100%;
+}
+
+html .Home .banner .col,
+body .Home .banner .col {
+  text-align: center;
+  padding: 20px;
+}
+
+html .Home .banner .banner-sub,
+body .Home .banner .banner-sub {
+  color: gray;
+  font-family: "Poppins", sans-serif;
+}
+
+html .Home .banner .Title,
+body .Home .banner .Title {
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+html .Home .Welcome,
+body .Home .Welcome {
+  background-color: #ffffffe3;
+  padding: 50px 0;
+}
+
+html .Home .Welcome .descrip,
+body .Home .Welcome .descrip {
+  border: 1px solid #adb0ac;
+  padding: 20px;
+  border-radius: 20px 20px 0 20px;
+  font-size: 15px;
+  /* font-weight: bold; */
+}
+
+html .Home .Cirsulars,
+body .Home .Cirsulars {
+  margin: 30px 0;
+}
+
+html .Home .Cirsulars .title,
+body .Home .Cirsulars .title {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+
+html .Home .Cirsulars .table,
+body .Home .Cirsulars .table {
+  border-radius: 5px;
+}
+
+html .Home .Cirsulars .table .item,
+body .Home .Cirsulars .table .item {
+  padding: 20px 30px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  -webkit-transition: border-color 0.2s ease-in-out;
+  transition: border-color 0.2s ease-in-out;
+  border: 3px solid #fff;
+  cursor: pointer;
+}
+
+html .Home .Cirsulars .table .item p,
+body .Home .Cirsulars .table .item p {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: bold;
+  color: gray;
+  margin-bottom: 15px;
+}
+
+html .Home .Cirsulars .table .item svg,
+body .Home .Cirsulars .table .item svg {
+  color: #da9007;
+}
+
+html .Home .Cirsulars .table .item i,
+body .Home .Cirsulars .table .item i {
+  color: #a7a7a9;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+html .Home .Cirsulars .table .item:hover,
+body .Home .Cirsulars .table .item:hover {
+  border-left: 3px solid #da9007;
+}
+
+html .Home .Cirsulars .table .item:hover p,
+body .Home .Cirsulars .table .item:hover p {
+  color: #1aab03;
+}
+/*# sourceMappingURL=styles.css.map */

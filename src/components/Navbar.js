@@ -1,30 +1,33 @@
 import React from 'react';
-import { Container } from 'react-bootstrap'
+import { Container, Navbar, Nav } from 'react-bootstrap'
 import Logo from '../assets/logo.png'
 import { ImOffice, ImHome } from 'react-icons/im';
 import { FaHistory } from 'react-icons/fa';
 import { RiContactsFill } from 'react-icons/ri'
 
-const Navbar = () => {
+const NavbarComponent = () => {
     return (
-        <div style={{ background: '#083e77b4'}}>
-            <Container>
-                <nav className="Navbar">
-                    <a href="/" className="Navbar-Brand">
-                        <img src={Logo} alt="BrandLogo" height={50} width={50} />
+        <>
+            <Navbar bg="light" expand="lg" sticky="top" >
+                <Container>
+                    <Navbar.Brand href="#home"  >
+                        <img src={Logo} alt="BrandLogo" height={40} width={40} />
                         &nbsp;
                         ECoRSC
-                    </a>
-                    <ul className="Navs">
-                        <li className="Nav-Items"><ImHome /> &nbsp; Home</li>
-                        <li className="Nav-Items"><FaHistory />&nbsp; History & Affliations</li>
-                        <li className="Nav-Items"><ImOffice /> &nbsp; Central Office Bearers</li>
-                        <li className="Nav-Items"><RiContactsFill /> &nbsp; Contact Us</li>
-                    </ul>
-                </nav>
-            </Container>
-        </div>
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="justify-content-end flex-grow-1 pe-3">
+                            <Nav.Link href="#home"><ImHome /> &nbsp;&nbsp;  Home</Nav.Link>
+                            <Nav.Link href="#link"><FaHistory />&nbsp;&nbsp;  History & Affliations</Nav.Link>
+                            <Nav.Link href="#home"><ImOffice /> &nbsp;&nbsp;  Central Office Bearers</Nav.Link>
+                            <Nav.Link href="#home"><RiContactsFill /> &nbsp;&nbsp;  Contact Us</Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+        </>
     )
 }
 
-export default Navbar
+export default NavbarComponent

@@ -1,9 +1,10 @@
 import React from 'react';
+import Adminlogin from './login';
 
 const Admin = () => {
     return (
-        <div>
-            
+        <div className='container admin'>
+            <Adminlogin />
         </div>
     );
 };

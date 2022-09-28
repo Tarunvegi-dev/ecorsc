@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Dangrek&family=Nunito&family=Poppins:wght@700&display=swap");
+.admin .login {
+  margin-top: 140px;
+  font-family: "Poppins";
+}
+.admin .login .username-input {
+  padding: 18px;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+  max-width: 360px;
+}/*# sourceMappingURL=styles.css.map */

@@ -13,8 +13,11 @@ const Banner = () => {
                     <p className="Title">
                         East Coast Railway Shramik Congress
                     </p>
+                    <span>(Regd No: 758)</span>
+                    <br />
+                    <span>Regd, Recognized & Affiliated to N.F.I.R., I.N.T.U.C., I.T.F (Londan)</span>
                 </center>
-                <br/>
+                <br />
                 <Row>
                     <Col>
                         <Image src={Nfir_GS} width='250px' height='300px' />

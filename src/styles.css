@@ -16,15 +16,23 @@ body a {
 html .navbar,
 body .navbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 0;
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 0;
+  -webkit-box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+          box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 html .navbar .navbar-brand,
 body .navbar .navbar-brand {
   display: flex;
-  align-items: center;
+  color: #000080;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 24px;
   text-decoration: none;
   font-weight: 700;
@@ -39,11 +47,12 @@ body .navbar .nav-link {
   padding: 10px;
   margin: 0 10px;
   font-size: 14px;
+  color: #433d3d;
   /* text-transform: uppercase; */
 }
 html .navbar .nav-link:hover,
 body .navbar .nav-link:hover {
-  color: #000;
+  color: #000080;
   font-weight: bold;
 }
 html .Home,
@@ -79,9 +88,11 @@ html .Home .banner,
 body .Home .banner {
   width: 100%;
   padding: 70px 0;
-  background: linear-gradient(47deg, #da9007 26%, rgb(255, 255, 255) 50%, #1aab03 75%);
+  background: #e9ae08;
+  background: linear-gradient(183deg, #e9ae08 26%, white 50%, #1aab03 75%);
   background-size: cover;
   height: 100%;
+  color: #000080;
 }
 html .Home .banner .col,
 body .Home .banner .col {
@@ -90,15 +101,23 @@ body .Home .banner .col {
 }
 html .Home .banner .banner-sub,
 body .Home .banner .banner-sub {
-  color: gray;
+  color: #fff;
   font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
 }
 html .Home .banner .Title,
 body .Home .banner .Title {
   font-family: "Poppins", sans-serif;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: bold;
   text-transform: uppercase;
+  margin: 0;
+}
+
+html .Home .banner span,
+body .Home .banner span {
+  font-size: 18px;
+  font-weight: bold;
 }
 html .Home .Welcome,
 body .Home .Welcome {
@@ -121,11 +140,22 @@ html .Home .Cirsulars .title,
 body .Home .Cirsulars .title {
   font-family: "Poppins", sans-serif;
   font-weight: bold;
+  color: #000080;
 }
 html .Home .Cirsulars .table,
 body .Home .Cirsulars .table {
   border-radius: 5px;
 }
+
+html .Home .Cirsulars .table .link,
+body .Home .Cirsulars .table .link {
+  padding: 20px;
+  width: 100%;
+  text-align: right;
+  color: #000080;
+  font-weight: bold;
+}
+
 html .Home .Cirsulars .table .item,
 body .Home .Cirsulars .table .item {
   padding: 20px 30px;

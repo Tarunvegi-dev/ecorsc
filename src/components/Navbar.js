@@ -7,7 +7,7 @@ import { RiContactsFill } from 'react-icons/ri'
 
 const Navbar = () => {
     return (
-        <div style={{ background: '#083e77b4'}}>
+        <div className="Navbar-Par">
             <Container>
                 <nav className="Navbar">
                     <a href="#" className="Navbar-Brand">

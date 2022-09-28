@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Dangrek&family=Nunito&family=Poppins&display=swap");
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: rgb(233, 174, 8);
+  background: linear-gradient(
+    47deg,
+    rgba(233, 174, 8, 1) 26%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(26, 171, 3, 1) 75%
+  );
+  background-size: cover;
+  height: 100%;
+  overflow-y: auto;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .Navbar-Par{
+    background-color:#fff;
+
+
+      .Navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 0;
+        .Navbar-Brand {
+          display: flex;
+        //   color: #fff;
+          align-items: center;
+          font-size: 24px;
+          text-decoration: none;
+          font-weight: 700;
+          font-family: "Dangrek", cursive;
+        }
+        .Navs {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          list-style-type: none;
+          margin: 10px 0;
+    
+          .Nav-Items {
+            margin: 0 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: all 0.4s ease-in-out;
+            border-bottom: 2px solid transparent;
+            padding: 10px 5px;
+            font-size: 14px;
+            /* text-transform: uppercase; */
+    
+            &:hover {
+              color: #ef3054;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+  }
+
+  // Home
+  .Home {
+    min-height: 100vh;
+    font-family: "Nunito", sans-serif;
+
+    /* FlashNews */
+    .flash-news {
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      h5 {
+        color: #ef3054;
+        font-family: "Dangrek", cursive;
+        margin: 0;
+        margin-bottom: 5px;
+      }
+      p {
+        color: #575a5e;
+        font-weight: bold;
+        font-size: 14px;
+        margin: 0 10px;
+      }
+    }
+
+    /* Banner */
+    .banner {
+      width: 100%;
+      margin-top: 50px 0;
+      padding: 70px 0;
+      min-height: 40vh;
+    //   background-color: #fff;
+
+      .banner-sub {
+        color: #c7c7c7;
+      }
+      .Title {
+        font-family: "Poppins", sans-serif;
+        font-size: 50px;
+        font-weight: bold;
+      }
+    }
+
+    /* welcome */
+    .Welcome {
+      background-color: #ffffffe3;
+      padding: 50px 0;
+      .descrip {
+        font-family: "Poppins", sans-serif;
+        /* font-weight: bold; */
+      }
+    }
+
+    /* circulars */
+    .Circulars {
+      padding: 100px 0;
+      min-height: 50vh;
+      .Latest-News {
+        margin: 50px;
+      }
+    }
+  }
+}

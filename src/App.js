@@ -1,12 +1,15 @@
 import { Route, Switch } from 'react-router-dom'
-import Homepage from './components/homepage';
+import Homepage from './pages/homepage';
+import CentralOfficeBearers from './pages/CentralOfficeBearers';
 import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 function App() {
   return (
     <div className="App">
       <Switch>
-        <Route path="/" component={Homepage}/>
+        <Route path="/" exact component={Homepage} />
+        <Route path='/central-office-bearers' component={CentralOfficeBearers} />
       </Switch>
     </div>
   );

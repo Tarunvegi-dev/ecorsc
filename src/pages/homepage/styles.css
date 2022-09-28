@@ -4,19 +4,22 @@ html,
 body {
   padding: 0;
   margin: 0;
-    background:url('https://free4kwallpapers.com/uploads/originals/2020/10/19/train-wallpaper.jpg');
-    background-size:cover;
-    overflow-y: auto;
-  }
-  
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  
-  .Home {
-  min-height:100vh;
+  overflow-y: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+.wrapper {
+  background: url('../../assets/background.jpeg');
+  background-size: cover;
+}
+
+.Home {
+  min-height: 100vh;
   font-family: "Nunito", sans-serif;
 }
 
@@ -95,6 +98,7 @@ body {
 .banner .banner-sub {
   color: #c7c7c7;
 }
+
 .banner .Title {
   font-family: "Poppins", sans-serif;
   font-size: 50px;
@@ -127,5 +131,5 @@ body {
 }
 
 .Circulars .Latest-News {
-  margin:50px
+  margin: 50px
 }

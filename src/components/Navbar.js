@@ -10,7 +10,7 @@ const Navbar = () => {
         <div style={{ background: '#083e77b4'}}>
             <Container>
                 <nav className="Navbar">
-                    <a href="#" className="Navbar-Brand">
+                    <a href="/" className="Navbar-Brand">
                         <img src={Logo} alt="BrandLogo" height={50} width={50} />
                         &nbsp;
                         ECoRSC

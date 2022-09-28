@@ -6,7 +6,6 @@ const Circulars = () => {
     <div className="Cirsulars" style={{ minHeight: '500px' }}>
       <Container>
         <div className="Latest-News">
-          Hello
         </div>
       </Container>
     </div>

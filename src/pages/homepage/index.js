@@ -2,7 +2,10 @@ import React from 'react'
 import Navbar from '../../components/Navbar';
 import Description from './Description'
 import Circulars from './Circulars';
-import Banner from './Banner'
+import Banner from './Banner';
+import Links from './Links.js';
+import Subscribe from './Subscribe';
+import Footer from '../../components/Footer'
 
 const Homepage = () => {
     return (
@@ -12,6 +15,9 @@ const Homepage = () => {
                 <Banner />
                 <Description />
                 <Circulars />
+                <Links />
+                <Subscribe />
+                <Footer />
             </div>
         </>
     );

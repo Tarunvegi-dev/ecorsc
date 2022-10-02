@@ -15,6 +15,13 @@ body a {
   text-decoration: none;
 }
 
+html .title,
+body .title {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  color: #000080;
+}
+
 html .navbar,
 body .navbar {
   display: -webkit-box;
@@ -27,8 +34,9 @@ body .navbar {
       -ms-flex-align: center;
           align-items: center;
   padding: 10px 0;
-  -webkit-box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-          box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  border-bottom: 1px solid #a9a7a7;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+          box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
 html .navbar .navbar-brand,
@@ -60,13 +68,38 @@ body .navbar .nav-link {
   margin: 0 10px;
   font-size: 14px;
   color: #433d3d;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   /* text-transform: uppercase; */
+  font-weight: 600;
 }
 
 html .navbar .nav-link:hover,
 body .navbar .nav-link:hover {
   color: #000080;
-  font-weight: bold;
+}
+
+html footer,
+body footer {
+  margin: 60px 0;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+html footer svg,
+body footer svg {
+  color: #000080;
+  cursor: pointer;
+  margin: 0 10px;
 }
 
 html .Home,
@@ -123,7 +156,6 @@ html .Home .banner .banner-sub,
 body .Home .banner .banner-sub {
   color: #fff;
   font-family: "Poppins", sans-serif;
-  text-transform: uppercase;
 }
 
 html .Home .banner .Title,
@@ -163,8 +195,6 @@ body .Home .Cirsulars {
 
 html .Home .Cirsulars .title,
 body .Home .Cirsulars .title {
-  font-family: "Poppins", sans-serif;
-  font-weight: bold;
   color: #000080;
 }
 
@@ -222,5 +252,124 @@ body .Home .Cirsulars .table .item:hover {
 html .Home .Cirsulars .table .item:hover p,
 body .Home .Cirsulars .table .item:hover p {
   color: #1aab03;
+}
+
+html .Home .Links,
+body .Home .Links {
+  min-height: 300px;
+  padding: 20px 0;
+}
+
+html .Home .Links .Link,
+body .Home .Links .Link {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border: 2px solid #fff;
+}
+
+html .Home .Links .Link .icon,
+body .Home .Links .Link .icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #1aab03;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 30px;
+  color: #fff;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+html .Home .Links .Link:hover,
+body .Home .Links .Link:hover {
+  border-left: 5px solid #000080;
+}
+
+html .Home .Links .Link:hover .icon,
+body .Home .Links .Link:hover .icon {
+  background-color: #000080;
+}
+
+html .Home .Links .Link p,
+body .Home .Links .Link p {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+html .Home .Subscribe,
+body .Home .Subscribe {
+  margin: 30px 0;
+}
+
+html .Home .Subscribe .mute,
+body .Home .Subscribe .mute {
+  color: #808084;
+}
+
+html .Home .Subscribe form,
+body .Home .Subscribe form {
+  background-color: #1aab03;
+  padding: 30px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+html .Home .Subscribe form .btn,
+body .Home .Subscribe form .btn {
+  background-color: #da9007;
+  border: none;
+  width: 100%;
+}
+
+html .Home .Subscribe form .text-muted,
+body .Home .Subscribe form .text-muted {
+  color: #c3c3c7 !important;
+}
+
+html .Home .Subscribe .Contact,
+body .Home .Subscribe .Contact {
+  background-color: #000080;
+  height: 100%;
+  padding: 25px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+html .Home .Subscribe .Contact .logo,
+body .Home .Subscribe .Contact .logo {
+  color: #91e4f4;
+  margin: 20px 0 10px 0;
+  font-family: "Poppins";
+}
+
+html .Home .Subscribe .Contact span,
+body .Home .Subscribe .Contact span {
+  color: #fff;
+  font-family: 'Nunito';
+}
+
+html .Home .Subscribe .Contact .title,
+body .Home .Subscribe .Contact .title {
+  color: #fff;
 }
 /*# sourceMappingURL=styles.css.map */

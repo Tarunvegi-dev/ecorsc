@@ -9,7 +9,7 @@ const Banner = () => {
         <div className="banner">
             <Container>
                 <center>
-                    <h5 className="banner-sub">Welcome to</h5>
+                    <h5 className="banner-sub">Welcome to ECoRSC</h5>
                     <p className="Title">
                         East Coast Railway Shramik Congress
                     </p>

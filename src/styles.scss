@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Dangrek&family=Nunito&family=Poppins:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dangrek&family=Nunito&family=Poppins:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
 html,
 body {
   overflow-x: hidden;
@@ -47,7 +49,7 @@ body {
       color: rgb(106, 100, 100);
       transition: all 0.3s ease-in-out;
       /* text-transform: uppercase; */
-      font-weight:600;
+      font-weight: 600;
 
       &:hover {
         color: #000080;
@@ -56,7 +58,7 @@ body {
   }
 
   // footer
-  footer{
+  footer {
     margin: 60px 0;
     margin-bottom: 30px;
     text-align: center;
@@ -65,11 +67,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    svg{
+    svg {
       color: #000080;
       cursor: pointer;
       margin: 0 10px;
-
     }
   }
 
@@ -113,6 +114,18 @@ body {
       color: #000080;
       //   background-color: #fff;
 
+      .banner-img {
+        width: 250px;
+        height: 300px;
+        @media screen and (max-width: 576px) {
+          width: 100%;
+          height: 90%;
+        }
+        @media screen and (min-width: 576px) and (max-width: 992px) {
+          width: 130px;
+          height: 130px;
+        }
+      }
       .col {
         text-align: center;
         padding: 20px;
@@ -129,10 +142,22 @@ body {
         font-weight: bold;
         text-transform: uppercase;
         margin: 0;
+        @media screen and (max-width: 576px) {
+          font-size: medium;
+        }
+        @media screen and (max-width: 400px) {
+          font-size: 14px;
+        }
       }
       span {
         font-size: 18px;
         font-weight: bold;
+        @media screen and (max-width: 576px) {
+          font-size: small;
+        }
+        @media screen and (max-width: 400px) {
+          font-size: 11px;
+        }
       }
     }
 
@@ -202,6 +227,7 @@ body {
       min-height: 300px;
       padding: 20px 0;
       .Link {
+        margin-bottom: 20px;
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -245,34 +271,77 @@ body {
         padding: 30px;
         border-radius: 10px;
         color: #fff;
-        .btn{
+        .btn {
           background-color: #da9007;
           border: none;
-          width:100%;
+          width: 100%;
         }
-        .text-muted{
+        .text-muted {
           color: #c3c3c7 !important;
         }
       }
-      .Contact{
+      .Contact {
         background-color: #000080;
         height: 100%;
         padding: 25px;
         border-radius: 10px;
         color: #fff;
-        .logo{
+        .logo {
           color: #91e4f4;
           margin: 20px 0 10px 0;
           font-family: "Poppins";
         }
-        span{
+        span {
           color: #fff;
-          font-family: 'Nunito';
+          font-family: "Nunito";
         }
-        .title{
-          color:#fff;
+        .title {
+          color: #fff;
         }
       }
+    }
+  }
+}
+
+// Affiliations
+.Affiliations {
+  font-family: "Poppins";
+  margin-top: 80px;
+  h2 {
+    font-weight: 600;
+    margin-top: 40px;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: underline;
+  }
+  .Affiliate {
+    margin-bottom: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: 2px solid #fff;
+    .logo {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      margin-right: 30px;
+      color: #fff;
+      transition: all 0.3s ease-in-out;
+    }
+    &:hover {
+      border-left: 5px solid #000080;
+      .icon {
+        background-color: #000080;
+      }
+    }
+    p {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+      transition: all 0.3s ease-in-out;
     }
   }
 }

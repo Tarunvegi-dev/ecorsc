@@ -16,7 +16,7 @@ const Links = () => {
                             <div className="icon">
                                 <MdOutlineHealthAndSafety size={28} />
                             </div>
-                            <p>NFIR</p>
+                            <p>Railway Rule</p>
                         </div>
                     </Col>
                     <Col xs={12} sm={6} md={4} >
@@ -24,7 +24,7 @@ const Links = () => {
                             <div className="icon">
                                 <MdOutlineHealthAndSafety size={28} />
                             </div>
-                            <p>NFIR</p>
+                            <p>Shortest Path</p>
                         </div>
                     </Col>
                     <Col xs={12} sm={6} md={4} >
@@ -32,7 +32,7 @@ const Links = () => {
                             <div className="icon">
                                 <MdOutlineHealthAndSafety size={28} />
                             </div>
-                            <p>NFIR</p>
+                            <p>PNR Status</p>
                         </div>
                     </Col>
                 </Row>

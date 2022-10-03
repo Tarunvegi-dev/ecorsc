@@ -4,26 +4,21 @@
   font-family: "Poppins";
   margin-top: 20px;
 }
-
 .admin .submitBtn {
   font-family: "Montserrat";
   padding: 10px 15px;
 }
-
 .admin .circulars {
   margin-top: 10px;
 }
-
 .admin .circulars .circulars-title {
   font-family: "Poppins";
   text-decoration: underline;
 }
-
 .admin .circulars .group {
   position: relative;
   margin-bottom: 45px;
 }
-
 .admin .circulars input {
   font-size: 18px;
   padding: 10px 10px 10px 5px;
@@ -32,11 +27,9 @@
   border: none;
   border-bottom: 1px solid #757575;
 }
-
 .admin .circulars input:focus {
   outline: none;
 }
-
 .admin .circulars label {
   color: rgba(0, 0, 0, 0.26);
   font-size: 18px;
@@ -49,20 +42,17 @@
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-
 .admin .circulars input:focus ~ label,
 .admin .circulars input:valid ~ label {
   top: -20px;
   font-size: 14px;
   color: #000080;
 }
-
 .admin .circulars .bar {
   position: relative;
   display: block;
   width: 500px;
 }
-
 .admin .circulars .bar:before,
 .admin .circulars .bar:after {
   content: "";
@@ -75,20 +65,16 @@
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-
 .admin .circulars .bar:before {
   left: 50%;
 }
-
 .admin .circulars .bar:after {
   right: 50%;
 }
-
 .admin .circulars input:focus ~ .bar:before,
 .admin .circulars input:focus ~ .bar:after {
   width: 50%;
 }
-
 .admin .circulars .highlight {
   position: absolute;
   height: 60%;
@@ -98,17 +84,14 @@
   pointer-events: none;
   opacity: 0.5;
 }
-
 .admin .circulars input:focus ~ .highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   animation: inputHighlighter 0.3s ease;
 }
-
 .admin .circulars .select {
   position: relative;
   width: 350px;
 }
-
 .admin .circulars .select-text {
   position: relative;
   font-family: inherit;
@@ -120,18 +103,15 @@
   border: none;
   border-bottom: 1px solid #000080;
 }
-
 .admin .circulars .select-text:focus {
   outline: none;
   border-bottom: 1px solid #000080;
 }
-
 .admin .circulars .select .select-text {
   -moz-appearance: none;
        appearance: none;
   -webkit-appearance: none;
 }
-
 .admin .circulars .select:after {
   position: absolute;
   top: 18px;
@@ -145,7 +125,6 @@
   border-top: 6px solid #000080;
   pointer-events: none;
 }
-
 .admin .circulars .select-label {
   color: rgba(0, 0, 0, 0.26);
   font-size: 18px;
@@ -153,25 +132,20 @@
   pointer-events: none;
   left: 0;
   top: 10px;
-  -webkit-transition: 0.2s ease all;
   transition: 0.2s ease all;
 }
-
 .admin .circulars .select-text:focus ~ .select-label,
 .admin .circulars .select-text:valid ~ .select-label {
   color: #000080;
   top: -20px;
-  -webkit-transition: 0.2s ease all;
   transition: 0.2s ease all;
   font-size: 14px;
 }
-
 .admin .circulars .select-bar {
   position: relative;
   display: block;
   width: 500px;
 }
-
 .admin .circulars .select-bar:before,
 .admin .circulars .select-bar:after {
   content: "";
@@ -180,23 +154,18 @@
   bottom: 1px;
   position: absolute;
   background: #000080;
-  -webkit-transition: 0.2s ease all;
   transition: 0.2s ease all;
 }
-
 .admin .circulars .select-bar:before {
   left: 50%;
 }
-
 .admin .circulars .select-bar:after {
   right: 50%;
 }
-
 .admin .circulars .select-text:focus ~ .select-bar:before,
 .admin .circulars .select-text:focus ~ .select-bar:after {
   width: 50%;
 }
-
 .admin .circulars .select-highlight {
   position: absolute;
   height: 60%;
@@ -206,17 +175,14 @@
   pointer-events: none;
   opacity: 0.5;
 }
-
 .admin .bulkSMS .bulkSMSTitle {
   font-family: "Poppins";
   text-decoration: underline;
 }
-
 .admin .bulkSMS .group {
   position: relative;
   margin-bottom: 45px;
 }
-
 .admin .bulkSMS textarea {
   font-size: 18px;
   padding: 10px 10px 10px 5px;
@@ -225,11 +191,9 @@
   border: none;
   border-bottom: 1px solid #757575;
 }
-
 .admin .bulkSMS textarea:focus {
   outline: none;
 }
-
 .admin .bulkSMS label {
   color: rgba(0, 0, 0, 0.26);
   font-size: 18px;
@@ -242,20 +206,17 @@
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-
 .admin .bulkSMS textarea:focus ~ label,
 .admin .bulkSMS textarea:valid ~ label {
   top: -20px;
   font-size: 14px;
   color: #000080;
 }
-
 .admin .bulkSMS .bar {
   position: relative;
   display: block;
   width: 500px;
 }
-
 .admin .bulkSMS .bar:before,
 .admin .bulkSMS .bar:after {
   content: "";
@@ -268,20 +229,16 @@
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-
 .admin .bulkSMS .bar:before {
   left: 50%;
 }
-
 .admin .bulkSMS .bar:after {
   right: 50%;
 }
-
 .admin .bulkSMS textarea:focus ~ .bar:before,
 .admin .bulkSMS textarea:focus ~ .bar:after {
   width: 50%;
 }
-
 .admin .bulkSMS .highlight {
   position: absolute;
   height: 60%;
@@ -291,17 +248,14 @@
   pointer-events: none;
   opacity: 0.5;
 }
-
 .admin .bulkSMS textarea:focus ~ .highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   animation: inputHighlighter 0.3s ease;
 }
-
 .admin .bulkSMS .select {
   position: relative;
   width: 350px;
 }
-
 .admin .bulkSMS .select-text {
   position: relative;
   font-family: inherit;
@@ -313,18 +267,15 @@
   border: none;
   border-bottom: 1px solid #000080;
 }
-
 .admin .bulkSMS .select-text:focus {
   outline: none;
   border-bottom: 1px solid #000080;
 }
-
 .admin .bulkSMS .select .select-text {
   -moz-appearance: none;
        appearance: none;
   -webkit-appearance: none;
 }
-
 .admin .bulkSMS .select:after {
   position: absolute;
   top: 18px;
@@ -338,7 +289,6 @@
   border-top: 6px solid #000080;
   pointer-events: none;
 }
-
 .admin .bulkSMS .select-label {
   color: rgba(0, 0, 0, 0.26);
   font-size: 18px;
@@ -346,25 +296,20 @@
   pointer-events: none;
   left: 0;
   top: 10px;
-  -webkit-transition: 0.2s ease all;
   transition: 0.2s ease all;
 }
-
 .admin .bulkSMS .select-text:focus ~ .select-label,
 .admin .bulkSMS .select-text:valid ~ .select-label {
   color: #000080;
   top: -20px;
-  -webkit-transition: 0.2s ease all;
   transition: 0.2s ease all;
   font-size: 14px;
 }
-
 .admin .bulkSMS .select-bar {
   position: relative;
   display: block;
   width: 500px;
 }
-
 .admin .bulkSMS .select-bar:before,
 .admin .bulkSMS .select-bar:after {
   content: "";
@@ -373,23 +318,18 @@
   bottom: 1px;
   position: absolute;
   background: #000080;
-  -webkit-transition: 0.2s ease all;
   transition: 0.2s ease all;
 }
-
 .admin .bulkSMS .select-bar:before {
   left: 50%;
 }
-
 .admin .bulkSMS .select-bar:after {
   right: 50%;
 }
-
 .admin .bulkSMS .select-text:focus ~ .select-bar:before,
 .admin .bulkSMS .select-text:focus ~ .select-bar:after {
   width: 50%;
 }
-
 .admin .bulkSMS .select-highlight {
   position: absolute;
   height: 60%;
@@ -399,16 +339,12 @@
   pointer-events: none;
   opacity: 0.5;
 }
-
 .admin .login {
   margin-top: 140px;
   font-family: "Poppins";
 }
-
 .admin .login .username-input {
   padding: 18px;
-  -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
   max-width: 360px;
-}
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */

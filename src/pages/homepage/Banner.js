@@ -15,18 +15,18 @@ const Banner = () => {
                     </p>
                     <span>(Regd No: 758)</span>
                     <br />
-                    <span>Regd, Recognized & Affiliated to N.F.I.R., I.N.T.U.C., I.T.F (Londan)</span>
+                    <span>Regd, Recognized & Affiliated to N.F.I.R., I.N.T.U.C., I.T.F (London)</span>
                 </center>
                 <br />
                 <Row>
                     <Col>
-                        <Image src={Nfir_GS} width='250px' height='300px' />
+                        <Image src={Nfir_GS} className='banner-img' />
                     </Col>
                     <Col>
-                        <Image src={Ecorsc_president} width='250px' height='300px' />
+                        <Image src={Ecorsc_president} className='banner-img' />
                     </Col>
                     <Col>
-                        <Image src={Ecorsc_GS} width='250px' height='300px' />
+                        <Image src={Ecorsc_GS} className='banner-img' />
                     </Col>
                 </Row>
             </Container>

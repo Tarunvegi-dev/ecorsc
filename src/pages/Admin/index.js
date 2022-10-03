@@ -18,7 +18,7 @@ const Admin = (props) => {
                 ?
                 <>
                     <Button variant='danger' onClick={logout} style={{ float: 'right', margin: '20px', padding: '10px 15px' }}><FiLogOut size="18" />&nbsp;LOGOUT</Button>
-                    <div className='container'>
+                    <div className='container' >
                         <div>
                             <center>
                                 <Image src={logo} height="120px" width="120px" style={{ marginTop: '30px' }} />
@@ -55,7 +55,7 @@ const Admin = (props) => {
                                     <div class="group">
                                         <input class="form-control" type="file" id="formFile" />
                                     </div>
-                                    <Button className='submitBtn'><FaUpload />&nbsp;UPLOAD</Button>
+                                    <Button className='submitBtn' style={{ marginBottom: '70px' }}><FaUpload />&nbsp;UPLOAD</Button>
                                 </Form>
                             </Col>
                             <Col className='bulkSMS' xs={12} sm={6}>
@@ -88,7 +88,7 @@ const Admin = (props) => {
                                         <span class="select-bar"></span>
                                         <label class="select-label">Branch</label>
                                     </div><br /><br />
-                                    <Button className='submitBtn'><RiSendPlaneFill />&nbsp;SEND</Button>
+                                    <Button className='submitBtn' style={{ marginBottom: '70px' }}><RiSendPlaneFill />&nbsp;SEND</Button>
                                 </Form>
                             </Col>
                         </div>

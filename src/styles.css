@@ -27,7 +27,7 @@ body .navbar {
   align-items: center;
   padding: 10px 0;
   border-bottom: 1px solid #a9a7a7;
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 15px -20px;
 }
 html .navbar .navbar-brand,
 body .navbar .navbar-brand {
@@ -248,7 +248,7 @@ body .Home .Cirsulars .table .item:hover p {
 html .Home .Links,
 body .Home .Links {
   min-height: 300px;
-  padding: 20px 0;
+  padding: 20px;
 }
 html .Home .Links .Link,
 body .Home .Links .Link {
@@ -341,10 +341,10 @@ body .Home .Subscribe .Contact .title {
   font-family: "Poppins";
   margin-top: 80px;
 }
-.Affiliations h2 {
-  font-weight: 600;
+.Affiliations h1 {
+  color: #000080;
   margin-top: 40px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat";
   text-decoration: underline;
 }
 .Affiliations .Affiliate {
@@ -377,4 +377,224 @@ body .Home .Subscribe .Contact .title {
   font-weight: bold;
   margin: 0;
   transition: all 0.3s ease-in-out;
+}
+
+.central-office-bearers {
+  margin-top: 80px;
+  font-family: "Poppins";
+}
+.central-office-bearers .header {
+  background: #000080;
+}
+.central-office-bearers .header h3 {
+  font-weight: 600;
+  font-family: "Montserrat";
+  color: white;
+}
+.central-office-bearers .grid-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+}
+@media screen and (max-width: 420px) {
+  .central-office-bearers .grid-col {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+}
+.central-office-bearers .grid-col .bearers {
+  cursor: pointer;
+  margin: 30px;
+  display: flex;
+  box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.1);
+  transition: ease-in 0.19s;
+}
+.central-office-bearers .grid-col .bearers:hover {
+  box-shadow: 20px 20px 50px 20px rgba(0, 0, 0, 0.1);
+  transform: scale(1.04);
+}
+.central-office-bearers .grid-col .bearers .discrp {
+  margin-top: 30px;
+}
+@media screen and (max-width: 600px) {
+  .central-office-bearers .grid-col .bearers .discrp {
+    margin-left: 70px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+}
+.central-office-bearers .grid-col .bearers .discrp h3 {
+  color: #000080;
+  font-weight: bold;
+  font-family: "Montserrat";
+  margin-bottom: 15px;
+}
+.central-office-bearers .grid-col .bearers .discrp p {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.contact {
+  margin-top: 80px;
+  font-family: "Poppins";
+}
+.contact h2 {
+  font-weight: bold;
+}
+.contact .contact-cards {
+  margin-top: 40px;
+}
+.contact .contact-cards .contact-card {
+  min-height: 260px;
+  margin-bottom: 20px;
+}
+.contact .contact-cards .card h3 {
+  margin: 30px;
+  font-weight: 600;
+}
+.contact .contact-cards .card .address,
+.contact .contact-cards .card .phone,
+.contact .contact-cards .card .email {
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+.contact .contact-cards .card .address p,
+.contact .contact-cards .card .phone p,
+.contact .contact-cards .card .email p {
+  margin: 0px 30px;
+}
+.contact .contactForm {
+  margin-top: 50px;
+}
+.contact .contactForm h2 {
+  font-weight: bold;
+}
+.contact .contactForm .group {
+  position: relative;
+  margin-bottom: 45px;
+}
+.contact .contactForm input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #757575;
+  width: 400px;
+}
+@media screen and (max-width: 600px) {
+  .contact .contactForm input {
+    width: 100%;
+  }
+}
+.contact .contactForm input:focus {
+  outline: none;
+}
+.contact .contactForm label {
+  color: rgba(0, 0, 0, 0.26);
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.contact .contactForm input:focus ~ label,
+.contact .contactForm input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #000080;
+}
+.contact .contactForm .bar {
+  position: relative;
+  display: block;
+  width: 400px;
+}
+@media screen and (max-width: 600px) {
+  .contact .contactForm .bar {
+    width: 100%;
+  }
+}
+.contact .contactForm .bar:before,
+.contact .contactForm .bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #000080;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.contact .contactForm .bar:before {
+  left: 50%;
+}
+.contact .contactForm .bar:after {
+  right: 50%;
+}
+.contact .contactForm input:focus ~ .bar:before,
+.contact .contactForm input:focus ~ .bar:after {
+  width: 50%;
+}
+.contact .contactForm .highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+.contact .contactForm input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+.contact .contactForm textarea {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #757575;
+  width: 400px;
+}
+@media screen and (max-width: 600px) {
+  .contact .contactForm textarea {
+    width: 100%;
+  }
+}
+.contact .contactForm textarea:focus {
+  outline: none;
+}
+.contact .contactForm textarea:focus ~ label,
+.contact .contactForm textarea:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #000080;
+}
+.contact .contactForm textarea:focus ~ .bar:before,
+.contact .contactForm textarea:focus ~ .bar:after {
+  width: 50%;
+}
+.contact .contactForm .sendBtn {
+  padding: 10px 20px;
+  background: #000080;
+  width: 400px;
+}
+@media screen and (max-width: 600px) {
+  .contact .contactForm .sendBtn {
+    width: 100%;
+  }
+}
+.contact .location {
+  margin-top: 50px;
+}
+.contact .location h2 {
+  font-weight: bold;
+}
+.contact .location .card {
+  margin-top: 40px;
+  width: 100%;
+  min-height: 500px;
 }/*# sourceMappingURL=styles.css.map */

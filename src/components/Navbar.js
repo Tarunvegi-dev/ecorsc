@@ -22,7 +22,7 @@ const NavbarComponent = () => {
                             <Nav.Link as={Link} to="/"><ImHome /> &nbsp;&nbsp;  Home</Nav.Link>
                             <Nav.Link as={Link} to="/history-and-affiliations"><FaHistory />&nbsp;&nbsp;  History & Affliations</Nav.Link>
                             <Nav.Link as={Link} to="/central-office-bearers"><ImOffice /> &nbsp;&nbsp;  Central Office Bearers</Nav.Link>
-                            <Nav.Link as={Link} to="#home"><RiContactsFill /> &nbsp;&nbsp;  Contact Us</Nav.Link>
+                            <Nav.Link as={Link} to="/contact"><RiContactsFill /> &nbsp;&nbsp;  Contact Us</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

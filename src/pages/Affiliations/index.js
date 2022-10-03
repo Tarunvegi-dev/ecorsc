@@ -10,7 +10,7 @@ const Affiliations = () => {
     <div >
       <Navbar />
       <Container className="Affiliations" >
-        <h2>About ECoRSC</h2><br />
+        <h1>About ECoRSC</h1><br />
         <p className='discrp'>
           loremEa id voluptate minim tempor deserunt eu non veniam fugiat incididunt.
           Deserunt exercitation aliqua nisi cillum proident. Elit aliqua veniam adipisicing officia.
@@ -21,7 +21,7 @@ const Affiliations = () => {
           loremEa id voluptate minim tempor deserunt eu non veniam fugiat incididunt.
           Deserunt exercitation aliqua nisi cillum proident. Elit aliqua veniam adipisicing officia.
         </p>
-        <h2>ECoRSC History</h2><br />
+        <h1>ECoRSC History</h1><br />
         <p className='discrp'>
           loremEa id voluptate minim tempor deserunt eu non veniam fugiat incididunt.
           Deserunt exercitation aliqua nisi cillum proident. Elit aliqua veniam adipisicing officia.
@@ -32,7 +32,7 @@ const Affiliations = () => {
           loremEa id voluptate minim tempor deserunt eu non veniam fugiat incididunt.
           Deserunt exercitation aliqua nisi cillum proident. Elit aliqua veniam adipisicing officia.
         </p>
-        <h2>ECoRSC Affiliations</h2>
+        <h1>ECoRSC Affiliations</h1>
         <div className='row' style={{ marginTop: '30px', justifyContent: 'space-around' }}>
           <Col xs={12} sm={6} md={4}>
             <div className="p-3 Affiliate">
@@ -59,7 +59,7 @@ const Affiliations = () => {
             </div>
           </Col>
         </div>
-        <h2>History of ECoRSC Affiliations</h2>
+        <h1>History of ECoRSC Affiliations</h1>
         <div style={{ marginTop: '20px', marginLeft: '20px' }}>
           <h3>1. NFIR</h3>
           <p>

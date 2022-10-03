@@ -27,7 +27,7 @@ body {
     align-items: center;
     padding: 10px 0;
     border-bottom: 1px solid #a9a7a7;
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 15px -20px;
     .navbar-brand {
       display: flex;
       color: #000080;
@@ -225,7 +225,7 @@ body {
     // Links
     .Links {
       min-height: 300px;
-      padding: 20px 0;
+      padding: 20px;
       .Link {
         margin-bottom: 20px;
         cursor: pointer;
@@ -307,10 +307,10 @@ body {
 .Affiliations {
   font-family: "Poppins";
   margin-top: 80px;
-  h2 {
-    font-weight: 600;
+  h1 {
+    color: #000080;
     margin-top: 40px;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat";
     text-decoration: underline;
   }
   .Affiliate {
@@ -342,6 +342,225 @@ body {
       font-weight: bold;
       margin: 0;
       transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+.central-office-bearers {
+  margin-top: 80px;
+  font-family: "Poppins";
+  .header {
+    background: #000080;
+    h3 {
+      font-weight: 600;
+      font-family: "Montserrat";
+      color: white;
+    }
+  }
+  .grid-col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    @media screen and (max-width: 420px) {
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+    .bearers {
+      cursor: pointer;
+      margin: 30px;
+      display: flex;
+      box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.1);
+      transition: ease-in 0.19s;
+      &:hover {
+        box-shadow: 20px 20px 50px 20px rgba(0, 0, 0, 0.1);
+        transform: scale(1.04);
+      }
+      .discrp {
+        margin-top: 30px;
+        @media screen and (max-width: 600px) {
+          margin-left: 70px;
+          margin-top: 10px;
+          margin-bottom: 20px;
+          align-items: center;
+        }
+        h3 {
+          color: #000080;
+          font-weight: bold;
+          font-family: "Montserrat";
+          margin-bottom: 15px;
+        }
+        p {
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+.contact {
+  margin-top: 80px;
+  font-family: "Poppins";
+  h2 {
+    font-weight: bold;
+  }
+  .contact-cards {
+    margin-top: 40px;
+    .contact-card {
+      min-height: 260px;
+      margin-bottom: 20px;
+    }
+    .card {
+      h3 {
+        margin: 30px;
+        font-weight: 600;
+      }
+      .address,
+      .phone,
+      .email {
+        margin-left: 30px;
+        margin-bottom: 30px;
+        p {
+          margin: 0px 30px;
+        }
+      }
+    }
+  }
+  .contactForm {
+    margin-top: 50px;
+    h2 {
+      font-weight: bold;
+    }
+    .group {
+      position: relative;
+      margin-bottom: 45px;
+    }
+    input {
+      font-size: 18px;
+      padding: 10px 10px 10px 5px;
+      display: block;
+      border: none;
+      border-bottom: 1px solid #757575;
+      width: 400px;
+      @media screen and (max-width: 600px) {
+        width: 100%;
+      }
+    }
+    input:focus {
+      outline: none;
+    }
+
+    label {
+      color: rgba(0, 0, 0, 0.26);
+      font-size: 18px;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      left: 5px;
+      top: 10px;
+      transition: 0.2s ease all;
+      -moz-transition: 0.2s ease all;
+      -webkit-transition: 0.2s ease all;
+    }
+
+    input:focus ~ label,
+    input:valid ~ label {
+      top: -20px;
+      font-size: 14px;
+      color: #000080;
+    }
+
+    .bar {
+      position: relative;
+      display: block;
+      width: 400px;
+      @media screen and (max-width: 600px) {
+        width: 100%;
+      }
+    }
+    .bar:before,
+    .bar:after {
+      content: "";
+      height: 2px;
+      width: 0;
+      bottom: 1px;
+      position: absolute;
+      background: #000080;
+      transition: 0.2s ease all;
+      -moz-transition: 0.2s ease all;
+      -webkit-transition: 0.2s ease all;
+    }
+    .bar:before {
+      left: 50%;
+    }
+    .bar:after {
+      right: 50%;
+    }
+
+    input:focus ~ .bar:before,
+    input:focus ~ .bar:after {
+      width: 50%;
+    }
+
+    .highlight {
+      position: absolute;
+      height: 60%;
+      width: 100px;
+      top: 25%;
+      left: 0;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    input:focus ~ .highlight {
+      -webkit-animation: inputHighlighter 0.3s ease;
+      -moz-animation: inputHighlighter 0.3s ease;
+      animation: inputHighlighter 0.3s ease;
+    }
+
+    textarea {
+      font-size: 18px;
+      padding: 10px 10px 10px 5px;
+      display: block;
+      border: none;
+      border-bottom: 1px solid #757575;
+      width: 400px;
+      @media screen and (max-width: 600px) {
+        width: 100%;
+      }
+    }
+    textarea:focus {
+      outline: none;
+    }
+
+    textarea:focus ~ label,
+    textarea:valid ~ label {
+      top: -20px;
+      font-size: 14px;
+      color: #000080;
+    }
+
+    textarea:focus ~ .bar:before,
+    textarea:focus ~ .bar:after {
+      width: 50%;
+    }
+
+    .sendBtn {
+      padding: 10px 20px;
+      background: #000080;
+      width: 400px;
+      @media screen and (max-width: 600px) {
+        width: 100%;
+      }
+    }
+  }
+  .location {
+    margin-top: 50px;
+    h2 {
+      font-weight: bold;
+    }
+    .card {
+      margin-top: 40px;
+      width: 100%;
+      min-height: 500px;
     }
   }
 }

@@ -49,7 +49,7 @@ const Events = () => {
 
       {/* static */}
       <Row>
-        <a href="#" className="link">View More</a>
+        <a href="#!" className="link">View More</a>
       </Row>
     </div>
   )

@@ -14,14 +14,21 @@ body a {
   color: inherit;
   text-decoration: none;
 }
+html .container,
+body .container {
+  max-width: 980px !important;
+}
 html .title,
 body .title {
   font-family: "Poppins", sans-serif;
   font-weight: bold;
-  color: #000080;
+  font-size: 16px;
+  background-color: #000080;
+  color: #fff;
+  padding: 5px 10px;
 }
-html .navbar,
-body .navbar {
+html .custom-nav,
+body .custom-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,18 +36,8 @@ body .navbar {
   border-bottom: 1px solid #a9a7a7;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 15px -20px;
 }
-html .navbar .navbar-brand,
-body .navbar .navbar-brand {
-  display: flex;
-  color: #000080;
-  align-items: center;
-  font-size: 24px;
-  text-decoration: none;
-  font-weight: 700;
-  font-family: "Dangrek", cursive;
-}
-html .navbar .nav-link,
-body .navbar .nav-link {
+html .custom-nav .nav-link,
+body .custom-nav .nav-link {
   font-size: 14px;
   cursor: pointer;
   display: flex;
@@ -53,14 +50,13 @@ body .navbar .nav-link {
   /* text-transform: uppercase; */
   font-weight: 600;
 }
-html .navbar .nav-link:hover,
-body .navbar .nav-link:hover {
+html .custom-nav .nav-link:hover,
+body .custom-nav .nav-link:hover {
   color: #000080;
 }
 html footer,
 body footer {
-  margin: 60px 0;
-  margin-bottom: 30px;
+  margin: 30px 0;
   text-align: center;
   font-size: 15px;
   display: flex;
@@ -102,93 +98,21 @@ body .Home .flash-news p {
   font-size: 14px;
   margin: 0 10px;
 }
-html .Home .banner,
-body .Home .banner {
-  width: 100%;
-  padding: 70px 0;
-  background: rgb(233, 174, 8);
-  background: linear-gradient(183deg, rgb(233, 174, 8) 26%, rgb(255, 255, 255) 50%, rgb(26, 171, 3) 75%);
-  background-size: cover;
-  height: 100%;
-  color: #000080;
-}
-html .Home .banner .banner-img,
-body .Home .banner .banner-img {
-  width: 250px;
-  height: 300px;
-}
-@media screen and (max-width: 576px) {
-  html .Home .banner .banner-img,
-body .Home .banner .banner-img {
-    width: 100%;
-    height: 90%;
-  }
-}
-@media screen and (min-width: 576px) and (max-width: 992px) {
-  html .Home .banner .banner-img,
-body .Home .banner .banner-img {
-    width: 130px;
-    height: 130px;
-  }
-}
-html .Home .banner .col,
-body .Home .banner .col {
-  text-align: center;
-  padding: 20px;
-}
-html .Home .banner .banner-sub,
-body .Home .banner .banner-sub {
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-}
-html .Home .banner .Title,
-body .Home .banner .Title {
-  font-family: "Poppins", sans-serif;
-  font-size: 35px;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin: 0;
-}
-@media screen and (max-width: 576px) {
-  html .Home .banner .Title,
-body .Home .banner .Title {
-    font-size: medium;
-  }
-}
-@media screen and (max-width: 400px) {
-  html .Home .banner .Title,
-body .Home .banner .Title {
-    font-size: 14px;
-  }
-}
-html .Home .banner span,
-body .Home .banner span {
-  font-size: 18px;
-  font-weight: bold;
-}
-@media screen and (max-width: 576px) {
-  html .Home .banner span,
-body .Home .banner span {
-    font-size: small;
-  }
-}
-@media screen and (max-width: 400px) {
-  html .Home .banner span,
-body .Home .banner span {
-    font-size: 11px;
-  }
+html .Home .carousel .screen,
+body .Home .carousel .screen {
+  width: 632.33px;
+  height: 355.67px;
 }
 html .Home .Welcome,
 body .Home .Welcome {
   background-color: rgba(255, 255, 255, 0.8901960784);
-  padding: 50px 0;
 }
 html .Home .Welcome .descrip,
 body .Home .Welcome .descrip {
   border: 1px solid #adb0ac;
-  padding: 20px;
   border-radius: 20px 20px 0 20px;
-  font-size: 15px;
+  font-size: 12px;
+  padding: 20px;
   /* font-weight: bold; */
 }
 html .Home .Cirsulars,
@@ -197,7 +121,7 @@ body .Home .Cirsulars {
 }
 html .Home .Cirsulars .title,
 body .Home .Cirsulars .title {
-  color: #000080;
+  color: #fff;
 }
 html .Home .Cirsulars .table,
 body .Home .Cirsulars .table {
@@ -205,7 +129,7 @@ body .Home .Cirsulars .table {
 }
 html .Home .Cirsulars .table .link,
 body .Home .Cirsulars .table .link {
-  padding: 20px;
+  padding: 10px 20px;
   width: 100%;
   text-align: right;
   color: #000080;
@@ -213,10 +137,8 @@ body .Home .Cirsulars .table .link {
 }
 html .Home .Cirsulars .table .item,
 body .Home .Cirsulars .table .item {
-  padding: 20px 30px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transition: border-color 0.2s ease-in-out;
-  border: 3px solid #fff;
+  border: 1px solid #d6d6d6;
+  padding: 10px 5px;
   cursor: pointer;
 }
 html .Home .Cirsulars .table .item p,
@@ -224,8 +146,10 @@ body .Home .Cirsulars .table .item p {
   font-size: 1.1rem;
   margin: 0;
   font-weight: bold;
-  color: gray;
-  margin-bottom: 15px;
+  color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 html .Home .Cirsulars .table .item svg,
 body .Home .Cirsulars .table .item svg {
@@ -233,75 +157,44 @@ body .Home .Cirsulars .table .item svg {
 }
 html .Home .Cirsulars .table .item i,
 body .Home .Cirsulars .table .item i {
-  color: rgb(167, 167, 169);
-  font-size: 14px;
-  margin-top: 5px;
+  color: gray;
+  font-size: 12px;
 }
-html .Home .Cirsulars .table .item:hover,
-body .Home .Cirsulars .table .item:hover {
-  border-left: 3px solid #da9007;
+html .Home .Links p,
+body .Home .Links p {
+  margin: 0;
 }
-html .Home .Cirsulars .table .item:hover p,
-body .Home .Cirsulars .table .item:hover p {
-  color: #1aab03;
-}
-html .Home .Links,
-body .Home .Links {
-  min-height: 300px;
-  padding: 20px;
+html .Home .Links ul,
+body .Home .Links ul {
+  padding: 0;
 }
 html .Home .Links .Link,
 body .Home .Links .Link {
-  margin-bottom: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  transition: all 0.3s ease-in-out;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border: 2px solid #fff;
-}
-html .Home .Links .Link .icon,
-body .Home .Links .Link .icon {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  background-color: #1aab03;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 30px;
-  color: #fff;
-  transition: all 0.3s ease-in-out;
-}
-html .Home .Links .Link:hover,
-body .Home .Links .Link:hover {
-  border-left: 5px solid #000080;
-}
-html .Home .Links .Link:hover .icon,
-body .Home .Links .Link:hover .icon {
-  background-color: #000080;
-}
-html .Home .Links .Link p,
-body .Home .Links .Link p {
-  font-size: 18px;
-  font-weight: bold;
+  list-style: none;
   margin: 0;
-  transition: all 0.3s ease-in-out;
+  width: 100%;
+  padding: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #d6d6d6;
 }
 html .Home .Subscribe,
 body .Home .Subscribe {
-  margin: 30px 0;
+  margin-top: 30px;
+  border: 1px solid #d6d6d6;
 }
 html .Home .Subscribe .mute,
 body .Home .Subscribe .mute {
-  color: #808084;
+  color: rgb(52, 50, 50);
+  padding: 0 5px;
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 12px;
 }
 html .Home .Subscribe form,
 body .Home .Subscribe form {
-  background-color: #1aab03;
-  padding: 30px;
-  border-radius: 10px;
-  color: #fff;
+  border-radius: 5px;
+  padding: 5px;
 }
 html .Home .Subscribe form .btn,
 body .Home .Subscribe form .btn {
@@ -313,38 +206,10 @@ html .Home .Subscribe form .text-muted,
 body .Home .Subscribe form .text-muted {
   color: #c3c3c7 !important;
 }
-html .Home .Subscribe .Contact,
-body .Home .Subscribe .Contact {
-  background-color: #000080;
-  height: 100%;
-  padding: 25px;
-  border-radius: 10px;
-  color: #fff;
-}
-html .Home .Subscribe .Contact .logo,
-body .Home .Subscribe .Contact .logo {
-  color: #91e4f4;
-  margin: 20px 0 10px 0;
-  font-family: "Poppins";
-}
-html .Home .Subscribe .Contact span,
-body .Home .Subscribe .Contact span {
-  color: #fff;
-  font-family: "Nunito";
-}
-html .Home .Subscribe .Contact .title,
-body .Home .Subscribe .Contact .title {
-  color: #fff;
-}
 
-.Affiliations {
-  font-family: "Poppins";
-  margin-top: 80px;
-}
-.Affiliations h1 {
+.Affiliations h3 {
   color: #000080;
-  margin-top: 40px;
-  font-family: "Montserrat";
+  font-family: "Poppins";
   text-decoration: underline;
 }
 .Affiliations .Affiliate {
@@ -380,61 +245,37 @@ body .Home .Subscribe .Contact .title {
 }
 
 .central-office-bearers {
-  margin-top: 80px;
   font-family: "Poppins";
 }
-.central-office-bearers .header {
+.central-office-bearers h4 {
   background: #000080;
-}
-.central-office-bearers .header h3 {
   font-weight: 600;
-  font-family: "Montserrat";
+  font-family: "Poppins";
+  padding: 10px;
   color: white;
 }
-.central-office-bearers .grid-col {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-}
-@media screen and (max-width: 420px) {
-  .central-office-bearers .grid-col {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  }
-}
-.central-office-bearers .grid-col .bearers {
+.central-office-bearers .bearers {
   cursor: pointer;
-  margin: 30px;
-  display: flex;
   box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.1);
-  transition: ease-in 0.19s;
 }
-.central-office-bearers .grid-col .bearers:hover {
-  box-shadow: 20px 20px 50px 20px rgba(0, 0, 0, 0.1);
-  transform: scale(1.04);
+.central-office-bearers .bearers .bearers-inner {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
-.central-office-bearers .grid-col .bearers .discrp {
-  margin-top: 30px;
-}
-@media screen and (max-width: 600px) {
-  .central-office-bearers .grid-col .bearers .discrp {
-    margin-left: 70px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    align-items: center;
-  }
-}
-.central-office-bearers .grid-col .bearers .discrp h3 {
+.central-office-bearers .bearers .discrp h5 {
   color: #000080;
   font-weight: bold;
-  font-family: "Montserrat";
+  font-family: "Poppins";
   margin-bottom: 15px;
 }
-.central-office-bearers .grid-col .bearers .discrp p {
-  font-size: 20px;
+.central-office-bearers .bearers .discrp p {
+  font-size: 14px;
   margin-bottom: 10px;
 }
 
 .contact {
-  margin-top: 80px;
   font-family: "Poppins";
 }
 .contact h2 {

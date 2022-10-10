@@ -1,24 +1,19 @@
 import React from 'react';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
-import Image from 'next/image';
-import First from '../public/carousel/1.jpg'
+import { Carousel} from 'react-bootstrap';
+import First from '../../assets/carousel/1.png'
 
 const CarouselComponent = () => {
     return (
         <Carousel>
-            <div>
-                <Image src={First} layout='fill' />
-                <p className="legend">Legend 1</p>
-            </div>
-            {/* <div>
-                <img src="assets/2.jpeg" />
-                <p className="legend">Legend 2</p>
-            </div>
-            <div>
-                <img src="assets/3.jpeg" />
-                <p className="legend">Legend 3</p>
-            </div> */}
+            <Carousel.Item interval={1000}>
+                <div className="screen">
+                    <img
+                        className="d-block w-100"
+                        src={First}
+                        alt="First slide"
+                    />
+                </div>
+            </Carousel.Item>
         </Carousel>
     )
 }

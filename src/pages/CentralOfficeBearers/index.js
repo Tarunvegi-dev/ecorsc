@@ -13,55 +13,58 @@ const CentralOfficeBearers = () => {
     const [bearers, setbearers] = useState([1, 2, 3, 4]);
     return (
         <div>
-            <Navbar />
             <div className='container central-office-bearers'>
-                <Card className='p-3 header'>
-                    <h3>
-                        Central Office Bearers
-                    </h3>
-                </Card>
+                <Navbar />
+                <br />
+                <h4>
+                    Central Office Bearers
+                </h4>
                 <Row>
-                    <Col className='grid-col'>
-                        {bearers.map((_) => <Card className='bearers'>
-                            <div className='row'>
-                                <div className='col-sm-6' style={{ margin: '30px 0' }}>
-                                    <center>
-                                        <Image src={COB1} height="220px" width="180px" />
-                                    </center>
+                    {bearers.map((_) =>
+                        <Col sm={6} className="p-1">
+                            <Card className='bearers'>
+                                <div className='bearers-inner'>
+                                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                                        <center>
+                                            <Image src={COB1} height="200px" />
+                                        </center>
+                                    </div>
+                                    <div className='col-sm-6 discrp'>
+                                        <h5>Dr. M. Raghavaiah  </h5>
+                                        <p><CgToolbox size={18} style={{ marginRight: '10px', color: '#000080' }} />President</p>
+                                        <p><MdLocationOn size={18} style={{ marginRight: '10px', color: '#000080' }} />Central Office</p>
+                                        <p><FaPhone size={18} style={{ marginRight: '10px', color: '#000080' }} /> 9848014130</p>
+                                    </div>
                                 </div>
-                                <div className='col-sm-6 discrp'>
-                                    <h3>Dr. M. Raghavaiah  </h3>
-                                    <p><CgToolbox size={25} style={{ marginRight: '10px', color: '#000080' }} />President</p>
-                                    <p><MdLocationOn size={25} style={{ marginRight: '10px', color: '#000080' }} />Central Office</p>
-                                    <p><FaPhone size={25} style={{ marginRight: '10px', color: '#000080' }} /> 9848014130</p>
-                                </div>
-                            </div>
-                        </Card>)}
-                    </Col>
+                            </Card>
+                        </Col>
+                    )}
                 </Row>
-                <Card className='p-3 header' style={{ marginTop: '30px' }}>
-                    <h3>
-                        Divisonal Office Bearers
-                    </h3>
-                </Card>
+                <br />
+                <br />
+                <h4>
+                    Divisonal Office Bearers
+                </h4>
                 <Row>
-                    <Col className='grid-col'>
-                        {bearers.map((_) => <Card className='bearers'>
-                            <div className='row'>
-                                <div className='col-sm-6' style={{ margin: '30px 0' }}>
-                                    <center>
-                                        <Image src={COB1} height="220px" width="180px" />
-                                    </center>
+                    {bearers.map((_) =>
+                        <Col sm={6} className="p-1">
+                            <Card className='bearers'>
+                                <div className='bearers-inner'>
+                                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                                        <center>
+                                            <Image src={COB1} height="200px" />
+                                        </center>
+                                    </div>
+                                    <div className='col-sm-6 discrp'>
+                                        <h5>Dr. M. Raghavaiah  </h5>
+                                        <p><CgToolbox size={18} style={{ marginRight: '10px', color: '#000080' }} />President</p>
+                                        <p><MdLocationOn size={18} style={{ marginRight: '10px', color: '#000080' }} />Central Office</p>
+                                        <p><FaPhone size={18} style={{ marginRight: '10px', color: '#000080' }} /> 9848014130</p>
+                                    </div>
                                 </div>
-                                <div className='col-sm-6 discrp'>
-                                    <h3>Dr. M. Raghavaiah  </h3>
-                                    <p><CgToolbox size={25} style={{ marginRight: '10px', color: '#000080' }} />President</p>
-                                    <p><MdLocationOn size={25} style={{ marginRight: '10px', color: '#000080' }} />Central Office</p>
-                                    <p><FaPhone size={25} style={{ marginRight: '10px', color: '#000080' }} /> 9848014130</p>
-                                </div>
-                            </div>
-                        </Card>)}
-                    </Col>
+                            </Card>
+                        </Col>
+                    )}
                 </Row>
             </div>
             <Footer />

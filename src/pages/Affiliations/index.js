@@ -8,9 +8,10 @@ import Footer from '../../components/Footer'
 const Affiliations = () => {
   return (
     <div >
-      <Navbar />
       <Container className="Affiliations" >
-        <h1>About ECoRSC</h1><br />
+        <Navbar />
+        <br />
+        <h3>About ECoRSC</h3>
         <p className='discrp'>
           loremEa id voluptate minim tempor deserunt eu non veniam fugiat incididunt.
           Deserunt exercitation aliqua nisi cillum proident. Elit aliqua veniam adipisicing officia.
@@ -21,7 +22,8 @@ const Affiliations = () => {
           loremEa id voluptate minim tempor deserunt eu non veniam fugiat incididunt.
           Deserunt exercitation aliqua nisi cillum proident. Elit aliqua veniam adipisicing officia.
         </p>
-        <h1>ECoRSC History</h1><br />
+        <br />
+        <h3>ECoRSC History</h3>
         <p className='discrp'>
           loremEa id voluptate minim tempor deserunt eu non veniam fugiat incididunt.
           Deserunt exercitation aliqua nisi cillum proident. Elit aliqua veniam adipisicing officia.
@@ -32,7 +34,8 @@ const Affiliations = () => {
           loremEa id voluptate minim tempor deserunt eu non veniam fugiat incididunt.
           Deserunt exercitation aliqua nisi cillum proident. Elit aliqua veniam adipisicing officia.
         </p>
-        <h1>ECoRSC Affiliations</h1>
+        <br />
+        <h3>ECoRSC Affiliations</h3>
         <div className='row' style={{ marginTop: '30px', justifyContent: 'space-around' }}>
           <Col xs={12} sm={6} md={4}>
             <div className="p-3 Affiliate">
@@ -59,7 +62,8 @@ const Affiliations = () => {
             </div>
           </Col>
         </div>
-        <h1>History of ECoRSC Affiliations</h1>
+        <br />
+        <h3>History of ECoRSC Affiliations</h3>
         <div style={{ marginTop: '20px', marginLeft: '20px' }}>
           <h3>1. NFIR</h3>
           <p>

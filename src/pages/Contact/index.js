@@ -8,8 +8,9 @@ import { MdLocationCity, MdEmail } from 'react-icons/md'
 const Contact = () => {
     return (
         <div>
-            <Navbar />
             <div className='container contact'>
+                <Navbar />
+                <br />
                 <h2>Contact Information</h2>
                 <div className='row contact-cards'>
                     <Col sm={12} md={6} lg={4}>

@@ -33,6 +33,15 @@ const Events = () => {
       <li className="item">
         <p>29th National Convention of NFIR to be held on 17th & 18th September 2019 at Ujjain</p>
       </li>
+      <li className="item">
+        <p>29th National Convention of NFIR to be held on 17th & 18th September 2019 at Ujjain</p>
+      </li>
+      <li className="item">
+        <p>29th National Convention of NFIR to be held on 17th & 18th September 2019 at Ujjain</p>
+      </li>
+      <li className="item">
+        <p>29th National Convention of NFIR to be held on 17th & 18th September 2019 at Ujjain</p>
+      </li>
 
       {/* static */}
       <Row>

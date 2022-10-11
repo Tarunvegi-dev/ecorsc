@@ -1,6 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Nav, Image } from 'react-bootstrap'
-import Logo from '../assets/logo.png'
+import { Nav, Image } from 'react-bootstrap'
 import { ImOffice, ImHome } from 'react-icons/im';
 import { FaHistory } from 'react-icons/fa';
 import { RiContactsFill } from 'react-icons/ri'

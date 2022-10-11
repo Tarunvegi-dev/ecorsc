@@ -1,3 +1,4 @@
+import React from 'react';
 import { Route, Switch } from 'react-router-dom'
 import Homepage from './pages/homepage';
 import Affiliations from './pages/Affiliations';

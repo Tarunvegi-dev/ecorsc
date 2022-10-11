@@ -1,5 +1,4 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
 import { FaWhatsapp, FaTwitter, FaFacebook, FaYoutube } from 'react-icons/fa'
 
 const Footer = () => {

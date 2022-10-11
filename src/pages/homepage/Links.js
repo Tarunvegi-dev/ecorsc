@@ -27,9 +27,9 @@ const Links = () => {
         <div className="Links">
             <p className="title">Important Links</p>
             <ul>
-                {links?.map((item, id) => (
+                {links.map((item, id) => (
                     <li className="Link" key={id}>
-                        <a href={item.url} target="_blank" rel="noopener noreferrer">{item.title}</a>
+                        <a href={item.url}>{item.title}</a>
                     </li>
                 ))}
             </ul>

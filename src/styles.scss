@@ -122,7 +122,7 @@ body {
         color: #fff;
       }
       .table {
-        border-radius: 5px;
+        border: 1px solid #d6d6d6;
         .link {
           padding: 10px 20px;
           width: 100%;
@@ -131,17 +131,16 @@ body {
           font-weight: bold;
         }
         .item {
-          border: 1px solid #d6d6d6;
-          padding: 10px 5px;
+          padding: 5px;
           cursor: pointer;
           p {
             font-size: 14px;
             margin: 0;
             font-weight: bold;
-            color: #000;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            color: #063ccf;
+            // white-space: nowrap;
+            // overflow: hidden;
+            // text-overflow: ellipsis;
           }
           svg {
             color: #da9007;
@@ -170,6 +169,9 @@ body {
         font-weight: bold;
         cursor: pointer;
         border: 1px solid #d6d6d6;
+        a{
+          color: #063ccf;
+        }
       }
     }
 

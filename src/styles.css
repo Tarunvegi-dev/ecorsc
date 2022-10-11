@@ -125,7 +125,7 @@ body .Home .Cirsulars .title {
 }
 html .Home .Cirsulars .table,
 body .Home .Cirsulars .table {
-  border-radius: 5px;
+  border: 1px solid #d6d6d6;
 }
 html .Home .Cirsulars .table .link,
 body .Home .Cirsulars .table .link {
@@ -137,8 +137,7 @@ body .Home .Cirsulars .table .link {
 }
 html .Home .Cirsulars .table .item,
 body .Home .Cirsulars .table .item {
-  border: 1px solid #d6d6d6;
-  padding: 10px 5px;
+  padding: 5px;
   cursor: pointer;
 }
 html .Home .Cirsulars .table .item p,
@@ -146,10 +145,7 @@ body .Home .Cirsulars .table .item p {
   font-size: 14px;
   margin: 0;
   font-weight: bold;
-  color: #000;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  color: #063ccf;
 }
 html .Home .Cirsulars .table .item svg,
 body .Home .Cirsulars .table .item svg {
@@ -177,6 +173,10 @@ body .Home .Links .Link {
   font-weight: bold;
   cursor: pointer;
   border: 1px solid #d6d6d6;
+}
+html .Home .Links .Link a,
+body .Home .Links .Link a {
+  color: #063ccf;
 }
 html .Home .Contact-Info,
 body .Home .Contact-Info {

@@ -1,6 +1,5 @@
 import React from 'react';
-import { Container, Col, Row, Form, Button } from 'react-bootstrap';
-import { FaRegAddressCard, FaPhoneAlt } from 'react-icons/fa'
+import { Form, Button } from 'react-bootstrap';
 
 const Subscribe = () => {
     return (

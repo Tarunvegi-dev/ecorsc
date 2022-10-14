@@ -106,7 +106,6 @@ body {
     .Welcome {
       background-color: #ffffffe3;
       .descrip {
-        // font-family: "Poppins", sans-serif;
         border: 1px solid #adb0ac;
         border-radius: 20px 20px 0 20px;
         font-size: 12px;
@@ -169,17 +168,17 @@ body {
         font-weight: bold;
         cursor: pointer;
         border: 1px solid #d6d6d6;
-        a{
+        a {
           color: #063ccf;
         }
       }
     }
 
-    .Contact-Info{
+    .Contact-Info {
       margin-top: 30px;
       border: 1px solid #d6d6d6;
-      p{
-        span{
+      p {
+        span {
           font-weight: bold;
         }
       }
@@ -214,6 +213,7 @@ body {
 
 // Affiliations
 .Affiliations {
+  font-family: "Poppins";
   h3 {
     color: #000080;
     font-family: "Poppins";
@@ -227,6 +227,9 @@ body {
     transition: all 0.3s ease-in-out;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border: 2px solid #fff;
+    .discrp {
+      font-family: "Poppins", sans-serif;
+    }
     .logo {
       height: 50px;
       width: 50px;
@@ -266,7 +269,7 @@ body {
     box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.1);
     .bearers-inner {
       padding: 20px;
-      display:flex;
+      display: flex;
       align-items: center;
       justify-content: space-around;
     }

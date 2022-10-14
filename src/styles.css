@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Dangrek&family=Nunito&family=Poppins:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
 html,
 body {
   overflow-x: hidden;
@@ -9,15 +10,18 @@ body {
   overflow-y: auto;
   font-size: 14px;
 }
+
 html a,
 body a {
   color: inherit;
   text-decoration: none;
 }
+
 html .container,
 body .container {
   max-width: 980px !important;
 }
+
 html .title,
 body .title {
   font-family: "Poppins", sans-serif;
@@ -27,6 +31,7 @@ body .title {
   color: #fff;
   padding: 5px 10px;
 }
+
 html .custom-nav,
 body .custom-nav {
   display: flex;
@@ -36,6 +41,7 @@ body .custom-nav {
   border-bottom: 1px solid #a9a7a7;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 15px -20px;
 }
+
 html .custom-nav .nav-link,
 body .custom-nav .nav-link {
   font-size: 14px;
@@ -50,10 +56,12 @@ body .custom-nav .nav-link {
   /* text-transform: uppercase; */
   font-weight: 600;
 }
+
 html .custom-nav .nav-link:hover,
 body .custom-nav .nav-link:hover {
   color: #000080;
 }
+
 html footer,
 body footer {
   margin: 20px 0;
@@ -63,12 +71,14 @@ body footer {
   align-items: center;
   justify-content: space-around;
 }
+
 html footer svg,
 body footer svg {
   color: #000080;
   cursor: pointer;
   margin: 0 10px;
 }
+
 html .Home,
 body .Home {
   min-height: 100vh;
@@ -78,12 +88,14 @@ body .Home {
   /* welcome */
   /* circulars */
 }
+
 html .Home .flash-news,
 body .Home .flash-news {
   background-color: #fff;
   padding: 10px;
   border-radius: 5px;
 }
+
 html .Home .flash-news h5,
 body .Home .flash-news h5 {
   color: #da9007;
@@ -91,6 +103,7 @@ body .Home .flash-news h5 {
   margin: 0;
   margin-bottom: 5px;
 }
+
 html .Home .flash-news p,
 body .Home .flash-news p {
   color: #575a5e;
@@ -98,15 +111,18 @@ body .Home .flash-news p {
   font-size: 14px;
   margin: 0 10px;
 }
+
 html .Home .carousel .screen,
 body .Home .carousel .screen {
   width: auto !important;
   height: auto !important;
 }
+
 html .Home .Welcome,
 body .Home .Welcome {
   background-color: rgba(255, 255, 255, 0.8901960784);
 }
+
 html .Home .Welcome .descrip,
 body .Home .Welcome .descrip {
   border: 1px solid #adb0ac;
@@ -115,18 +131,22 @@ body .Home .Welcome .descrip {
   padding: 20px;
   /* font-weight: bold; */
 }
+
 html .Home .Cirsulars,
 body .Home .Cirsulars {
   margin: 30px 0;
 }
+
 html .Home .Cirsulars .title,
 body .Home .Cirsulars .title {
   color: #fff;
 }
+
 html .Home .Cirsulars .table,
 body .Home .Cirsulars .table {
   border: 1px solid #d6d6d6;
 }
+
 html .Home .Cirsulars .table .link,
 body .Home .Cirsulars .table .link {
   padding: 10px 20px;
@@ -135,11 +155,13 @@ body .Home .Cirsulars .table .link {
   color: #000080;
   font-weight: bold;
 }
+
 html .Home .Cirsulars .table .item,
 body .Home .Cirsulars .table .item {
   padding: 5px;
   cursor: pointer;
 }
+
 html .Home .Cirsulars .table .item p,
 body .Home .Cirsulars .table .item p {
   font-size: 14px;
@@ -147,23 +169,28 @@ body .Home .Cirsulars .table .item p {
   font-weight: bold;
   color: #063ccf;
 }
+
 html .Home .Cirsulars .table .item svg,
 body .Home .Cirsulars .table .item svg {
   color: #da9007;
 }
+
 html .Home .Cirsulars .table .item i,
 body .Home .Cirsulars .table .item i {
   color: gray;
   font-size: 12px;
 }
+
 html .Home .Links p,
 body .Home .Links p {
   margin: 0;
 }
+
 html .Home .Links ul,
 body .Home .Links ul {
   padding: 0;
 }
+
 html .Home .Links .Link,
 body .Home .Links .Link {
   list-style: none;
@@ -174,24 +201,29 @@ body .Home .Links .Link {
   cursor: pointer;
   border: 1px solid #d6d6d6;
 }
+
 html .Home .Links .Link a,
 body .Home .Links .Link a {
   color: #063ccf;
 }
+
 html .Home .Contact-Info,
 body .Home .Contact-Info {
   margin-top: 30px;
   border: 1px solid #d6d6d6;
 }
+
 html .Home .Contact-Info p span,
 body .Home .Contact-Info p span {
   font-weight: bold;
 }
+
 html .Home .Subscribe,
 body .Home .Subscribe {
   margin-top: 30px;
   border: 1px solid #d6d6d6;
 }
+
 html .Home .Subscribe .mute,
 body .Home .Subscribe .mute {
   color: rgb(52, 50, 50);
@@ -200,17 +232,20 @@ body .Home .Subscribe .mute {
   margin-bottom: 10px;
   font-size: 12px;
 }
+
 html .Home .Subscribe form,
 body .Home .Subscribe form {
   border-radius: 5px;
   padding: 5px;
 }
+
 html .Home .Subscribe form .btn,
 body .Home .Subscribe form .btn {
   background-color: #da9007;
   border: none;
   width: 100%;
 }
+
 html .Home .Subscribe form .text-muted,
 body .Home .Subscribe form .text-muted {
   color: #c3c3c7 !important;
@@ -221,6 +256,7 @@ body .Home .Subscribe form .text-muted {
   font-family: "Poppins";
   text-decoration: underline;
 }
+
 .Affiliations .Affiliate {
   margin-bottom: 10px;
   cursor: pointer;
@@ -230,6 +266,7 @@ body .Home .Subscribe form .text-muted {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border: 2px solid #fff;
 }
+
 .Affiliations .Affiliate .logo {
   height: 50px;
   width: 50px;
@@ -240,12 +277,15 @@ body .Home .Subscribe form .text-muted {
   color: #fff;
   transition: all 0.3s ease-in-out;
 }
+
 .Affiliations .Affiliate:hover {
   border-left: 5px solid #000080;
 }
+
 .Affiliations .Affiliate:hover .icon {
   background-color: #000080;
 }
+
 .Affiliations .Affiliate p {
   font-size: 18px;
   font-weight: bold;
@@ -256,6 +296,7 @@ body .Home .Subscribe form .text-muted {
 .central-office-bearers {
   font-family: "Poppins";
 }
+
 .central-office-bearers h4 {
   background: #000080;
   font-weight: 600;
@@ -263,22 +304,26 @@ body .Home .Subscribe form .text-muted {
   padding: 10px;
   color: white;
 }
+
 .central-office-bearers .bearers {
   cursor: pointer;
   box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.1);
 }
+
 .central-office-bearers .bearers .bearers-inner {
   padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
+
 .central-office-bearers .bearers .discrp h5 {
   color: #000080;
   font-weight: bold;
   font-family: "Poppins";
   margin-bottom: 15px;
 }
+
 .central-office-bearers .bearers .discrp p {
   font-size: 14px;
   margin-bottom: 10px;
@@ -287,41 +332,51 @@ body .Home .Subscribe form .text-muted {
 .contact {
   font-family: "Poppins";
 }
+
 .contact h2 {
   font-weight: bold;
 }
+
 .contact .contact-cards {
   margin-top: 40px;
 }
+
 .contact .contact-cards .contact-card {
   min-height: 260px;
   margin-bottom: 20px;
 }
+
 .contact .contact-cards .card h3 {
   margin: 30px;
   font-weight: 600;
 }
+
 .contact .contact-cards .card .address,
 .contact .contact-cards .card .phone,
 .contact .contact-cards .card .email {
   margin-left: 30px;
   margin-bottom: 30px;
 }
+
 .contact .contact-cards .card .address p,
 .contact .contact-cards .card .phone p,
 .contact .contact-cards .card .email p {
   margin: 0px 30px;
 }
+
 .contact .contactForm {
   margin-top: 50px;
 }
+
 .contact .contactForm h2 {
   font-weight: bold;
 }
+
 .contact .contactForm .group {
   position: relative;
   margin-bottom: 45px;
 }
+
 .contact .contactForm input {
   font-size: 18px;
   padding: 10px 10px 10px 5px;
@@ -330,14 +385,17 @@ body .Home .Subscribe form .text-muted {
   border-bottom: 1px solid #757575;
   width: 400px;
 }
+
 @media screen and (max-width: 600px) {
   .contact .contactForm input {
     width: 100%;
   }
 }
+
 .contact .contactForm input:focus {
   outline: none;
 }
+
 .contact .contactForm label {
   color: rgba(0, 0, 0, 0.26);
   font-size: 18px;
@@ -350,22 +408,26 @@ body .Home .Subscribe form .text-muted {
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-.contact .contactForm input:focus ~ label,
-.contact .contactForm input:valid ~ label {
+
+.contact .contactForm input:focus~label,
+.contact .contactForm input:valid~label {
   top: -20px;
   font-size: 14px;
   color: #000080;
 }
+
 .contact .contactForm .bar {
   position: relative;
   display: block;
   width: 400px;
 }
+
 @media screen and (max-width: 600px) {
   .contact .contactForm .bar {
     width: 100%;
   }
 }
+
 .contact .contactForm .bar:before,
 .contact .contactForm .bar:after {
   content: "";
@@ -378,16 +440,20 @@ body .Home .Subscribe form .text-muted {
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
+
 .contact .contactForm .bar:before {
   left: 50%;
 }
+
 .contact .contactForm .bar:after {
   right: 50%;
 }
-.contact .contactForm input:focus ~ .bar:before,
-.contact .contactForm input:focus ~ .bar:after {
+
+.contact .contactForm input:focus~.bar:before,
+.contact .contactForm input:focus~.bar:after {
   width: 50%;
 }
+
 .contact .contactForm .highlight {
   position: absolute;
   height: 60%;
@@ -397,10 +463,12 @@ body .Home .Subscribe form .text-muted {
   pointer-events: none;
   opacity: 0.5;
 }
-.contact .contactForm input:focus ~ .highlight {
+
+.contact .contactForm input:focus~.highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   animation: inputHighlighter 0.3s ease;
 }
+
 .contact .contactForm textarea {
   font-size: 18px;
   padding: 10px 10px 10px 5px;
@@ -409,42 +477,53 @@ body .Home .Subscribe form .text-muted {
   border-bottom: 1px solid #757575;
   width: 400px;
 }
+
 @media screen and (max-width: 600px) {
   .contact .contactForm textarea {
     width: 100%;
   }
 }
+
 .contact .contactForm textarea:focus {
   outline: none;
 }
-.contact .contactForm textarea:focus ~ label,
-.contact .contactForm textarea:valid ~ label {
+
+.contact .contactForm textarea:focus~label,
+.contact .contactForm textarea:valid~label {
   top: -20px;
   font-size: 14px;
   color: #000080;
 }
-.contact .contactForm textarea:focus ~ .bar:before,
-.contact .contactForm textarea:focus ~ .bar:after {
+
+.contact .contactForm textarea:focus~.bar:before,
+.contact .contactForm textarea:focus~.bar:after {
   width: 50%;
 }
+
 .contact .contactForm .sendBtn {
   padding: 10px 20px;
   background: #000080;
   width: 400px;
 }
+
 @media screen and (max-width: 600px) {
   .contact .contactForm .sendBtn {
     width: 100%;
   }
 }
+
 .contact .location {
   margin-top: 50px;
 }
+
 .contact .location h2 {
   font-weight: bold;
 }
+
 .contact .location .card {
   margin-top: 40px;
   width: 100%;
   min-height: 500px;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=styles.css.map */

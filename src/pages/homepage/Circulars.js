@@ -2,50 +2,30 @@ import React from 'react';
 import { Row } from 'react-bootstrap';
 import NewGif from '../../assets/new.gif'
 
-const Circulars = () => {
+const Circulars = (props) => {
   return (
     <div className="Cirsulars">
       <h3 className="title">Railway Board Circulars</h3>
-      <Events />
+      <Events items={props.circulars} />
       <br />
       <h3 className="title">ECoRSC PNM Items</h3>
-      <Events />
+      <Events items={props.pnmMinutes} />
     </div >
   )
 }
 
-const Events = () => {
+const Events = (props) => {
   return (
     <ul className="table">
-      <li className="item">
-        <p>29th National Convention of NFIR to be held on 17th & 18th September 2019 at Ujjain
-          <img src={NewGif} height="28px" alt="New Gif" />
-        </p>
-      </li>
-      <li className="item">
-        <p>29th National Convention of NFIR to be held on 17th & 18th September 2019 at Ujjain</p>
-      </li>
-      <li className="item">
-        <p>29th National Convention of NFIR to be held on 17th & 18th September 2019 at Ujjain
-          <img src={NewGif} height="28px" alt="New Gif" />
-        </p>
-      </li>
-      <li className="item">
-        <p>29th National Convention of NFIR to be held on 17th & 18th September 2019 at Ujjain</p>
-      </li>
-      <li className="item">
-        <p>29th National Convention of NFIR to be held on 17th & 18th September 2019 at Ujjain</p>
-      </li>
-      <li className="item">
-        <p>29th National Convention of NFIR to be held on 17th & 18th September 2019 at Ujjain</p>
-      </li>
-      <li className="item">
-        <p>29th National Convention of NFIR to be held on 17th & 18th September 2019 at Ujjain</p>
-      </li>
-
-      {/* static */}
+      {props.items?.map((circular, i) => {
+        return <li className="item" key={i}>
+          <a href={circular.link} rel="noreferrer" target="_blank">{circular.title}
+            <img src={NewGif} height="28px" alt="New Gif" />
+          </a>
+        </li>
+      })}
       <Row>
-        <a href="#!" className="link">View More</a>
+        <a href="/circulars" className="link">View More</a>
       </Row>
     </ul>
   )

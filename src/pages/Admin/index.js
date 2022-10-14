@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Adminlogin from './login';
-import { Form, Button, Col, Image } from 'react-bootstrap';
+import { Form, Button, Image } from 'react-bootstrap';
 import logo from '../../assets/logo.png'
 import { FaUpload } from 'react-icons/fa'
 import { FiLogOut } from 'react-icons/fi'
 import { RiSendPlaneFill } from 'react-icons/ri'
-import { firestore } from '../../firebase/firebase-utils'
+import { firestore, storage } from '../../firebase/firebase-utils'
 
 const Admin = (props) => {
     const [circular, setcircular] = useState({
@@ -13,23 +13,39 @@ const Admin = (props) => {
         category: "circular",
         link: "",
     });
+    const [file, setfile] = useState(null);
 
     const logout = () => {
         localStorage.removeItem('admin-username')
         props.history.push('/admin')
     }
 
-    const uploadItems = () => {
-        if (circular.title === '' || circular.category === '' || circular.link === '') {
+    const uploadItems = async () => {
+        if (circular.title === '' || circular.category === '') {
             alert('Please fill all the fields')
             return;
         }
-        firestore.collection('railway-board').doc().set(circular)
+        if (circular.link === '' && file === null) {
+            alert('Please enter pdf url or upload file')
+            return;
+        }
+        await firestore.collection('railway-board').doc().set(circular)
             .then(() => {
                 alert('Document Uploaded Successfully');
                 window.location.reload(true)
             })
             .catch((err) => console.log(err))
+    }
+
+    const updateFile = (file) => {
+        setfile(file)
+        storage.ref(`/circulars/${file.name}`).put(file)
+            .then(async () => {
+                await storage.ref("circulars").child(file.name).getDownloadURL()
+                    .then((url) => {
+                        setcircular({ ...circular, link: url })
+                    })
+            })
     }
 
     return (
@@ -45,8 +61,8 @@ const Admin = (props) => {
                                 <h2 className='heading'>ECoRSC Admin Dashboard</h2>
                             </center>
                         </div>
-                        <div className='admin row' style={{ marginTop: '60px' }}>
-                            <Col className='circulars' xs={12} sm={6}>
+                        <div className='adminContainer' style={{ marginTop: '60px' }}>
+                            <div className='circulars'>
                                 <h4 className='circulars-title'>Upload Circulars</h4>
                                 <span>Fill the below form and you can upload circulars directly from here</span>
                                 <Form style={{ marginTop: '40px', fontFamily: 'Poppins' }}>
@@ -60,25 +76,25 @@ const Admin = (props) => {
                                         <select defaultValue="circular" className="select-text" required onChange={(e) => setcircular({ ...circular, category: e.target.value })}>
                                             <option value="" disabled selected></option>
                                             <option value="cirular">Railway Circulars</option>
-                                            <option value="pnm minutes">Zonal PNM Minutes</option>
+                                            <option value="pnm-minutes">Zonal PNM Minutes</option>
                                         </select>
                                         <span className="select-highlight"></span>
                                         <span className="select-bar"></span>
                                         <label className="select-label">Category</label>
                                     </div><br /><br />
                                     <div className="group">
-                                        <input type="text" required onChange={(e) => setcircular({ ...circular, link: e.target.value })} />
+                                        <input type="text" required value={circular.link} onChange={(e) => setcircular({ ...circular, link: e.target.value })} />
                                         <span className="highlight"></span>
                                         <span className="bar"></span>
                                         <label>Pdf Link</label>
                                     </div>
                                     <div className="group">
-                                        <input className="form-control" type="file" id="formFile" />
+                                        <input className="form-control" type="file" id="formFile" onChange={(e) => updateFile(e.target.files[0])} />
                                     </div>
                                     <Button className='submitBtn' style={{ marginBottom: '70px' }} onClick={uploadItems}><FaUpload />&nbsp;UPLOAD</Button>
                                 </Form>
-                            </Col>
-                            <Col className='bulkSMS' xs={12} sm={6}>
+                            </div>
+                            <div className='bulkSMS'>
                                 <h4 className='bulkSMSTitle'>Send Bulk SMS</h4>
                                 <span>Fill the below form and you can send bulk SMS directly from here</span>
                                 <Form style={{ marginTop: '40px', fontFamily: 'Poppins' }}>
@@ -110,7 +126,7 @@ const Admin = (props) => {
                                     </div><br /><br />
                                     <Button className='submitBtn' style={{ marginBottom: '70px' }}><RiSendPlaneFill />&nbsp;SEND</Button>
                                 </Form>
-                            </Col>
+                            </div>
                         </div>
                     </div>
                 </>

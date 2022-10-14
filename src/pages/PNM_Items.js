@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, InputGroup, Form, Button, Row, Col, Pagination } from 'react-bootstrap';
 import Navbar from '../components/Navbar';
 import { Events } from './homepage/Circulars'
+import { firestore } from '../firebase/firebase-utils';
 
 const Circulars = () => {
     let active = 2;
@@ -13,6 +14,20 @@ const Circulars = () => {
             </Pagination.Item>,
         );
     }
+
+    const [pnmMinutes, setpnmMinutes] = useState([]);
+
+    useEffect(() => {
+        firestore.collection('railway-board').where("category", "==", "pnm-minutes").get()
+            .then((querySnapshot) => {
+                let data = querySnapshot.docs.map((doc) => {
+                    return { ...doc.data() }
+                })
+                setpnmMinutes(data)
+            })
+    }, []);
+
+
 
     return (
         <div className="Cirsulars">
@@ -35,12 +50,12 @@ const Circulars = () => {
                 </Row>
                 <h3 className="title">Railway PNM Items</h3>
                 <br />
-                <Events />
+                <Events items={pnmMinutes} />
                 <br />
-                <div style={{display: 'flex', justifyContent: 'center'}}>
-                        <Pagination>
-                            {items}
-                        </Pagination>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <Pagination>
+                        {items}
+                    </Pagination>
                 </div>
             </Container>
         </div>

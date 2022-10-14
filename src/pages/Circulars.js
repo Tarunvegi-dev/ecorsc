@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, InputGroup, Form, Button, Row, Col, Pagination } from 'react-bootstrap';
 import Navbar from '../components/Navbar';
 import { Events } from './homepage/Circulars'
+import { firestore } from '../firebase/firebase-utils';
 
 const Circulars = () => {
     let active = 2;
@@ -13,6 +14,18 @@ const Circulars = () => {
             </Pagination.Item>,
         );
     }
+
+    const [circulars, setcirculars] = useState([]);
+
+    useEffect(() => {
+        firestore.collection('railway-board').where("category", "==", "circular").get()
+            .then((querySnapshot) => {
+                let data = querySnapshot.docs.map((doc) => {
+                    return { ...doc.data() }
+                })
+                setcirculars(data)
+            })
+    }, []);
 
     return (
         <div className="Cirsulars">
@@ -46,7 +59,7 @@ const Circulars = () => {
                 </div>
                 <br />
                 <h3 className="title">Railway Board Circulars</h3>
-                <Events />
+                <Events items={circulars} />
                 <br />
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <Pagination>

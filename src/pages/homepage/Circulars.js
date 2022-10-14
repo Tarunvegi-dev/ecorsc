@@ -14,7 +14,7 @@ const Circulars = (props) => {
   )
 }
 
-const Events = (props) => {
+export const Events = (props) => {
   return (
     <ul className="table">
       {props.items?.map((circular, i) => {

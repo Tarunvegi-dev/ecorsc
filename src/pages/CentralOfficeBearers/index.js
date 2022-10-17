@@ -1,16 +1,27 @@
-import React, { useState } from 'react';
-import { Card, Row, Col, Image } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Card, Row, Col } from 'react-bootstrap';
 import Navbar from '../../components/Navbar';
-import COB1 from '../../assets/nfir_gs.jpeg'
 import { CgToolbox } from 'react-icons/cg'
 import { MdLocationOn } from 'react-icons/md'
 import { FaPhone } from 'react-icons/fa'
 import Footer from '../../components/Footer'
-
+import { firestore } from '../../firebase/firebase-utils'
 
 const CentralOfficeBearers = () => {
     //eslint-disable-next-line
-    const [bearers, setbearers] = useState([1, 2, 3, 4]);
+    const [bearers, setbearers] = useState([]);
+
+    useEffect(() => {
+        firestore.collection('office-bearers').get()
+            .then((querySnapshot) => {
+                const data = querySnapshot.docs.map((doc) => {
+                    return {
+                        ...doc.data()
+                    }
+                })
+                setbearers(data)
+            })
+    }, []);
     return (
         <div>
             <div className='container central-office-bearers'>
@@ -20,20 +31,15 @@ const CentralOfficeBearers = () => {
                     Central Office Bearers
                 </h4>
                 <Row>
-                    {bearers.map((_) =>
-                        <Col sm={6} className="p-1">
+                    {bearers.filter((b) => b.location === 'Central Office').map((bearer) =>
+                        <Col sm={4} className="p-1">
                             <Card className='bearers'>
                                 <div className='bearers-inner'>
-                                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                                        <center>
-                                            <Image src={COB1} height="200px" />
-                                        </center>
-                                    </div>
-                                    <div className='col-sm-6 discrp'>
-                                        <h5>Dr. M. Raghavaiah  </h5>
-                                        <p><CgToolbox size={18} style={{ marginRight: '10px', color: '#000080' }} />President</p>
-                                        <p><MdLocationOn size={18} style={{ marginRight: '10px', color: '#000080' }} />Central Office</p>
-                                        <p><FaPhone size={18} style={{ marginRight: '10px', color: '#000080' }} /> 9848014130</p>
+                                    <div className='col discrp'>
+                                        <h5>{bearer.name}</h5>
+                                        <p><CgToolbox size={18} style={{ marginRight: '10px', color: '#000080' }} />{bearer.designation}</p>
+                                        <p><MdLocationOn size={18} style={{ marginRight: '10px', color: '#000080' }} />{bearer.location}</p>
+                                        <p><FaPhone size={18} style={{ marginRight: '10px', color: '#000080' }} /> {bearer.mobile}</p>
                                     </div>
                                 </div>
                             </Card>
@@ -46,20 +52,16 @@ const CentralOfficeBearers = () => {
                     Divisonal Office Bearers
                 </h4>
                 <Row>
-                    {bearers.map((_) =>
-                        <Col sm={6} className="p-1">
+                    {bearers.filter((b) => b.location !== 'Central Office').map((bearer) =>
+                        <Col sm={4} className="p-1">
                             <Card className='bearers'>
                                 <div className='bearers-inner'>
-                                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                                        <center>
-                                            <Image src={COB1} height="200px" />
-                                        </center>
-                                    </div>
-                                    <div className='col-sm-6 discrp'>
-                                        <h5>Dr. M. Raghavaiah  </h5>
-                                        <p><CgToolbox size={18} style={{ marginRight: '10px', color: '#000080' }} />President</p>
-                                        <p><MdLocationOn size={18} style={{ marginRight: '10px', color: '#000080' }} />Central Office</p>
-                                        <p><FaPhone size={18} style={{ marginRight: '10px', color: '#000080' }} /> 9848014130</p>
+
+                                    <div className='col discrp'>
+                                        <h5>{bearer.name}</h5>
+                                        <p><CgToolbox size={18} style={{ marginRight: '10px', color: '#000080' }} />{bearer.designation}</p>
+                                        <p><MdLocationOn size={18} style={{ marginRight: '10px', color: '#000080' }} />{bearer.location}</p>
+                                        <p><FaPhone size={18} style={{ marginRight: '10px', color: '#000080' }} />{bearer.mobile}</p>
                                     </div>
                                 </div>
                             </Card>

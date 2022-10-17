@@ -2,18 +2,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 .admin {
+    font-family: "Poppins";
     .heading {
         font-family: "Poppins";
         margin-top: 20px;
     }
-    .adminContainer {
-        display: flex;
+    .nav-link {
+        font-size: 20px;
+        font-family: "Montserrat";
+    }
+    .tab-content {
+        margin-top: 50px;
         .submitBtn {
             font-family: "Montserrat";
             padding: 10px 15px;
         }
-        .circulars {
-            margin-top: 10px;
+        .circulars,
+        .officeBearers {
+            margin-top: 40px;
             .circulars-title {
                 font-family: "Poppins";
                 text-decoration: underline;
@@ -26,7 +32,7 @@
                 font-size: 18px;
                 padding: 10px 10px 10px 5px;
                 display: block;
-                width: 400px;
+                width: 100%;
                 border: none;
                 border-bottom: 1px solid #757575;
             }
@@ -57,7 +63,7 @@
             .bar {
                 position: relative;
                 display: block;
-                width: 400px;
+                width: 100%;
             }
             .bar:before,
             .bar:after {
@@ -101,14 +107,14 @@
 
             .select {
                 position: relative;
-                width: 350px;
+                width: 100%;
             }
 
             .select-text {
                 position: relative;
                 font-family: inherit;
                 background-color: transparent;
-                width: 400px;
+                width: 100%;
                 padding: 10px 10px 10px 0;
                 font-size: 18px;
                 border-radius: 0;
@@ -129,7 +135,7 @@
             .select:after {
                 position: absolute;
                 top: 18px;
-                right: -50px;
+                right: 0px;
                 width: 0;
                 height: 0;
                 padding: 0;
@@ -161,7 +167,7 @@
             .select-bar {
                 position: relative;
                 display: block;
-                width: 400px;
+                width: 100%;
             }
 
             .select-bar:before,
@@ -200,7 +206,7 @@
         }
 
         .bulkSMS {
-            margin-left: 70px;
+            margin-top: 50px;
             .bulkSMSTitle {
                 font-family: "Poppins";
                 text-decoration: underline;
@@ -213,7 +219,7 @@
                 font-size: 18px;
                 padding: 10px 10px 10px 5px;
                 display: block;
-                width: 400px;
+                width: 100%;
                 border: none;
                 border-bottom: 1px solid #757575;
             }
@@ -287,14 +293,14 @@
             }
             .select {
                 position: relative;
-                width: 350px;
+                width: 100%;
             }
 
             .select-text {
                 position: relative;
                 font-family: inherit;
                 background-color: transparent;
-                width: 400px;
+                width: 100%;
                 padding: 10px 10px 10px 0;
                 font-size: 18px;
                 border-radius: 0;
@@ -315,7 +321,7 @@
             .select:after {
                 position: absolute;
                 top: 18px;
-                right: -50px;
+                right: 0px;
                 width: 0;
                 height: 0;
                 padding: 0;
@@ -347,7 +353,7 @@
             .select-bar {
                 position: relative;
                 display: block;
-                width: 400px;
+                width: 100%;
             }
 
             .select-bar:before,

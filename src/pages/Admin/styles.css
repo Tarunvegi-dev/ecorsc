@@ -1,39 +1,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Dangrek&family=Nunito&family=Poppins:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.admin {
+  font-family: "Poppins";
+}
 .admin .heading {
   font-family: "Poppins";
   margin-top: 20px;
 }
-.admin .adminContainer {
-  display: flex;
+.admin .nav-link {
+  font-size: 20px;
+  font-family: "Montserrat";
 }
-.admin .adminContainer .submitBtn {
+.admin .tab-content {
+  margin-top: 50px;
+}
+.admin .tab-content .submitBtn {
   font-family: "Montserrat";
   padding: 10px 15px;
 }
-.admin .adminContainer .circulars {
-  margin-top: 10px;
+.admin .tab-content .circulars,
+.admin .tab-content .officeBearers {
+  margin-top: 40px;
 }
-.admin .adminContainer .circulars .circulars-title {
+.admin .tab-content .circulars .circulars-title,
+.admin .tab-content .officeBearers .circulars-title {
   font-family: "Poppins";
   text-decoration: underline;
 }
-.admin .adminContainer .circulars .group {
+.admin .tab-content .circulars .group,
+.admin .tab-content .officeBearers .group {
   position: relative;
   margin-bottom: 45px;
 }
-.admin .adminContainer .circulars input {
+.admin .tab-content .circulars input,
+.admin .tab-content .officeBearers input {
   font-size: 18px;
   padding: 10px 10px 10px 5px;
   display: block;
-  width: 400px;
+  width: 100%;
   border: none;
   border-bottom: 1px solid #757575;
 }
-.admin .adminContainer .circulars input:focus {
+.admin .tab-content .circulars input:focus,
+.admin .tab-content .officeBearers input:focus {
   outline: none;
 }
-.admin .adminContainer .circulars label {
+.admin .tab-content .circulars label,
+.admin .tab-content .officeBearers label {
   color: rgba(0, 0, 0, 0.26);
   font-size: 18px;
   font-weight: normal;
@@ -45,19 +58,24 @@
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-.admin .adminContainer .circulars input:focus ~ label,
-.admin .adminContainer .circulars input:valid ~ label {
+.admin .tab-content .circulars input:focus ~ label,
+.admin .tab-content .circulars input:valid ~ label,
+.admin .tab-content .officeBearers input:focus ~ label,
+.admin .tab-content .officeBearers input:valid ~ label {
   top: -20px;
   font-size: 14px;
   color: #000080;
 }
-.admin .adminContainer .circulars .bar {
+.admin .tab-content .circulars .bar,
+.admin .tab-content .officeBearers .bar {
   position: relative;
   display: block;
-  width: 400px;
+  width: 100%;
 }
-.admin .adminContainer .circulars .bar:before,
-.admin .adminContainer .circulars .bar:after {
+.admin .tab-content .circulars .bar:before,
+.admin .tab-content .circulars .bar:after,
+.admin .tab-content .officeBearers .bar:before,
+.admin .tab-content .officeBearers .bar:after {
   content: "";
   height: 2px;
   width: 0;
@@ -68,17 +86,22 @@
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-.admin .adminContainer .circulars .bar:before {
+.admin .tab-content .circulars .bar:before,
+.admin .tab-content .officeBearers .bar:before {
   left: 50%;
 }
-.admin .adminContainer .circulars .bar:after {
+.admin .tab-content .circulars .bar:after,
+.admin .tab-content .officeBearers .bar:after {
   right: 50%;
 }
-.admin .adminContainer .circulars input:focus ~ .bar:before,
-.admin .adminContainer .circulars input:focus ~ .bar:after {
+.admin .tab-content .circulars input:focus ~ .bar:before,
+.admin .tab-content .circulars input:focus ~ .bar:after,
+.admin .tab-content .officeBearers input:focus ~ .bar:before,
+.admin .tab-content .officeBearers input:focus ~ .bar:after {
   width: 50%;
 }
-.admin .adminContainer .circulars .highlight {
+.admin .tab-content .circulars .highlight,
+.admin .tab-content .officeBearers .highlight {
   position: absolute;
   height: 60%;
   width: 100px;
@@ -87,38 +110,44 @@
   pointer-events: none;
   opacity: 0.5;
 }
-.admin .adminContainer .circulars input:focus ~ .highlight {
+.admin .tab-content .circulars input:focus ~ .highlight,
+.admin .tab-content .officeBearers input:focus ~ .highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   animation: inputHighlighter 0.3s ease;
 }
-.admin .adminContainer .circulars .select {
+.admin .tab-content .circulars .select,
+.admin .tab-content .officeBearers .select {
   position: relative;
-  width: 350px;
+  width: 100%;
 }
-.admin .adminContainer .circulars .select-text {
+.admin .tab-content .circulars .select-text,
+.admin .tab-content .officeBearers .select-text {
   position: relative;
   font-family: inherit;
   background-color: transparent;
-  width: 400px;
+  width: 100%;
   padding: 10px 10px 10px 0;
   font-size: 18px;
   border-radius: 0;
   border: none;
   border-bottom: 1px solid #000080;
 }
-.admin .adminContainer .circulars .select-text:focus {
+.admin .tab-content .circulars .select-text:focus,
+.admin .tab-content .officeBearers .select-text:focus {
   outline: none;
   border-bottom: 1px solid #000080;
 }
-.admin .adminContainer .circulars .select .select-text {
+.admin .tab-content .circulars .select .select-text,
+.admin .tab-content .officeBearers .select .select-text {
   -moz-appearance: none;
        appearance: none;
   -webkit-appearance: none;
 }
-.admin .adminContainer .circulars .select:after {
+.admin .tab-content .circulars .select:after,
+.admin .tab-content .officeBearers .select:after {
   position: absolute;
   top: 18px;
-  right: -50px;
+  right: 0px;
   width: 0;
   height: 0;
   padding: 0;
@@ -128,7 +157,8 @@
   border-top: 6px solid #000080;
   pointer-events: none;
 }
-.admin .adminContainer .circulars .select-label {
+.admin .tab-content .circulars .select-label,
+.admin .tab-content .officeBearers .select-label {
   color: rgba(0, 0, 0, 0.26);
   font-size: 18px;
   position: absolute;
@@ -137,20 +167,25 @@
   top: 10px;
   transition: 0.2s ease all;
 }
-.admin .adminContainer .circulars .select-text:focus ~ .select-label,
-.admin .adminContainer .circulars .select-text:valid ~ .select-label {
+.admin .tab-content .circulars .select-text:focus ~ .select-label,
+.admin .tab-content .circulars .select-text:valid ~ .select-label,
+.admin .tab-content .officeBearers .select-text:focus ~ .select-label,
+.admin .tab-content .officeBearers .select-text:valid ~ .select-label {
   color: #000080;
   top: -20px;
   transition: 0.2s ease all;
   font-size: 14px;
 }
-.admin .adminContainer .circulars .select-bar {
+.admin .tab-content .circulars .select-bar,
+.admin .tab-content .officeBearers .select-bar {
   position: relative;
   display: block;
-  width: 400px;
+  width: 100%;
 }
-.admin .adminContainer .circulars .select-bar:before,
-.admin .adminContainer .circulars .select-bar:after {
+.admin .tab-content .circulars .select-bar:before,
+.admin .tab-content .circulars .select-bar:after,
+.admin .tab-content .officeBearers .select-bar:before,
+.admin .tab-content .officeBearers .select-bar:after {
   content: "";
   height: 2px;
   width: 0;
@@ -159,17 +194,22 @@
   background: #000080;
   transition: 0.2s ease all;
 }
-.admin .adminContainer .circulars .select-bar:before {
+.admin .tab-content .circulars .select-bar:before,
+.admin .tab-content .officeBearers .select-bar:before {
   left: 50%;
 }
-.admin .adminContainer .circulars .select-bar:after {
+.admin .tab-content .circulars .select-bar:after,
+.admin .tab-content .officeBearers .select-bar:after {
   right: 50%;
 }
-.admin .adminContainer .circulars .select-text:focus ~ .select-bar:before,
-.admin .adminContainer .circulars .select-text:focus ~ .select-bar:after {
+.admin .tab-content .circulars .select-text:focus ~ .select-bar:before,
+.admin .tab-content .circulars .select-text:focus ~ .select-bar:after,
+.admin .tab-content .officeBearers .select-text:focus ~ .select-bar:before,
+.admin .tab-content .officeBearers .select-text:focus ~ .select-bar:after {
   width: 50%;
 }
-.admin .adminContainer .circulars .select-highlight {
+.admin .tab-content .circulars .select-highlight,
+.admin .tab-content .officeBearers .select-highlight {
   position: absolute;
   height: 60%;
   width: 100px;
@@ -178,29 +218,29 @@
   pointer-events: none;
   opacity: 0.5;
 }
-.admin .adminContainer .bulkSMS {
-  margin-left: 70px;
+.admin .tab-content .bulkSMS {
+  margin-top: 50px;
 }
-.admin .adminContainer .bulkSMS .bulkSMSTitle {
+.admin .tab-content .bulkSMS .bulkSMSTitle {
   font-family: "Poppins";
   text-decoration: underline;
 }
-.admin .adminContainer .bulkSMS .group {
+.admin .tab-content .bulkSMS .group {
   position: relative;
   margin-bottom: 45px;
 }
-.admin .adminContainer .bulkSMS textarea {
+.admin .tab-content .bulkSMS textarea {
   font-size: 18px;
   padding: 10px 10px 10px 5px;
   display: block;
-  width: 400px;
+  width: 100%;
   border: none;
   border-bottom: 1px solid #757575;
 }
-.admin .adminContainer .bulkSMS textarea:focus {
+.admin .tab-content .bulkSMS textarea:focus {
   outline: none;
 }
-.admin .adminContainer .bulkSMS label {
+.admin .tab-content .bulkSMS label {
   color: rgba(0, 0, 0, 0.26);
   font-size: 18px;
   font-weight: normal;
@@ -212,19 +252,19 @@
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-.admin .adminContainer .bulkSMS textarea:focus ~ label,
-.admin .adminContainer .bulkSMS textarea:valid ~ label {
+.admin .tab-content .bulkSMS textarea:focus ~ label,
+.admin .tab-content .bulkSMS textarea:valid ~ label {
   top: -20px;
   font-size: 14px;
   color: #000080;
 }
-.admin .adminContainer .bulkSMS .bar {
+.admin .tab-content .bulkSMS .bar {
   position: relative;
   display: block;
   width: 400px;
 }
-.admin .adminContainer .bulkSMS .bar:before,
-.admin .adminContainer .bulkSMS .bar:after {
+.admin .tab-content .bulkSMS .bar:before,
+.admin .tab-content .bulkSMS .bar:after {
   content: "";
   height: 2px;
   width: 0;
@@ -235,17 +275,17 @@
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-.admin .adminContainer .bulkSMS .bar:before {
+.admin .tab-content .bulkSMS .bar:before {
   left: 50%;
 }
-.admin .adminContainer .bulkSMS .bar:after {
+.admin .tab-content .bulkSMS .bar:after {
   right: 50%;
 }
-.admin .adminContainer .bulkSMS textarea:focus ~ .bar:before,
-.admin .adminContainer .bulkSMS textarea:focus ~ .bar:after {
+.admin .tab-content .bulkSMS textarea:focus ~ .bar:before,
+.admin .tab-content .bulkSMS textarea:focus ~ .bar:after {
   width: 50%;
 }
-.admin .adminContainer .bulkSMS .highlight {
+.admin .tab-content .bulkSMS .highlight {
   position: absolute;
   height: 60%;
   width: 100px;
@@ -254,38 +294,38 @@
   pointer-events: none;
   opacity: 0.5;
 }
-.admin .adminContainer .bulkSMS textarea:focus ~ .highlight {
+.admin .tab-content .bulkSMS textarea:focus ~ .highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   animation: inputHighlighter 0.3s ease;
 }
-.admin .adminContainer .bulkSMS .select {
+.admin .tab-content .bulkSMS .select {
   position: relative;
-  width: 350px;
+  width: 100%;
 }
-.admin .adminContainer .bulkSMS .select-text {
+.admin .tab-content .bulkSMS .select-text {
   position: relative;
   font-family: inherit;
   background-color: transparent;
-  width: 400px;
+  width: 100%;
   padding: 10px 10px 10px 0;
   font-size: 18px;
   border-radius: 0;
   border: none;
   border-bottom: 1px solid #000080;
 }
-.admin .adminContainer .bulkSMS .select-text:focus {
+.admin .tab-content .bulkSMS .select-text:focus {
   outline: none;
   border-bottom: 1px solid #000080;
 }
-.admin .adminContainer .bulkSMS .select .select-text {
+.admin .tab-content .bulkSMS .select .select-text {
   -moz-appearance: none;
        appearance: none;
   -webkit-appearance: none;
 }
-.admin .adminContainer .bulkSMS .select:after {
+.admin .tab-content .bulkSMS .select:after {
   position: absolute;
   top: 18px;
-  right: -50px;
+  right: 0px;
   width: 0;
   height: 0;
   padding: 0;
@@ -295,7 +335,7 @@
   border-top: 6px solid #000080;
   pointer-events: none;
 }
-.admin .adminContainer .bulkSMS .select-label {
+.admin .tab-content .bulkSMS .select-label {
   color: rgba(0, 0, 0, 0.26);
   font-size: 18px;
   position: absolute;
@@ -304,20 +344,20 @@
   top: 10px;
   transition: 0.2s ease all;
 }
-.admin .adminContainer .bulkSMS .select-text:focus ~ .select-label,
-.admin .adminContainer .bulkSMS .select-text:valid ~ .select-label {
+.admin .tab-content .bulkSMS .select-text:focus ~ .select-label,
+.admin .tab-content .bulkSMS .select-text:valid ~ .select-label {
   color: #000080;
   top: -20px;
   transition: 0.2s ease all;
   font-size: 14px;
 }
-.admin .adminContainer .bulkSMS .select-bar {
+.admin .tab-content .bulkSMS .select-bar {
   position: relative;
   display: block;
-  width: 400px;
+  width: 100%;
 }
-.admin .adminContainer .bulkSMS .select-bar:before,
-.admin .adminContainer .bulkSMS .select-bar:after {
+.admin .tab-content .bulkSMS .select-bar:before,
+.admin .tab-content .bulkSMS .select-bar:after {
   content: "";
   height: 2px;
   width: 0;
@@ -326,17 +366,17 @@
   background: #000080;
   transition: 0.2s ease all;
 }
-.admin .adminContainer .bulkSMS .select-bar:before {
+.admin .tab-content .bulkSMS .select-bar:before {
   left: 50%;
 }
-.admin .adminContainer .bulkSMS .select-bar:after {
+.admin .tab-content .bulkSMS .select-bar:after {
   right: 50%;
 }
-.admin .adminContainer .bulkSMS .select-text:focus ~ .select-bar:before,
-.admin .adminContainer .bulkSMS .select-text:focus ~ .select-bar:after {
+.admin .tab-content .bulkSMS .select-text:focus ~ .select-bar:before,
+.admin .tab-content .bulkSMS .select-text:focus ~ .select-bar:after {
   width: 50%;
 }
-.admin .adminContainer .bulkSMS .select-highlight {
+.admin .tab-content .bulkSMS .select-highlight {
   position: absolute;
   height: 60%;
   width: 100px;
@@ -345,11 +385,11 @@
   pointer-events: none;
   opacity: 0.5;
 }
-.admin .adminContainer .login {
+.admin .tab-content .login {
   margin-top: 140px;
   font-family: "Poppins";
 }
-.admin .adminContainer .login .username-input {
+.admin .tab-content .login .username-input {
   padding: 18px;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
   max-width: 360px;

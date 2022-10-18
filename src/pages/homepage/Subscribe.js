@@ -66,12 +66,12 @@ const Subscribe = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Control type="tel" placeholder="Enter your mobile number" onChange={(e) => setsubscription({ ...subscription, mobile: e.target.value })} />
-                    <Form.Text className="text-muted">
-                        We'll never share your mobile number with anyone else.
+                    <br /><Form.Text className="text-muted" style={{ fontSize: '12px' }}>
+                        By clicking submit, I agree to the Terms of Service and Privacy Policy.
                     </Form.Text>
                 </Form.Group>
 
-                <Button variant="primary" type="submit" onClick={(e) => Subscribe(e)}>
+                <Button variant="primary" type="submit" onClick={(e) => Subscribe(e)} style={{ background: '#5B8D29', color: '#FFF', fontWeight: '700' }}>
                     Submit
                 </Button>
             </Form>

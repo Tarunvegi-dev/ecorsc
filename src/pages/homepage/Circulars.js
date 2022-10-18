@@ -27,7 +27,7 @@ export const Events = (props) => {
       {props.items?.map((item, i) => {
         return <li className="item" key={i}>
           <p>
-            <a href={item.link} target="_blank" rel="noreferrer">{item.title}
+            <a href={item.link} style={{ color: 'gray' }} target="_blank" rel="noreferrer">{item.title}
             </a>
             <img src={NewGif} height="28px" alt="New Gif" />
           </p>

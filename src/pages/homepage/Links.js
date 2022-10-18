@@ -1,6 +1,7 @@
 import React from 'react'
+import { FiChevronsRight } from 'react-icons/fi'
 
-const Links = () => {
+const Links = ({ title }) => {
     const links = [
         {
             title: 'Central Railway Website',
@@ -25,11 +26,11 @@ const Links = () => {
     ];
     return (
         <div className="Links">
-            <p className="title">Important Links</p>
+            <p className="title">{title}</p>
             <ul>
                 {links.map((item, id) => (
                     <li className="Link" key={id}>
-                        <a href={item.url}>{item.title}</a>
+                        <FiChevronsRight style={{ color: 'gray' }} />&nbsp;<a href={item.url}>{item.title}</a>
                     </li>
                 ))}
             </ul>

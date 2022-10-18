@@ -38,7 +38,7 @@ const Homepage = () => {
                     <br />
                     <Row>
                         <Col sm={3}>
-                            <Links />
+                            <Links title="Important Links"/>
                             <ContactInfo />
                         </Col>
                         <Col sm={6}>
@@ -46,7 +46,7 @@ const Homepage = () => {
                             <Circulars circulars={circulars} pnmMinutes={pnmMinutes}/>
                         </Col>
                         <Col sm={3}>
-                            <Links />
+                            <Links title="Other Links"/>
                             <Subscribe />
                         </Col>
                     </Row>

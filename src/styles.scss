@@ -23,7 +23,7 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: bold;
     font-size: 16px;
-    background-color: #000080;
+    background-color: #075476;
     color: #fff;
     padding: 5px 10px;
   }
@@ -43,13 +43,13 @@ body {
       padding: 10px;
       margin: 0 10px;
       font-size: 14px;
-      color: rgb(106, 100, 100);
+      color: #075476;
       transition: all 0.3s ease-in-out;
       /* text-transform: uppercase; */
       font-weight: 600;
 
       &:hover {
-        color: #000080;
+        color: #c0392b;
       }
     }
   }
@@ -137,8 +137,8 @@ body {
             font-size: 14px;
             margin: 0;
             font-weight: bold;
-            a{
-              color: #063ccf; 
+            a {
+              color: #063ccf;
             }
             // white-space: nowrap;
             // overflow: hidden;
@@ -172,7 +172,10 @@ body {
         cursor: pointer;
         border: 1px solid #d6d6d6;
         a {
-          color: #063ccf;
+          color: gray;
+          &:hover {
+            color: #063ccf;
+          }
         }
       }
     }
@@ -261,7 +264,7 @@ body {
 .central-office-bearers {
   font-family: "Poppins";
   h4 {
-    background: #000080;
+    background: #075476;
     font-weight: 600;
     font-family: "Poppins";
     padding: 10px;
@@ -439,7 +442,7 @@ body {
 
     .sendBtn {
       padding: 10px 20px;
-      background: #000080;
+      background: #075476;
       width: 400px;
       @media screen and (max-width: 600px) {
         width: 100%;

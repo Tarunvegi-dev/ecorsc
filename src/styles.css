@@ -23,7 +23,7 @@ body .title {
   font-family: "Poppins", sans-serif;
   font-weight: bold;
   font-size: 16px;
-  background-color: #000080;
+  background-color: #075476;
   color: #fff;
   padding: 5px 10px;
 }
@@ -45,14 +45,14 @@ body .custom-nav .nav-link {
   padding: 10px;
   margin: 0 10px;
   font-size: 14px;
-  color: rgb(106, 100, 100);
+  color: #075476;
   transition: all 0.3s ease-in-out;
   /* text-transform: uppercase; */
   font-weight: 600;
 }
 html .custom-nav .nav-link:hover,
 body .custom-nav .nav-link:hover {
-  color: #000080;
+  color: #c0392b;
 }
 html footer,
 body footer {
@@ -180,6 +180,10 @@ body .Home .Links .Link {
 }
 html .Home .Links .Link a,
 body .Home .Links .Link a {
+  color: gray;
+}
+html .Home .Links .Link a:hover,
+body .Home .Links .Link a:hover {
   color: #063ccf;
 }
 html .Home .Contact-Info,
@@ -267,7 +271,7 @@ body .Home .Subscribe form .text-muted {
   font-family: "Poppins";
 }
 .central-office-bearers h4 {
-  background: #000080;
+  background: #075476;
   font-weight: 600;
   font-family: "Poppins";
   padding: 10px;
@@ -439,7 +443,7 @@ body .Home .Subscribe form .text-muted {
 }
 .contact .contactForm .sendBtn {
   padding: 10px 20px;
-  background: #000080;
+  background: #075476;
   width: 400px;
 }
 @media screen and (max-width: 600px) {

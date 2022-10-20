@@ -72,6 +72,12 @@ const Contact = () => {
                                 <label>Mobile number</label>
                             </div>
                             <div className="group">
+                                <input type="text" required />
+                                <span className="highlight"></span>
+                                <span className="bar"></span>
+                                <label>Subject</label>
+                            </div>
+                            <div className="group">
                                 <textarea type="textarea" rows="4" required="required"></textarea><span className="highlight"></span><span className="bar"></span>
                                 <label>Message</label>
                             </div>

@@ -324,7 +324,9 @@ body .Home .Subscribe form .text-muted {
 .contact .contact-cards .card .address p,
 .contact .contact-cards .card .phone p,
 .contact .contact-cards .card .email p {
-  margin: 0px 30px;
+  font-size: 13px;
+  margin-left: 10px;
+  margin-right: 5px;
 }
 .contact .contactForm {
   margin-top: 50px;

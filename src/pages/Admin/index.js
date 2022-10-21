@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import Adminlogin from './login';
 import { Form, Button, Image, Tabs, Tab, Table, Spinner } from 'react-bootstrap';
 import logo from '../../assets/logo.png'
 import { FaUpload } from 'react-icons/fa'
 import { FiLogOut } from 'react-icons/fi'
 import { RiSendPlaneFill } from 'react-icons/ri'
-import { firestore, storage } from '../../firebase/firebase-utils'
+import { firestore, storage, auth, signOut } from '../../firebase/firebase-utils'
+import UnAuthorized from './Unauthorized';
 
-const Admin = (props) => {
+const Admin = () => {
+    const [user, setuser] = useState(null);
     const [circulars, setcirculars] = useState([]);
     const [bearers, setbearers] = useState([]);
     const [isLoading, setisLoading] = useState(false);
+
+    useEffect(() => {
+        auth.onAuthStateChanged((user) => {
+            setuser(user)
+        })
+    }, []);
 
     const [circular, setcircular] = useState({
         title: "",
@@ -23,11 +30,6 @@ const Admin = (props) => {
         location: "",
         mobile: ""
     });
-
-    const logout = () => {
-        localStorage.removeItem('admin-username')
-        props.history.push('/admin')
-    }
 
     const uploadItems = async () => {
         if (circular.title === '' || circular.category === '' || circular.link === '') {
@@ -104,10 +106,9 @@ const Admin = (props) => {
 
     return (
         <div className='admin'>
-            {localStorage.getItem('admin-username') === process.env.REACT_APP_ADMIN_USERNAME
-                ?
+            {user ? user.email === 'naveen.amie@gmail.com' ?
                 <>
-                    <Button variant='danger' onClick={logout} style={{ float: 'right', margin: '20px', padding: '10px 15px' }}><FiLogOut size="18" />&nbsp;LOGOUT</Button>
+                    <Button variant='danger' onClick={signOut} style={{ float: 'right', margin: '20px', padding: '10px 15px' }}><FiLogOut size="18" />&nbsp;LOGOUT</Button>
                     <div className='container' >
                         <div>
                             <center>
@@ -266,7 +267,7 @@ const Admin = (props) => {
                         </Tabs>
                     </div>
                 </>
-                : <Adminlogin />
+                : <UnAuthorized /> : <UnAuthorized />
             }
         </div >
     );

@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import { Button, Card, Col, Form } from 'react-bootstrap';
 import { FaPhone } from 'react-icons/fa'
 import { MdLocationCity, MdEmail } from 'react-icons/md'
+import { firestore } from '../../firebase/firebase-utils'
+import { useForm } from 'react-hook-form'
 
 const Contact = () => {
+    const { register, handleSubmit, formState: { errors } } = useForm()
+    const [isSubmitting, setisSubmitting] = useState(false);
+
+    const onSubmit = (data) => {
+        setisSubmitting(true)
+        firestore.collection('contact-form').doc().set(data)
+            .then(() => {
+                setisSubmitting(false)
+                alert('Response Recorded Successfully')
+                window.location.reload(true)
+            })
+    }
+
     return (
         <div>
             <div className='container contact'>
@@ -20,7 +35,7 @@ const Contact = () => {
                                 <MdLocationCity size={25} />
                                 &nbsp;&nbsp;&nbsp;<span style={{ color: '#000080', fontWeight: '600', fontSize: '16px' }}>Address: </span><br /><br />
                                 <p>
-                                    Southern Railway Employees’ Sangh, <br />
+                                    East Coast Railway Shramik Congress <br />
                                     Central Office, “Unity House”, New No: 9, <br />
                                     Old No. 2, Siruvallur High Road, Perambur, <br />
                                     Chennai- 600 011.
@@ -52,36 +67,40 @@ const Contact = () => {
                 <div className='row' style={{ marginBottom: '80px', padding: "10px" }}>
                     <Col sm={12} md={6} className='contactForm'>
                         <h2>Get In Touch</h2>
-                        <Form style={{ marginTop: '40px' }}>
+                        <Form style={{ marginTop: '40px' }} onSubmit={handleSubmit(onSubmit)}>
                             <div className="group">
-                                <input type="text" required />
+                                <input type="text" {...register("name", { required: true })} />
                                 <span className="highlight"></span>
                                 <span className="bar"></span>
                                 <label>Name</label>
+                                {errors.name && <span className="text-danger">This field is required</span>}
                             </div>
                             <div className="group">
-                                <input type="text" required />
+                                <input type="text" {...register("email")} />
                                 <span className="highlight"></span>
                                 <span className="bar"></span>
                                 <label>Email</label>
                             </div>
                             <div className="group">
-                                <input type="text" required />
+                                <input type="text" {...register("phone", { required: true })} />
                                 <span className="highlight"></span>
                                 <span className="bar"></span>
                                 <label>Mobile number</label>
+                                {errors.phone && <span className="text-danger">This field is required</span>}
                             </div>
                             <div className="group">
-                                <input type="text" required />
+                                <input type="text" {...register("subject", { required: true })} />
                                 <span className="highlight"></span>
                                 <span className="bar"></span>
                                 <label>Subject</label>
+                                {errors.subject && <span className="text-danger">This field is required</span>}
                             </div>
-                            <div className="group">
-                                <textarea type="textarea" rows="4" required="required"></textarea><span className="highlight"></span><span className="bar"></span>
+                            <div className="group" >
+                                <textarea type="textarea" {...register("message", { required: true })} rows="4"></textarea><span className="highlight"></span><span className="bar"></span>
                                 <label>Message</label>
+                                {errors.message && <span className="text-danger">This field is required</span>}
                             </div>
-                            <Button className='sendBtn'>SEND MESSAGE</Button>
+                            <Button className='sendBtn' type='submit' disabled={isSubmitting}>{isSubmitting ? 'Sending..' : 'SEND MESSAGE'}</Button>
                         </Form>
                     </Col>
                     <Col sm={12} md={6} className='location'>

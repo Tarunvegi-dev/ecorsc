@@ -1,15 +1,14 @@
 import React from 'react';
-import { FaWhatsapp, FaTwitter, FaFacebook, FaYoutube } from 'react-icons/fa'
 
 const Footer = () => {
     return (
         <footer>
             <div className="rights">
                 <p>&copy; copyrights reserved by ECoRSC</p> &nbsp; &nbsp;
-                <FaWhatsapp size={22} />
-                <FaTwitter size={22} />
-                <FaFacebook size={22} />
-                <FaYoutube size={22} />
+                <img alt="footer" src="https://img.icons8.com/color/36/000000/whatsapp--v1.png" />&nbsp;&nbsp;
+                <img alt="footer" src="https://img.icons8.com/fluency/36/000000/twitter.png" />&nbsp;&nbsp;
+                <img alt="footer" src="https://img.icons8.com/fluency/36/000000/facebook-new.png" />&nbsp;&nbsp;
+                <img alt="footer" src="https://img.icons8.com/color/36/000000/youtube-play.png" />
             </div>
         </footer>
     )

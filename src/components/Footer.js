@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <footer>
             <div className="rights">
-                <p>&copy; All rights reserved by ECoRSC</p> &nbsp; &nbsp;
+                <p>&copy; copyrights reserved by ECoRSC</p> &nbsp; &nbsp;
                 <FaWhatsapp size={22} />
                 <FaTwitter size={22} />
                 <FaFacebook size={22} />

@@ -2,393 +2,403 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 .admin {
+    font-family: "Poppins";
     .heading {
         font-family: "Poppins";
         margin-top: 20px;
     }
-    .submitBtn {
+    .nav-link {
+        font-size: 20px;
         font-family: "Montserrat";
-        padding: 10px 15px;
     }
-    .circulars {
-        margin-top: 10px;
-        .circulars-title {
+    .tab-content {
+        margin-top: 50px;
+        .submitBtn {
+            font-family: "Montserrat";
+            padding: 10px 15px;
+        }
+        .circulars,
+        .officeBearers {
+            margin-top: 40px;
+            .circulars-title {
+                font-family: "Poppins";
+                text-decoration: underline;
+            }
+            .group {
+                position: relative;
+                margin-bottom: 45px;
+            }
+            input {
+                font-size: 18px;
+                padding: 10px 10px 10px 5px;
+                display: block;
+                width: 100%;
+                border: none;
+                border-bottom: 1px solid #757575;
+            }
+            input:focus {
+                outline: none;
+            }
+
+            label {
+                color: rgba(0, 0, 0, 0.26);
+                font-size: 18px;
+                font-weight: normal;
+                position: absolute;
+                pointer-events: none;
+                left: 5px;
+                top: 10px;
+                transition: 0.2s ease all;
+                -moz-transition: 0.2s ease all;
+                -webkit-transition: 0.2s ease all;
+            }
+
+            input:focus ~ label,
+            input:valid ~ label {
+                top: -20px;
+                font-size: 14px;
+                color: #000080;
+            }
+
+            .bar {
+                position: relative;
+                display: block;
+                width: 100%;
+            }
+            .bar:before,
+            .bar:after {
+                content: "";
+                height: 2px;
+                width: 0;
+                bottom: 1px;
+                position: absolute;
+                background: #000080;
+                transition: 0.2s ease all;
+                -moz-transition: 0.2s ease all;
+                -webkit-transition: 0.2s ease all;
+            }
+            .bar:before {
+                left: 50%;
+            }
+            .bar:after {
+                right: 50%;
+            }
+
+            input:focus ~ .bar:before,
+            input:focus ~ .bar:after {
+                width: 50%;
+            }
+
+            .highlight {
+                position: absolute;
+                height: 60%;
+                width: 100px;
+                top: 25%;
+                left: 0;
+                pointer-events: none;
+                opacity: 0.5;
+            }
+
+            input:focus ~ .highlight {
+                -webkit-animation: inputHighlighter 0.3s ease;
+                -moz-animation: inputHighlighter 0.3s ease;
+                animation: inputHighlighter 0.3s ease;
+            }
+
+            .select {
+                position: relative;
+                width: 100%;
+            }
+
+            .select-text {
+                position: relative;
+                font-family: inherit;
+                background-color: transparent;
+                width: 100%;
+                padding: 10px 10px 10px 0;
+                font-size: 18px;
+                border-radius: 0;
+                border: none;
+                border-bottom: 1px solid #000080;
+            }
+
+            .select-text:focus {
+                outline: none;
+                border-bottom: 1px solid #000080;
+            }
+
+            .select .select-text {
+                appearance: none;
+                -webkit-appearance: none;
+            }
+
+            .select:after {
+                position: absolute;
+                top: 18px;
+                right: 0px;
+                width: 0;
+                height: 0;
+                padding: 0;
+                content: "";
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-top: 6px solid #000080;
+                pointer-events: none;
+            }
+
+            .select-label {
+                color: rgba(0, 0, 0, 0.26);
+                font-size: 18px;
+                position: absolute;
+                pointer-events: none;
+                left: 0;
+                top: 10px;
+                transition: 0.2s ease all;
+            }
+
+            .select-text:focus ~ .select-label,
+            .select-text:valid ~ .select-label {
+                color: #000080;
+                top: -20px;
+                transition: 0.2s ease all;
+                font-size: 14px;
+            }
+
+            .select-bar {
+                position: relative;
+                display: block;
+                width: 100%;
+            }
+
+            .select-bar:before,
+            .select-bar:after {
+                content: "";
+                height: 2px;
+                width: 0;
+                bottom: 1px;
+                position: absolute;
+                background: #000080;
+                transition: 0.2s ease all;
+            }
+
+            .select-bar:before {
+                left: 50%;
+            }
+
+            .select-bar:after {
+                right: 50%;
+            }
+
+            .select-text:focus ~ .select-bar:before,
+            .select-text:focus ~ .select-bar:after {
+                width: 50%;
+            }
+
+            .select-highlight {
+                position: absolute;
+                height: 60%;
+                width: 100px;
+                top: 25%;
+                left: 0;
+                pointer-events: none;
+                opacity: 0.5;
+            }
+        }
+
+        .bulkSMS {
+            margin-top: 50px;
+            .bulkSMSTitle {
+                font-family: "Poppins";
+                text-decoration: underline;
+            }
+            .group {
+                position: relative;
+                margin-bottom: 45px;
+            }
+            textarea {
+                font-size: 18px;
+                padding: 10px 10px 10px 5px;
+                display: block;
+                width: 100%;
+                border: none;
+                border-bottom: 1px solid #757575;
+            }
+            textarea:focus {
+                outline: none;
+            }
+
+            label {
+                color: rgba(0, 0, 0, 0.26);
+                font-size: 18px;
+                font-weight: normal;
+                position: absolute;
+                pointer-events: none;
+                left: 5px;
+                top: 10px;
+                transition: 0.2s ease all;
+                -moz-transition: 0.2s ease all;
+                -webkit-transition: 0.2s ease all;
+            }
+
+            textarea:focus ~ label,
+            textarea:valid ~ label {
+                top: -20px;
+                font-size: 14px;
+                color: #000080;
+            }
+
+            .bar {
+                position: relative;
+                display: block;
+                width: 400px;
+            }
+            .bar:before,
+            .bar:after {
+                content: "";
+                height: 2px;
+                width: 0;
+                bottom: 1px;
+                position: absolute;
+                background: #000080;
+                transition: 0.2s ease all;
+                -moz-transition: 0.2s ease all;
+                -webkit-transition: 0.2s ease all;
+            }
+            .bar:before {
+                left: 50%;
+            }
+            .bar:after {
+                right: 50%;
+            }
+
+            textarea:focus ~ .bar:before,
+            textarea:focus ~ .bar:after {
+                width: 50%;
+            }
+
+            .highlight {
+                position: absolute;
+                height: 60%;
+                width: 100px;
+                top: 25%;
+                left: 0;
+                pointer-events: none;
+                opacity: 0.5;
+            }
+
+            textarea:focus ~ .highlight {
+                -webkit-animation: inputHighlighter 0.3s ease;
+                -moz-animation: inputHighlighter 0.3s ease;
+                animation: inputHighlighter 0.3s ease;
+            }
+            .select {
+                position: relative;
+                width: 100%;
+            }
+
+            .select-text {
+                position: relative;
+                font-family: inherit;
+                background-color: transparent;
+                width: 100%;
+                padding: 10px 10px 10px 0;
+                font-size: 18px;
+                border-radius: 0;
+                border: none;
+                border-bottom: 1px solid #000080;
+            }
+
+            .select-text:focus {
+                outline: none;
+                border-bottom: 1px solid #000080;
+            }
+
+            .select .select-text {
+                appearance: none;
+                -webkit-appearance: none;
+            }
+
+            .select:after {
+                position: absolute;
+                top: 18px;
+                right: 0px;
+                width: 0;
+                height: 0;
+                padding: 0;
+                content: "";
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-top: 6px solid #000080;
+                pointer-events: none;
+            }
+
+            .select-label {
+                color: rgba(0, 0, 0, 0.26);
+                font-size: 18px;
+                position: absolute;
+                pointer-events: none;
+                left: 0;
+                top: 10px;
+                transition: 0.2s ease all;
+            }
+
+            .select-text:focus ~ .select-label,
+            .select-text:valid ~ .select-label {
+                color: #000080;
+                top: -20px;
+                transition: 0.2s ease all;
+                font-size: 14px;
+            }
+
+            .select-bar {
+                position: relative;
+                display: block;
+                width: 100%;
+            }
+
+            .select-bar:before,
+            .select-bar:after {
+                content: "";
+                height: 2px;
+                width: 0;
+                bottom: 1px;
+                position: absolute;
+                background: #000080;
+                transition: 0.2s ease all;
+            }
+
+            .select-bar:before {
+                left: 50%;
+            }
+
+            .select-bar:after {
+                right: 50%;
+            }
+
+            .select-text:focus ~ .select-bar:before,
+            .select-text:focus ~ .select-bar:after {
+                width: 50%;
+            }
+
+            .select-highlight {
+                position: absolute;
+                height: 60%;
+                width: 100px;
+                top: 25%;
+                left: 0;
+                pointer-events: none;
+                opacity: 0.5;
+            }
+        }
+
+        .login {
+            margin-top: 140px;
             font-family: "Poppins";
-            text-decoration: underline;
-        }
-        .group {
-            position: relative;
-            margin-bottom: 45px;
-        }
-        input {
-            font-size: 18px;
-            padding: 10px 10px 10px 5px;
-            display: block;
-            width: 500px;
-            border: none;
-            border-bottom: 1px solid #757575;
-        }
-        input:focus {
-            outline: none;
-        }
-
-        label {
-            color: rgba(0, 0, 0, 0.26);
-            font-size: 18px;
-            font-weight: normal;
-            position: absolute;
-            pointer-events: none;
-            left: 5px;
-            top: 10px;
-            transition: 0.2s ease all;
-            -moz-transition: 0.2s ease all;
-            -webkit-transition: 0.2s ease all;
-        }
-
-        input:focus ~ label,
-        input:valid ~ label {
-            top: -20px;
-            font-size: 14px;
-            color: #000080;
-        }
-
-        .bar {
-            position: relative;
-            display: block;
-            width: 500px;
-        }
-        .bar:before,
-        .bar:after {
-            content: "";
-            height: 2px;
-            width: 0;
-            bottom: 1px;
-            position: absolute;
-            background: #000080;
-            transition: 0.2s ease all;
-            -moz-transition: 0.2s ease all;
-            -webkit-transition: 0.2s ease all;
-        }
-        .bar:before {
-            left: 50%;
-        }
-        .bar:after {
-            right: 50%;
-        }
-
-        input:focus ~ .bar:before,
-        input:focus ~ .bar:after {
-            width: 50%;
-        }
-
-        .highlight {
-            position: absolute;
-            height: 60%;
-            width: 100px;
-            top: 25%;
-            left: 0;
-            pointer-events: none;
-            opacity: 0.5;
-        }
-
-        input:focus ~ .highlight {
-            -webkit-animation: inputHighlighter 0.3s ease;
-            -moz-animation: inputHighlighter 0.3s ease;
-            animation: inputHighlighter 0.3s ease;
-        }
-
-        .select {
-            position: relative;
-            width: 350px;
-        }
-
-        .select-text {
-            position: relative;
-            font-family: inherit;
-            background-color: transparent;
-            width: 500px;
-            padding: 10px 10px 10px 0;
-            font-size: 18px;
-            border-radius: 0;
-            border: none;
-            border-bottom: 1px solid #000080;
-        }
-
-        .select-text:focus {
-            outline: none;
-            border-bottom: 1px solid #000080;
-        }
-
-        .select .select-text {
-            appearance: none;
-            -webkit-appearance: none;
-        }
-
-        .select:after {
-            position: absolute;
-            top: 18px;
-            right: -150px;
-            width: 0;
-            height: 0;
-            padding: 0;
-            content: "";
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            border-top: 6px solid #000080;
-            pointer-events: none;
-        }
-
-        .select-label {
-            color: rgba(0, 0, 0, 0.26);
-            font-size: 18px;
-            position: absolute;
-            pointer-events: none;
-            left: 0;
-            top: 10px;
-            transition: 0.2s ease all;
-        }
-
-        .select-text:focus ~ .select-label,
-        .select-text:valid ~ .select-label {
-            color: #000080;
-            top: -20px;
-            transition: 0.2s ease all;
-            font-size: 14px;
-        }
-
-        .select-bar {
-            position: relative;
-            display: block;
-            width: 500px;
-        }
-
-        .select-bar:before,
-        .select-bar:after {
-            content: "";
-            height: 2px;
-            width: 0;
-            bottom: 1px;
-            position: absolute;
-            background: #000080;
-            transition: 0.2s ease all;
-        }
-
-        .select-bar:before {
-            left: 50%;
-        }
-
-        .select-bar:after {
-            right: 50%;
-        }
-
-        .select-text:focus ~ .select-bar:before,
-        .select-text:focus ~ .select-bar:after {
-            width: 50%;
-        }
-
-        .select-highlight {
-            position: absolute;
-            height: 60%;
-            width: 100px;
-            top: 25%;
-            left: 0;
-            pointer-events: none;
-            opacity: 0.5;
-        }
-    }
-
-    .bulkSMS {
-        .bulkSMSTitle {
-            font-family: "Poppins";
-            text-decoration: underline;
-        }
-        .group {
-            position: relative;
-            margin-bottom: 45px;
-        }
-        textarea {
-            font-size: 18px;
-            padding: 10px 10px 10px 5px;
-            display: block;
-            width: 500px;
-            border: none;
-            border-bottom: 1px solid #757575;
-        }
-        textarea:focus {
-            outline: none;
-        }
-
-        label {
-            color: rgba(0, 0, 0, 0.26);
-            font-size: 18px;
-            font-weight: normal;
-            position: absolute;
-            pointer-events: none;
-            left: 5px;
-            top: 10px;
-            transition: 0.2s ease all;
-            -moz-transition: 0.2s ease all;
-            -webkit-transition: 0.2s ease all;
-        }
-
-        textarea:focus ~ label,
-        textarea:valid ~ label {
-            top: -20px;
-            font-size: 14px;
-            color: #000080;
-        }
-
-        .bar {
-            position: relative;
-            display: block;
-            width: 500px;
-        }
-        .bar:before,
-        .bar:after {
-            content: "";
-            height: 2px;
-            width: 0;
-            bottom: 1px;
-            position: absolute;
-            background: #000080;
-            transition: 0.2s ease all;
-            -moz-transition: 0.2s ease all;
-            -webkit-transition: 0.2s ease all;
-        }
-        .bar:before {
-            left: 50%;
-        }
-        .bar:after {
-            right: 50%;
-        }
-
-        textarea:focus ~ .bar:before,
-        textarea:focus ~ .bar:after {
-            width: 50%;
-        }
-
-        .highlight {
-            position: absolute;
-            height: 60%;
-            width: 100px;
-            top: 25%;
-            left: 0;
-            pointer-events: none;
-            opacity: 0.5;
-        }
-
-        textarea:focus ~ .highlight {
-            -webkit-animation: inputHighlighter 0.3s ease;
-            -moz-animation: inputHighlighter 0.3s ease;
-            animation: inputHighlighter 0.3s ease;
-        }
-        .select {
-            position: relative;
-            width: 350px;
-        }
-
-        .select-text {
-            position: relative;
-            font-family: inherit;
-            background-color: transparent;
-            width: 500px;
-            padding: 10px 10px 10px 0;
-            font-size: 18px;
-            border-radius: 0;
-            border: none;
-            border-bottom: 1px solid #000080;
-        }
-
-        .select-text:focus {
-            outline: none;
-            border-bottom: 1px solid #000080;
-        }
-
-        .select .select-text {
-            appearance: none;
-            -webkit-appearance: none;
-        }
-
-        .select:after {
-            position: absolute;
-            top: 18px;
-            right: -150px;
-            width: 0;
-            height: 0;
-            padding: 0;
-            content: "";
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            border-top: 6px solid #000080;
-            pointer-events: none;
-        }
-
-        .select-label {
-            color: rgba(0, 0, 0, 0.26);
-            font-size: 18px;
-            position: absolute;
-            pointer-events: none;
-            left: 0;
-            top: 10px;
-            transition: 0.2s ease all;
-        }
-
-        .select-text:focus ~ .select-label,
-        .select-text:valid ~ .select-label {
-            color: #000080;
-            top: -20px;
-            transition: 0.2s ease all;
-            font-size: 14px;
-        }
-
-        .select-bar {
-            position: relative;
-            display: block;
-            width: 500px;
-        }
-
-        .select-bar:before,
-        .select-bar:after {
-            content: "";
-            height: 2px;
-            width: 0;
-            bottom: 1px;
-            position: absolute;
-            background: #000080;
-            transition: 0.2s ease all;
-        }
-
-        .select-bar:before {
-            left: 50%;
-        }
-
-        .select-bar:after {
-            right: 50%;
-        }
-
-        .select-text:focus ~ .select-bar:before,
-        .select-text:focus ~ .select-bar:after {
-            width: 50%;
-        }
-
-        .select-highlight {
-            position: absolute;
-            height: 60%;
-            width: 100px;
-            top: 25%;
-            left: 0;
-            pointer-events: none;
-            opacity: 0.5;
-        }
-    }
-
-    .login {
-        margin-top: 140px;
-        font-family: "Poppins";
-        .username-input {
-            padding: 18px;
-            box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
-            max-width: 360px;
+            .username-input {
+                padding: 18px;
+                box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+                max-width: 360px;
+            }
         }
     }
 }

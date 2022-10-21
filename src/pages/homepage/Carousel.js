@@ -5,12 +5,21 @@ import First from '../../assets/carousel/1.png'
 const CarouselComponent = () => {
     return (
         <Carousel>
-            <Carousel.Item interval={1000}>
+            <Carousel.Item interval={5000}>
                 <img
                     className="w-100"
                     src={First}
                     alt="First slide"
                 />
+
+            </Carousel.Item>
+            <Carousel.Item interval={5000}>
+                <img
+                    className="w-100"
+                    src={First}
+                    alt="First slide"
+                />
+
             </Carousel.Item>
         </Carousel>
     )

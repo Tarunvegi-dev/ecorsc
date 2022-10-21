@@ -23,7 +23,7 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: bold;
     font-size: 16px;
-    background-color: #000080;
+    background-color: #075476;
     color: #fff;
     padding: 5px 10px;
   }
@@ -43,13 +43,13 @@ body {
       padding: 10px;
       margin: 0 10px;
       font-size: 14px;
-      color: rgb(106, 100, 100);
+      color: #075476;
       transition: all 0.3s ease-in-out;
       /* text-transform: uppercase; */
       font-weight: 600;
 
       &:hover {
-        color: #000080;
+        color: #c0392b;
       }
     }
   }
@@ -106,7 +106,6 @@ body {
     .Welcome {
       background-color: #ffffffe3;
       .descrip {
-        // font-family: "Poppins", sans-serif;
         border: 1px solid #adb0ac;
         border-radius: 20px 20px 0 20px;
         font-size: 12px;
@@ -138,8 +137,8 @@ body {
             font-size: 14px;
             margin: 0;
             font-weight: bold;
-            a{
-              color: #063ccf; 
+            a {
+              color: #063ccf;
             }
             // white-space: nowrap;
             // overflow: hidden;
@@ -172,17 +171,20 @@ body {
         font-weight: bold;
         cursor: pointer;
         border: 1px solid #d6d6d6;
-        a{
-          color: #063ccf;
+        a {
+          color: gray;
+          &:hover {
+            color: #063ccf;
+          }
         }
       }
     }
 
-    .Contact-Info{
+    .Contact-Info {
       margin-top: 30px;
       border: 1px solid #d6d6d6;
-      p{
-        span{
+      p {
+        span {
           font-weight: bold;
         }
       }
@@ -217,6 +219,7 @@ body {
 
 // Affiliations
 .Affiliations {
+  font-family: "Poppins";
   h3 {
     color: #000080;
     font-family: "Poppins";
@@ -230,6 +233,9 @@ body {
     transition: all 0.3s ease-in-out;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border: 2px solid #fff;
+    .discrp {
+      font-family: "Poppins", sans-serif;
+    }
     .logo {
       height: 50px;
       width: 50px;
@@ -258,7 +264,7 @@ body {
 .central-office-bearers {
   font-family: "Poppins";
   h4 {
-    background: #000080;
+    background: #075476;
     font-weight: 600;
     font-family: "Poppins";
     padding: 10px;
@@ -269,7 +275,7 @@ body {
     box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.1);
     .bearers-inner {
       padding: 20px;
-      display:flex;
+      display: flex;
       align-items: center;
       justify-content: space-around;
     }
@@ -436,7 +442,7 @@ body {
 
     .sendBtn {
       padding: 10px 20px;
-      background: #000080;
+      background: #075476;
       width: 400px;
       @media screen and (max-width: 600px) {
         width: 100%;

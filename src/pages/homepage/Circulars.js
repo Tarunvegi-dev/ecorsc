@@ -1,18 +1,19 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
 import NewGif from '../../assets/new.gif'
+import { withRouter } from 'react-router-dom';
 
-const Circulars = () => {
+const Circulars = (props) => {
   return (
     <div className="Cirsulars">
       <h3 className="title">Railway Board Circulars</h3>
-      <Events />
+      <Events items={props.circulars} />
       <Row>
         <a href="/board-circulars" className="link">View More</a>
       </Row>
       <br />
       <h3 className="title">ECoRSC PNM Items</h3>
-      <Events />
+      <Events items={props.pnmMinutes} />
       <Row>
         <a href="/pnm-items" className="link">View More</a>
       </Row>
@@ -20,39 +21,20 @@ const Circulars = () => {
   )
 }
 
-export const Events = () => {
+export const Events = (props) => {
   return (
     <ul className="table">
-      <li className="item">
-        <p>
-          <a>29th National Convention of NFIR to be held on 17th & 18th September 2019 at Ujjain
-          </a>
-          <img src={NewGif} height="28px" alt="New Gif" />
-        </p>
-      </li>
-      <li className="item">
-        <p>
-          <a>29th National Convention of NFIR to be held on 17th & 18th September 2019 at Ujjain
-          </a>
-          <img src={NewGif} height="28px" alt="New Gif" />
-        </p>
-      </li>
-      <li className="item">
-        <p>
-          <a>29th National Convention of NFIR to be held on 17th & 18th September 2019 at Ujjain
-          </a>
-          <img src={NewGif} height="28px" alt="New Gif" />
-        </p>
-      </li>
-      <li className="item">
-        <p>
-          <a>29th National Convention of NFIR to be held on 17th & 18th September 2019 at Ujjain
-          </a>
-          <img src={NewGif} height="28px" alt="New Gif" />
-        </p>
-      </li>
+      {props.items?.map((item, i) => {
+        return <li className="item" key={i}>
+          <p>
+            <a href={item.link} style={{ color: 'gray' }} target="_blank" rel="noreferrer">{item.title}
+            </a>
+            <img src={NewGif} height="28px" alt="New Gif" />
+          </p>
+        </li>
+      })}
     </ul>
   )
 }
 
-export default Circulars
+export default withRouter(Circulars);

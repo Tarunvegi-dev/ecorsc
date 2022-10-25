@@ -4,24 +4,24 @@ import { FiChevronsRight } from 'react-icons/fi'
 const Links = ({ title }) => {
     const links = [
         {
-            title: 'Central Railway Website',
-            url: 'https://wcrms.com/'
+            title: 'East Coast Railway Website',
+            url: 'https://eastcoastrail.indianrailways.gov.in/'
         },
         {
-            title: 'Ministry of Electronics & Information Technology',
-            url: 'http://meity.gov.in/'
+            title: 'Ministry of Railways',
+            url: 'https://indianrailways.gov.in/'
         },
         {
-            title: 'UIDAI',
-            url: 'http://www.uidai.gov.in/'
+            title: 'Railway Board Circulars',
+            url: 'https://railwayrule.com/railway-board-circulars'
         },
         {
-            title: 'NTIPRIT',
-            url: 'https://www.ntiprit.gov.in/'
+            title: 'ECOR establishment circulars',
+            url: 'https://eastcoastrail.indianrailways.gov.in/view_section.jsp?lang=0&id=0,1,291,912,1554'
         },
         {
-            title: 'Bharat Broadband Network Limited',
-            url: 'http://www.bbnl.nic.in/'
+            title: 'IR Personnel',
+            url: 'ECOR establishment circulars'
         },
         {
             title: 'Railway Board Circulars',
@@ -46,14 +46,6 @@ const Links = ({ title }) => {
     ];
 
     const otherLinks = [
-        {
-            title: 'Ministry of Railways',
-            url: 'https://indianrailways.gov.in/railwayboard/view_section.jsp?id=0,1,304,366,390,412,836'
-        },
-        {
-            title: 'AIRF',
-            url: 'http://www.airfindia.com/'
-        },
         {
             title: 'CGHS at a glance',
             url: 'https://cghs.gov.in/CghsGovIn/faces/ViewPage.xhtml'

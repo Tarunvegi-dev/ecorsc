@@ -261,7 +261,13 @@ body {
   }
 }
 
-.central-office-bearers {
+.central-office-bearers,
+.gallery {
+  iframe {
+    width: 100% !important;
+    height: 400px;
+    margin: 30px 0px;
+  }
   font-family: "Poppins";
   h4 {
     background: #075476;

@@ -18,20 +18,24 @@
   font-family: "Montserrat";
   padding: 10px 15px;
 }
+.admin .tab-content .photo-gallery,
 .admin .tab-content .circulars,
 .admin .tab-content .officeBearers {
   margin-top: 40px;
 }
-.admin .tab-content .circulars .circulars-title,
-.admin .tab-content .officeBearers .circulars-title {
+.admin .tab-content .photo-gallery .heading,
+.admin .tab-content .circulars .heading,
+.admin .tab-content .officeBearers .heading {
   font-family: "Poppins";
   text-decoration: underline;
 }
+.admin .tab-content .photo-gallery .group,
 .admin .tab-content .circulars .group,
 .admin .tab-content .officeBearers .group {
   position: relative;
   margin-bottom: 45px;
 }
+.admin .tab-content .photo-gallery input,
 .admin .tab-content .circulars input,
 .admin .tab-content .officeBearers input {
   font-size: 18px;
@@ -41,10 +45,12 @@
   border: none;
   border-bottom: 1px solid #757575;
 }
+.admin .tab-content .photo-gallery input:focus,
 .admin .tab-content .circulars input:focus,
 .admin .tab-content .officeBearers input:focus {
   outline: none;
 }
+.admin .tab-content .photo-gallery label,
 .admin .tab-content .circulars label,
 .admin .tab-content .officeBearers label {
   color: rgba(0, 0, 0, 0.26);
@@ -58,6 +64,8 @@
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
+.admin .tab-content .photo-gallery input:focus ~ label,
+.admin .tab-content .photo-gallery input:valid ~ label,
 .admin .tab-content .circulars input:focus ~ label,
 .admin .tab-content .circulars input:valid ~ label,
 .admin .tab-content .officeBearers input:focus ~ label,
@@ -66,12 +74,15 @@
   font-size: 14px;
   color: #000080;
 }
+.admin .tab-content .photo-gallery .bar,
 .admin .tab-content .circulars .bar,
 .admin .tab-content .officeBearers .bar {
   position: relative;
   display: block;
   width: 100%;
 }
+.admin .tab-content .photo-gallery .bar:before,
+.admin .tab-content .photo-gallery .bar:after,
 .admin .tab-content .circulars .bar:before,
 .admin .tab-content .circulars .bar:after,
 .admin .tab-content .officeBearers .bar:before,
@@ -86,20 +97,25 @@
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
+.admin .tab-content .photo-gallery .bar:before,
 .admin .tab-content .circulars .bar:before,
 .admin .tab-content .officeBearers .bar:before {
   left: 50%;
 }
+.admin .tab-content .photo-gallery .bar:after,
 .admin .tab-content .circulars .bar:after,
 .admin .tab-content .officeBearers .bar:after {
   right: 50%;
 }
+.admin .tab-content .photo-gallery input:focus ~ .bar:before,
+.admin .tab-content .photo-gallery input:focus ~ .bar:after,
 .admin .tab-content .circulars input:focus ~ .bar:before,
 .admin .tab-content .circulars input:focus ~ .bar:after,
 .admin .tab-content .officeBearers input:focus ~ .bar:before,
 .admin .tab-content .officeBearers input:focus ~ .bar:after {
   width: 50%;
 }
+.admin .tab-content .photo-gallery .highlight,
 .admin .tab-content .circulars .highlight,
 .admin .tab-content .officeBearers .highlight {
   position: absolute;
@@ -110,16 +126,19 @@
   pointer-events: none;
   opacity: 0.5;
 }
+.admin .tab-content .photo-gallery input:focus ~ .highlight,
 .admin .tab-content .circulars input:focus ~ .highlight,
 .admin .tab-content .officeBearers input:focus ~ .highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   animation: inputHighlighter 0.3s ease;
 }
+.admin .tab-content .photo-gallery .select,
 .admin .tab-content .circulars .select,
 .admin .tab-content .officeBearers .select {
   position: relative;
   width: 100%;
 }
+.admin .tab-content .photo-gallery .select-text,
 .admin .tab-content .circulars .select-text,
 .admin .tab-content .officeBearers .select-text {
   position: relative;
@@ -132,17 +151,20 @@
   border: none;
   border-bottom: 1px solid #000080;
 }
+.admin .tab-content .photo-gallery .select-text:focus,
 .admin .tab-content .circulars .select-text:focus,
 .admin .tab-content .officeBearers .select-text:focus {
   outline: none;
   border-bottom: 1px solid #000080;
 }
+.admin .tab-content .photo-gallery .select .select-text,
 .admin .tab-content .circulars .select .select-text,
 .admin .tab-content .officeBearers .select .select-text {
   -moz-appearance: none;
        appearance: none;
   -webkit-appearance: none;
 }
+.admin .tab-content .photo-gallery .select:after,
 .admin .tab-content .circulars .select:after,
 .admin .tab-content .officeBearers .select:after {
   position: absolute;
@@ -157,6 +179,7 @@
   border-top: 6px solid #000080;
   pointer-events: none;
 }
+.admin .tab-content .photo-gallery .select-label,
 .admin .tab-content .circulars .select-label,
 .admin .tab-content .officeBearers .select-label {
   color: rgba(0, 0, 0, 0.26);
@@ -167,6 +190,8 @@
   top: 10px;
   transition: 0.2s ease all;
 }
+.admin .tab-content .photo-gallery .select-text:focus ~ .select-label,
+.admin .tab-content .photo-gallery .select-text:valid ~ .select-label,
 .admin .tab-content .circulars .select-text:focus ~ .select-label,
 .admin .tab-content .circulars .select-text:valid ~ .select-label,
 .admin .tab-content .officeBearers .select-text:focus ~ .select-label,
@@ -176,12 +201,15 @@
   transition: 0.2s ease all;
   font-size: 14px;
 }
+.admin .tab-content .photo-gallery .select-bar,
 .admin .tab-content .circulars .select-bar,
 .admin .tab-content .officeBearers .select-bar {
   position: relative;
   display: block;
   width: 100%;
 }
+.admin .tab-content .photo-gallery .select-bar:before,
+.admin .tab-content .photo-gallery .select-bar:after,
 .admin .tab-content .circulars .select-bar:before,
 .admin .tab-content .circulars .select-bar:after,
 .admin .tab-content .officeBearers .select-bar:before,
@@ -194,20 +222,25 @@
   background: #000080;
   transition: 0.2s ease all;
 }
+.admin .tab-content .photo-gallery .select-bar:before,
 .admin .tab-content .circulars .select-bar:before,
 .admin .tab-content .officeBearers .select-bar:before {
   left: 50%;
 }
+.admin .tab-content .photo-gallery .select-bar:after,
 .admin .tab-content .circulars .select-bar:after,
 .admin .tab-content .officeBearers .select-bar:after {
   right: 50%;
 }
+.admin .tab-content .photo-gallery .select-text:focus ~ .select-bar:before,
+.admin .tab-content .photo-gallery .select-text:focus ~ .select-bar:after,
 .admin .tab-content .circulars .select-text:focus ~ .select-bar:before,
 .admin .tab-content .circulars .select-text:focus ~ .select-bar:after,
 .admin .tab-content .officeBearers .select-text:focus ~ .select-bar:before,
 .admin .tab-content .officeBearers .select-text:focus ~ .select-bar:after {
   width: 50%;
 }
+.admin .tab-content .photo-gallery .select-highlight,
 .admin .tab-content .circulars .select-highlight,
 .admin .tab-content .officeBearers .select-highlight {
   position: absolute;

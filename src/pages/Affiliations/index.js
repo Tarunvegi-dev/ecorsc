@@ -4,10 +4,14 @@ import { Col, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../../styles.css'
 import Footer from '../../components/Footer'
+import { Helmet } from 'react-helmet'
 
 const Affiliations = () => {
   return (
     <div >
+      <Helmet>
+        <title>ECoRSC - Affiliations</title>
+      </Helmet>
       <Container className="Affiliations" >
         <Navbar />
         <br />
@@ -143,7 +147,7 @@ const Affiliations = () => {
             </ul>
             Why we’re powerful
             What sets us apart is our scope and influence. We operate internationally and wield substantial bargaining and lobbying powers with international bodies and governments. Our size and stature mean that we are able to coordinate campaigns against multinationals and governments that get results and bring about change.
-            <br/><br/>
+            <br /><br />
             Join our global family
             We offer support, information and connection. Any independent trade union with members in the transport industry is eligible for ITF membership. Join us as together, we stand up for safety, fair pay and better working conditions.          </p>
           <a href='https://www.itfglobal.org/en' style={{ color: 'skyblue' }} target="_blank" rel="noopener noreferrer">Learn More</a>

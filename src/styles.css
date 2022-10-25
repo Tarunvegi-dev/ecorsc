@@ -267,33 +267,45 @@ body .Home .Subscribe form .text-muted {
   transition: all 0.3s ease-in-out;
 }
 
-.central-office-bearers {
+.central-office-bearers,
+.gallery {
   font-family: "Poppins";
 }
-.central-office-bearers h4 {
+.central-office-bearers iframe,
+.gallery iframe {
+  width: 100% !important;
+  height: 400px;
+  margin: 30px 0px;
+}
+.central-office-bearers h4,
+.gallery h4 {
   background: #075476;
   font-weight: 600;
   font-family: "Poppins";
   padding: 10px;
   color: white;
 }
-.central-office-bearers .bearers {
+.central-office-bearers .bearers,
+.gallery .bearers {
   cursor: pointer;
   box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.1);
 }
-.central-office-bearers .bearers .bearers-inner {
+.central-office-bearers .bearers .bearers-inner,
+.gallery .bearers .bearers-inner {
   padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-.central-office-bearers .bearers .discrp h5 {
+.central-office-bearers .bearers .discrp h5,
+.gallery .bearers .discrp h5 {
   color: #000080;
   font-weight: bold;
   font-family: "Poppins";
   margin-bottom: 15px;
 }
-.central-office-bearers .bearers .discrp p {
+.central-office-bearers .bearers .discrp p,
+.gallery .bearers .discrp p {
   font-size: 14px;
   margin-bottom: 10px;
 }

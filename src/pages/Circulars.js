@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Container, InputGroup, Form, Button, Row, Col, Pagination } from 'react-bootstrap';
+import { Container, InputGroup, Form, Button, Row, Col, Pagination, Card } from 'react-bootstrap';
 import Navbar from '../components/Navbar';
 import { Events } from './homepage/Circulars'
 import { firestore } from '../firebase/firebase-utils';
+import { Helmet } from 'react-helmet'
+import { ImPointRight } from 'react-icons/im'
+
 
 const Circulars = () => {
     const [circulars, setcirculars] = useState([]);
@@ -57,10 +60,20 @@ const Circulars = () => {
         }
     }, [keyword, circulars]);
 
+    let dept = ["All", "Achievements", "Accounts", "Personnel", "Engineering", "Mechanical", "Electrical", "Medical", "Stores", "Running Staff", "Commercial", "Signal and Telecom", "Operating"]
 
-
+    const applyFilter = (filter) => {
+        if (filter === 'All') {
+            setfilteredCirculars(circulars)
+            return;
+        }
+        setfilteredCirculars(circulars.filter((circular) => circular.department === filter))
+    }
     return (
         <div className="Cirsulars">
+            <Helmet>
+                <title>ECoRSC - Circulars</title>
+            </Helmet>
             <Container>
                 <Navbar />
                 <br />
@@ -80,20 +93,20 @@ const Circulars = () => {
                         </InputGroup>
                     </Col>
                 </Row>
-                {/* <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-                    <div style={{ padding: '5px 20px', border: '1px solid gray', color: '#000080', borderRadius: '25px', margin: '0 5px' }}>
-                        Engineering
-                    </div>
-                    <div style={{ padding: '5px 20px', border: '1px solid gray', color: '#000080', borderRadius: '25px', margin: '0 5px' }}>
-                        Science
-                    </div>
-                    <div style={{ padding: '5px 20px', border: '1px solid gray', color: '#000080', borderRadius: '25px', margin: '0 5px' }}>
-                        M Tech
-                    </div>
-                 </div>*/}
                 <br />
                 <h3 className="title">Railway Board Circulars</h3>
-                <Events items={getPaginatedData()} />
+                <Row>
+                    <Col sm={8}>
+                        {filteredCirculars.length > 0 ? <Events items={getPaginatedData()} /> : <div style={{ fontFamily: 'poppins', fontSize: '20px', marginTop: '50px' }}><center>No Results Found!</center></div>}
+                    </Col>
+                    <Col sm={4}>
+                        <Card style={{ padding: '10px' }}>
+                            {dept.map((dept, i) => <div key={i} onClick={() => applyFilter(dept)} style={{ display: 'flex', fontFamily: 'poppins', fontSize: '20px', margin: '5px 20px', color: '#000080', cursor: 'pointer' }}>
+                                <ImPointRight style={{ marginTop: '4px' }} size={24} />&nbsp; <span>{dept}</span>
+                            </div>)}
+                        </Card>
+                    </Col>
+                </Row>
                 <br />
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                     {filteredCirculars.length > 0 ? <Pagination>
@@ -104,7 +117,7 @@ const Circulars = () => {
                             </Pagination.Item>
                         ))}
                         <Pagination.Next onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === pages} />
-                    </Pagination> : <center>No Results Found!</center>}
+                    </Pagination> : null}
                 </div>
             </Container>
         </div>

@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles.css';
 import Circulars from './pages/Circulars';
 import PNM_Items from './pages/PNM_Items';
+import PhotoGallery from './pages/PhotoGallery'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/pnm-items" exact component={PNM_Items} />
         <Route path="/history-and-affiliations" exact component={Affiliations} />
         <Route path='/central-office-bearers' component={CentralOfficeBearers} />
+        <Route path='/photo-gallery' component={PhotoGallery} />
         <Route path='/contact' component={Contact} />
       </Switch>
     </div>

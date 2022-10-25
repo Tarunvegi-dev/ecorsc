@@ -6,6 +6,7 @@ import { MdLocationOn } from 'react-icons/md'
 import { FaPhone } from 'react-icons/fa'
 import Footer from '../../components/Footer'
 import { firestore } from '../../firebase/firebase-utils'
+import { Helmet } from 'react-helmet'
 
 const CentralOfficeBearers = () => {
     //eslint-disable-next-line
@@ -24,6 +25,9 @@ const CentralOfficeBearers = () => {
     }, []);
     return (
         <div>
+            <Helmet>
+                <title>ECoRSC - Central Office Bearers</title>
+            </Helmet>
             <div className='container central-office-bearers'>
                 <Navbar />
                 <br />

@@ -6,6 +6,7 @@ import { FaPhone } from 'react-icons/fa'
 import { MdLocationCity, MdEmail } from 'react-icons/md'
 import { firestore } from '../../firebase/firebase-utils'
 import { useForm } from 'react-hook-form'
+import { Helmet } from 'react-helmet'
 
 const Contact = () => {
     const { register, handleSubmit, formState: { errors } } = useForm()
@@ -23,6 +24,9 @@ const Contact = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>ECoRSC - Contact</title>
+            </Helmet>
             <div className='container contact'>
                 <Navbar />
                 <br />

@@ -7,9 +7,9 @@ import { Helmet } from 'react-helmet'
 import { ImPointRight } from 'react-icons/im'
 
 
-const Circulars = () => {
+const Circulars = (props) => {
     const [circulars, setcirculars] = useState([]);
-    const [keyword, setkeyword] = useState('');
+    const [keyword, setkeyword] = useState(null);
     const [filteredCirculars, setfilteredCirculars] = useState([]);
 
     useEffect(() => {
@@ -19,9 +19,17 @@ const Circulars = () => {
                     return { ...doc.data() }
                 })
                 setcirculars(data)
-                setfilteredCirculars(data)
+                if (props.location.state?.department) {
+                    if (props.location.state.department === 'All') {
+                        setfilteredCirculars(data)
+                        return;
+                    }
+                    setfilteredCirculars(data.filter((circular) => circular.department === props.location.state.department))
+                } else {
+                    setfilteredCirculars(data)
+                }
             })
-    }, []);
+    }, [props.location.state]);
 
     const [currentPage, setCurrentPage] = useState(1);
     let items = [];
@@ -81,7 +89,6 @@ const Circulars = () => {
                     <Col sm={6}>
                         <InputGroup className="mb-3">
                             <Form.Control
-                                value={keyword}
                                 onChange={(e) => setkeyword(e.target.value)}
                                 placeholder="Search"
                                 aria-label="Search"

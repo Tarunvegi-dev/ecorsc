@@ -6,10 +6,11 @@ import Carousel from './Carousel'
 import Links from './Links.js';
 import Subscribe from './Subscribe';
 import Footer from '../../components/Footer'
-import { Row, Col, Container } from 'react-bootstrap'
+import { Row, Col, Container, Card } from 'react-bootstrap'
 import { firestore } from '../../firebase/firebase-utils'
+import { FiChevronsRight } from 'react-icons/fi'
 
-const Homepage = () => {
+const Homepage = (props) => {
     const [circulars, setcirculars] = useState([]);
     const [pnmMinutes, setpnmMinutes] = useState([]);
 
@@ -30,6 +31,8 @@ const Homepage = () => {
             })
     }, []);
 
+    let dept = ["All", "Achievements", "Accounts", "Personnel", "Engineering", "Mechanical", "Electrical", "Medical", "Stores", "Running Staff", "Commercial", "Signal and Telecom", "Operating"]
+
     return (
         <>
             <div className='Home'>
@@ -38,15 +41,20 @@ const Homepage = () => {
                     <br />
                     <Row>
                         <Col sm={3}>
-                            <Links title="Important Links"/>
+                            <Links title="Important Links" />
                             <ContactInfo />
                         </Col>
                         <Col sm={6}>
                             <Carousel />
-                            <Circulars circulars={circulars} pnmMinutes={pnmMinutes}/>
+                            <Circulars circulars={circulars} pnmMinutes={pnmMinutes} />
                         </Col>
                         <Col sm={3}>
-                            <Links title="Other Links"/>
+                            <p className="title">ECoRSC Departments</p>
+                            <Card style={{ padding: '10px' }}>
+                                {dept.map((dept, i) => <div key={i} onClick={() => props.history.push('/board-circulars', { department: dept })} style={{ display: 'flex', fontFamily: 'poppins', fontSize: '14px', margin: '5px 20px', color: '#000080', cursor: 'pointer' }}>
+                                    <FiChevronsRight style={{ marginTop: '4px' }} />&nbsp; <span>{dept}</span>
+                                </div>)}
+                            </Card>
                             <Subscribe />
                         </Col>
                     </Row>

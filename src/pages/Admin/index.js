@@ -1,20 +1,39 @@
 import React, { useState, useEffect } from 'react';
-import Adminlogin from './login';
 import { Form, Button, Image, Tabs, Tab, Table, Spinner } from 'react-bootstrap';
 import logo from '../../assets/logo.png'
 import { FaUpload } from 'react-icons/fa'
 import { FiLogOut } from 'react-icons/fi'
 import { RiSendPlaneFill } from 'react-icons/ri'
-import { firestore, storage } from '../../firebase/firebase-utils'
+import { firestore, storage, auth, signOut } from '../../firebase/firebase-utils'
+import UnAuthorized from './Unauthorized';
+import ReactCrop from 'react-image-crop';
+import 'react-image-crop/dist/ReactCrop.css';
+import { Helmet } from 'react-helmet'
+import Swal from 'sweetalert2'
 
-const Admin = (props) => {
+const Admin = () => {
+    const [user, setuser] = useState(null);
     const [circulars, setcirculars] = useState([]);
     const [bearers, setbearers] = useState([]);
     const [isLoading, setisLoading] = useState(false);
 
+
+    const [src, setFile] = useState(null)
+    const [image, setImage] = useState(null)
+    const [crop, setCrop] = useState({ aspect: 4 / 3 });
+    const [croppedImg, setCroppedImg] = useState(null)
+    const [videoUrl, setvideoUrl] = useState('');
+
+    useEffect(() => {
+        auth.onAuthStateChanged((user) => {
+            setuser(user)
+        })
+    }, []);
+
     const [circular, setcircular] = useState({
         title: "",
         category: "circular",
+        department: "Accounts",
         link: "",
     });
     const [bearer, setbearer] = useState({
@@ -23,11 +42,6 @@ const Admin = (props) => {
         location: "",
         mobile: ""
     });
-
-    const logout = () => {
-        localStorage.removeItem('admin-username')
-        props.history.push('/admin')
-    }
 
     const uploadItems = async () => {
         if (circular.title === '' || circular.category === '' || circular.link === '') {
@@ -79,12 +93,22 @@ const Admin = (props) => {
     }, []);
 
     const deleteDocument = (collection, id) => {
-        firestore.collection(collection).doc(id).delete()
-            .then(() => {
-                alert("Record Deleted Successfully");
-                window.location.reload(true)
-            })
-            .catch((err) => console.log(err))
+        Swal.fire({
+            title: 'Are you sure want to delete this item?',
+            showConfirmButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Yes',
+            cancelButtonText: 'No',
+        }).then((res) => {
+            if (res.isConfirmed) {
+                firestore.collection(collection).doc(id).delete()
+                    .then(() => {
+                        alert("Record Deleted Successfully");
+                        window.location.reload(true)
+                    })
+                    .catch((err) => console.log(err))
+            }
+        })
     }
 
     const addOfficeBearers = () => {
@@ -101,13 +125,67 @@ const Admin = (props) => {
         }
     }
 
+    const handleFileChange = (e) => {
+        if (e.target.files.length !== 0) {
+            setFile(URL.createObjectURL(e.target.files[0]))
+        } else {
+            window.alert("Select Image File")
+        }
+        setCroppedImg(null)
+    }
+
+    function getCroppedImg() {
+        const canvas = document.createElement('canvas');
+        const scaleX = image.naturalWidth / image.width;
+        const scaleY = image.naturalHeight / image.height;
+        canvas.width = crop.width;
+        canvas.height = crop.height;
+        const ctx = canvas.getContext('2d');
+
+        ctx.drawImage(
+            image,
+            crop.x * scaleX,
+            crop.y * scaleY,
+            crop.width * scaleX,
+            crop.height * scaleY,
+            0,
+            0,
+            crop.width,
+            crop.height,
+        );
+
+
+        if (canvas.width !== 0 || canvas.height !== 0) {
+            const base64Image = canvas.toDataURL('image/jpeg');
+            setCroppedImg(base64Image);
+        } else { window.alert('Please crop the image correctly ... 😇 ') }
+    }
+
+
+    const upload = (url, category) => {
+        if (!url) {
+            alert('Please Fill All Empty Fields')
+        } else {
+            firestore.collection('photo-gallery').doc().set({
+                'url': url,
+                'time': Date.now(),
+                category: category
+            }).then(() => {
+                alert('Submitted Successfully')
+                window.location.reload(true);
+            })
+        }
+    }
+
 
     return (
         <div className='admin'>
-            {localStorage.getItem('admin-username') === process.env.REACT_APP_ADMIN_USERNAME
-                ?
+            <Helmet>
+                <title>ECoRSC - Admin</title>
+            </Helmet>
+            {user ? user.email === 'naveen.amie@gmail.com' ?
                 <>
-                    <Button variant='danger' onClick={logout} style={{ float: 'right', margin: '20px', padding: '10px 15px' }}><FiLogOut size="18" />&nbsp;LOGOUT</Button>
+                    <Button variant='danger' onClick={signOut} style={{ float: 'right', margin: '20px', padding: '10px 15px' }}><FiLogOut size="18" />&nbsp;LOGOUT</Button>
                     <div className='container' >
                         <div>
                             <center>
@@ -123,6 +201,7 @@ const Admin = (props) => {
                                             <th>S.No</th>
                                             <th>Title</th>
                                             <th>Category</th>
+                                            <th>Department</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
@@ -132,13 +211,14 @@ const Admin = (props) => {
                                                 <td>{i + 1}</td>
                                                 <td>{c.title}</td>
                                                 <td>{c.category}</td>
+                                                <td>{c.department}</td>
                                                 <td><Button onClick={() => deleteDocument('railway-board', c.id)} variant='danger'>Delete</Button></td>
                                             </tr>
                                         )}
                                     </tbody>
                                 </Table>
                                 <div className='circulars'>
-                                    <h3 className='circulars-title'>Upload Circulars</h3>
+                                    <h3 className='heading'>Upload Circulars</h3>
                                     <span>Fill the below form and you can upload circulars directly from here</span>
                                     <Form style={{ marginTop: '40px', fontFamily: 'Poppins' }}>
                                         <div className="group">
@@ -148,7 +228,7 @@ const Admin = (props) => {
                                             <label>Title</label>
                                         </div>
                                         <div className="select">
-                                            <select defaultValue="circular" className="select-text" required onChange={(e) => setcircular({ ...circular, category: e.target.value })}>
+                                            <select defaultValue="circular" className="select-text" required value={circular.category} onChange={(e) => setcircular({ ...circular, category: e.target.value })}>
                                                 <option value="" disabled selected></option>
                                                 <option value="cirular">Railway Circulars</option>
                                                 <option value="pnm-minutes">Zonal PNM Minutes</option>
@@ -156,6 +236,26 @@ const Admin = (props) => {
                                             <span className="select-highlight"></span>
                                             <span className="select-bar"></span>
                                             <label className="select-label">Category</label>
+                                        </div><br /><br />
+                                        <div className="select">
+                                            <select defaultValue="circular" className="select-text" required value={circular.department} onChange={(e) => setcircular({ ...circular, department: e.target.value })}>
+                                                <option value="" disabled selected></option>
+                                                <option>Achievements</option>
+                                                <option>Accounts</option>
+                                                <option>Personnel</option>
+                                                <option>Engineering</option>
+                                                <option>Mechanical</option>
+                                                <option>Electrical</option>
+                                                <option>Medical</option>
+                                                <option>Stores</option>
+                                                <option>Running Staff</option>
+                                                <option>Commercial</option>
+                                                <option>Signal and Telecom</option>
+                                                <option>Operating</option>
+                                            </select>
+                                            <span className="select-highlight"></span>
+                                            <span className="select-bar"></span>
+                                            <label className="select-label">Department</label>
                                         </div><br /><br />
                                         <div className="group">
                                             <input type="text" required value={circular.link} onChange={(e) => setcircular({ ...circular, link: e.target.value })} />
@@ -263,10 +363,48 @@ const Admin = (props) => {
                                     </Form>
                                 </div>
                             </Tab>
+                            <Tab eventKey="photo-gallery" title="Photo Gallery">
+                                <div className='photo-gallery'>
+                                    <Form>
+                                        <h3 className='heading'>Upload Images</h3>
+                                        <span>Fill the below form and you can upload images directly from here</span><br /><br />
+                                        <Form.Group>
+                                            <input type="file" onChange={handleFileChange} className='form-control' />
+                                        </Form.Group><br /><br />
+                                        {
+                                            croppedImg ?
+                                                <>
+                                                    <center>
+                                                        <Image src={croppedImg} fluid alt="Result" style={{ width: '100%' }} />
+                                                        <br />
+                                                        <Button variant='primary' style={{ width: '200px', marginTop: '20px' }} onClick={() => setCroppedImg(null)}>Recrop</Button>
+                                                    </center>
+                                                </>
+                                                : src
+                                                    ?
+                                                    <center>
+                                                        <ReactCrop src={src} onImageLoaded={setImage} crop={crop} onChange={newCrop => setCrop(newCrop)} />
+                                                        <br />
+                                                        <Button variant='danger' style={{ width: '200px', marginTop: '20px' }} onClick={getCroppedImg}>Crop</Button>
+                                                    </center> : null
+                                        }
+                                        <Button className='submitBtn' style={{ marginTop: '20px' }} onClick={() => upload(croppedImg, 'Photos')}><FaUpload />&nbsp;UPLOAD</Button>
+                                        <br /><br />
+                                        <h3 className='heading' style={{ margin: '40px 0px' }}>Upload Videos</h3>
+                                        <div className="group">
+                                            <input type="text" required value={videoUrl} onChange={(e) => setvideoUrl(e.target.value)} />
+                                            <span className="highlight"></span>
+                                            <span className="bar"></span>
+                                            <label>Youtube Link</label>
+                                        </div>
+                                        <Button className='submitBtn' style={{ marginTop: '20px' }} onClick={() => upload(videoUrl, 'Videos')}><FaUpload />&nbsp;UPLOAD</Button>
+                                    </Form>
+                                </div>
+                            </Tab>
                         </Tabs>
                     </div>
                 </>
-                : <Adminlogin />
+                : <UnAuthorized /> : <UnAuthorized />
             }
         </div >
     );

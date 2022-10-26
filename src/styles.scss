@@ -23,7 +23,7 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: bold;
     font-size: 16px;
-    background-color: #075476;
+    background-color: #000080;
     color: #fff;
     padding: 5px 10px;
   }
@@ -43,7 +43,7 @@ body {
       padding: 10px;
       margin: 0 10px;
       font-size: 14px;
-      color: #075476;
+      color: #000080;
       transition: all 0.3s ease-in-out;
       /* text-transform: uppercase; */
       font-weight: 600;
@@ -261,10 +261,16 @@ body {
   }
 }
 
-.central-office-bearers {
+.central-office-bearers,
+.gallery {
+  iframe {
+    width: 100% !important;
+    height: 400px;
+    margin: 30px 0px;
+  }
   font-family: "Poppins";
   h4 {
-    background: #075476;
+    background: #000080;
     font-weight: 600;
     font-family: "Poppins";
     padding: 10px;
@@ -316,7 +322,9 @@ body {
         margin-left: 30px;
         margin-bottom: 30px;
         p {
-          margin: 0px 30px;
+          font-size: 13px;
+          margin-left: 10px;
+          margin-right: 5px;
         }
       }
     }
@@ -442,7 +450,7 @@ body {
 
     .sendBtn {
       padding: 10px 20px;
-      background: #075476;
+      background: #000080;
       width: 400px;
       @media screen and (max-width: 600px) {
         width: 100%;

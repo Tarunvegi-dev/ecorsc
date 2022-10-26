@@ -23,7 +23,7 @@ body .title {
   font-family: "Poppins", sans-serif;
   font-weight: bold;
   font-size: 16px;
-  background-color: #075476;
+  background-color: #000080;
   color: #fff;
   padding: 5px 10px;
 }
@@ -45,7 +45,7 @@ body .custom-nav .nav-link {
   padding: 10px;
   margin: 0 10px;
   font-size: 14px;
-  color: #075476;
+  color: #000080;
   transition: all 0.3s ease-in-out;
   /* text-transform: uppercase; */
   font-weight: 600;
@@ -267,33 +267,45 @@ body .Home .Subscribe form .text-muted {
   transition: all 0.3s ease-in-out;
 }
 
-.central-office-bearers {
+.central-office-bearers,
+.gallery {
   font-family: "Poppins";
 }
-.central-office-bearers h4 {
-  background: #075476;
+.central-office-bearers iframe,
+.gallery iframe {
+  width: 100% !important;
+  height: 400px;
+  margin: 30px 0px;
+}
+.central-office-bearers h4,
+.gallery h4 {
+  background: #000080;
   font-weight: 600;
   font-family: "Poppins";
   padding: 10px;
   color: white;
 }
-.central-office-bearers .bearers {
+.central-office-bearers .bearers,
+.gallery .bearers {
   cursor: pointer;
   box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.1);
 }
-.central-office-bearers .bearers .bearers-inner {
+.central-office-bearers .bearers .bearers-inner,
+.gallery .bearers .bearers-inner {
   padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-.central-office-bearers .bearers .discrp h5 {
+.central-office-bearers .bearers .discrp h5,
+.gallery .bearers .discrp h5 {
   color: #000080;
   font-weight: bold;
   font-family: "Poppins";
   margin-bottom: 15px;
 }
-.central-office-bearers .bearers .discrp p {
+.central-office-bearers .bearers .discrp p,
+.gallery .bearers .discrp p {
   font-size: 14px;
   margin-bottom: 10px;
 }
@@ -324,7 +336,9 @@ body .Home .Subscribe form .text-muted {
 .contact .contact-cards .card .address p,
 .contact .contact-cards .card .phone p,
 .contact .contact-cards .card .email p {
-  margin: 0px 30px;
+  font-size: 13px;
+  margin-left: 10px;
+  margin-right: 5px;
 }
 .contact .contactForm {
   margin-top: 50px;
@@ -443,7 +457,7 @@ body .Home .Subscribe form .text-muted {
 }
 .contact .contactForm .sendBtn {
   padding: 10px 20px;
-  background: #075476;
+  background: #000080;
   width: 400px;
 }
 @media screen and (max-width: 600px) {

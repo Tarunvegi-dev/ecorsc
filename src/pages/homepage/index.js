@@ -49,7 +49,7 @@ const Homepage = (props) => {
                             <Circulars circulars={circulars} pnmMinutes={pnmMinutes} />
                         </Col>
                         <Col sm={3}>
-                            <p className="title">ECoRSC Departments</p>
+                            <p className="title">ECoRSC Circulars<br />Department Wise</p>
                             <Card style={{ padding: '10px' }}>
                                 {dept.map((dept, i) => <div key={i} onClick={() => props.history.push('/board-circulars', { department: dept })} style={{ display: 'flex', fontFamily: 'poppins', fontSize: '14px', margin: '5px 20px', color: '#000080', cursor: 'pointer' }}>
                                     <FiChevronsRight style={{ marginTop: '4px' }} />&nbsp; <span>{dept}</span>

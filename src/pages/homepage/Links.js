@@ -20,11 +20,11 @@ const Links = ({ title }) => {
             url: 'https://eastcoastrail.indianrailways.gov.in/view_section.jsp?lang=0&id=0,1,291,912,1554'
         },
         {
-            title: 'IR Personnel',
-            url: 'ECOR establishment circulars'
+            title: 'Pay commission Directorates',
+            url: 'https://indianrailways.gov.in/railwayboard/view_section.jsp?id=0,1,304,366,531'
         },
         {
-            title: 'NFIR',
+            title: 'NFIR Website',
             url: 'https://www.nfirindia.com/'
         },
         {

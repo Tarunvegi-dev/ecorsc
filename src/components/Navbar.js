@@ -4,7 +4,7 @@ import { ImOffice, ImHome } from 'react-icons/im';
 import { FaHistory } from 'react-icons/fa';
 import { RiContactsFill, RiGalleryFill } from 'react-icons/ri'
 import { Link } from 'react-router-dom';
-import BannerImage from '../assets/banner_1.png'
+import BannerImage from '../assets/banner.png'
 
 const NavbarComponent = () => {
     return (

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Row, Col } from 'react-bootstrap';
+import { Card, Row, Col, Image } from 'react-bootstrap';
 import Navbar from '../../components/Navbar';
 import { CgToolbox } from 'react-icons/cg'
 import { MdLocationOn } from 'react-icons/md'
@@ -35,16 +35,17 @@ const CentralOfficeBearers = () => {
                     Central Office Bearers
                 </h4>
                 <Row>
-                    {bearers.filter((b) => b.location === 'Central Office').map((bearer) =>
-                        <Col sm={4} className="p-1">
-                            <Card className='bearers'>
-                                <div className='bearers-inner'>
-                                    <div className='col discrp'>
-                                        <h5>{bearer.name}</h5>
-                                        <p><CgToolbox size={18} style={{ marginRight: '10px', color: '#000080' }} />{bearer.designation}</p>
-                                        <p><MdLocationOn size={18} style={{ marginRight: '10px', color: '#000080' }} />{bearer.location}</p>
-                                        <p><FaPhone size={18} style={{ marginRight: '10px', color: '#000080' }} /> {bearer.mobile}</p>
-                                    </div>
+                    {bearers.filter((b) => b.location === 'Central Office').map((bearer, i) =>
+                        <Col sm={6} className="p-1" key={i}>
+                            <Card className='bearers row'>
+                                <div className='col-sm-3' style={{ margin: '30px 10px' }}>
+                                    <Image src={bearer.image} height="220px" width="180px" alt="cob_img" />
+                                </div>
+                                <div className='col-sm-6 discrp'>
+                                    <h5>{bearer.name}</h5>
+                                    <p><CgToolbox size={18} style={{ marginRight: '10px', color: '#000080' }} />{bearer.designation}</p>
+                                    <p><MdLocationOn size={18} style={{ marginRight: '10px', color: '#000080' }} />{bearer.location}</p>
+                                    <p><FaPhone size={18} style={{ marginRight: '10px', color: '#000080' }} /> {bearer.mobile}</p>
                                 </div>
                             </Card>
                         </Col>
@@ -56,17 +57,17 @@ const CentralOfficeBearers = () => {
                     Divisonal Office Bearers
                 </h4>
                 <Row>
-                    {bearers.filter((b) => b.location !== 'Central Office').map((bearer) =>
-                        <Col sm={4} className="p-1">
-                            <Card className='bearers'>
-                                <div className='bearers-inner'>
-
-                                    <div className='col discrp'>
-                                        <h5>{bearer.name}</h5>
-                                        <p><CgToolbox size={18} style={{ marginRight: '10px', color: '#000080' }} />{bearer.designation}</p>
-                                        <p><MdLocationOn size={18} style={{ marginRight: '10px', color: '#000080' }} />{bearer.location}</p>
-                                        <p><FaPhone size={18} style={{ marginRight: '10px', color: '#000080' }} />{bearer.mobile}</p>
-                                    </div>
+                    {bearers.filter((b) => b.location !== 'Central Office').map((bearer, i) =>
+                        <Col sm={6} className="p-1" key={i}>
+                            <Card className='bearers row'>
+                                <div className='col-sm-3' style={{ margin: '30px 10px' }}>
+                                    <Image src={bearer.image} height="180px" width="150px" alt="cob_img" />
+                                </div>
+                                <div className='col-sm-6 discrp'>
+                                    <h5>{bearer.name}</h5>
+                                    <p><CgToolbox size={18} style={{ marginRight: '10px', color: '#000080' }} />{bearer.designation}</p>
+                                    <p><MdLocationOn size={18} style={{ marginRight: '10px', color: '#000080' }} />{bearer.location}</p>
+                                    <p><FaPhone size={18} style={{ marginRight: '10px', color: '#000080' }} /> {bearer.mobile}</p>
                                 </div>
                             </Card>
                         </Col>

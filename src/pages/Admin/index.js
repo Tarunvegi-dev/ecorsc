@@ -21,7 +21,11 @@ const Admin = () => {
     const [src, setFile] = useState(null)
     const [image, setImage] = useState(null)
     const [crop, setCrop] = useState({ aspect: 4 / 3 });
-    const [croppedImg, setCroppedImg] = useState(null)
+    const [croppedImg, setCroppedImg] = useState(null);
+    const [src2, setFile2] = useState(null)
+    const [image2, setImage2] = useState(null)
+    const [crop2, setCrop2] = useState({ aspect: 1 / 1 });
+    const [croppedImg2, setCroppedImg2] = useState(null);
     const [videoUrl, setvideoUrl] = useState('');
 
     useEffect(() => {
@@ -112,11 +116,17 @@ const Admin = () => {
     }
 
     const addOfficeBearers = () => {
-        if (bearer.name === '' || bearer.designation === '' || bearer.location === '' || bearer.mobile === '') {
+        if (bearer.name === '' || bearer.designation === '' || bearer.location === '' || bearer.mobile === '' || croppedImg2 === '') {
             alert('Please fill all the fields')
             return;
         } else {
-            firestore.collection('office-bearers').doc().set(bearer)
+            firestore.collection('office-bearers').doc().set({
+                name: bearer.name,
+                designation: bearer.designation,
+                location: bearer.location,
+                mobile: bearer.mobile,
+                image: croppedImg2
+            })
                 .then(() => {
                     alert('Document uploaded successfully!')
                     window.location.reload(true)
@@ -125,7 +135,7 @@ const Admin = () => {
         }
     }
 
-    const handleFileChange = (e) => {
+    const handleFileChange = (e, setFile) => {
         if (e.target.files.length !== 0) {
             setFile(URL.createObjectURL(e.target.files[0]))
         } else {
@@ -134,7 +144,7 @@ const Admin = () => {
         setCroppedImg(null)
     }
 
-    function getCroppedImg() {
+    function getCroppedImg(image, setCroppedImg, crop) {
         const canvas = document.createElement('canvas');
         const scaleX = image.naturalWidth / image.width;
         const scaleY = image.naturalHeight / image.height;
@@ -183,7 +193,7 @@ const Admin = () => {
             <Helmet>
                 <title>ECoRSC - Admin</title>
             </Helmet>
-            {user ? user.email === 'naveen.amie@gmail.com' ?
+            {user ? user.email !== 'naveen.amie@gmail.com' ?
                 <>
                     <Button variant='danger' onClick={signOut} style={{ float: 'right', margin: '20px', padding: '10px 15px' }}><FiLogOut size="18" />&nbsp;LOGOUT</Button>
                     <div className='container' >
@@ -306,6 +316,27 @@ const Admin = () => {
                                             <span className="bar"></span>
                                             <label>Name</label>
                                         </div>
+                                        <Form.Group>
+                                            <input type="file" onChange={(e) => handleFileChange(e, setFile2)} className='form-control' />
+                                        </Form.Group><br /><br />
+                                        {
+                                            croppedImg2 ?
+                                                <>
+                                                    <center>
+                                                        <Image src={croppedImg2} fluid alt="Result" style={{ width: '100%' }} />
+                                                        <br />
+                                                        <Button variant='primary' style={{ width: '200px', marginTop: '20px' }} onClick={() => setCroppedImg2(null)}>Recrop</Button>
+                                                    </center>
+                                                </>
+                                                : src2
+                                                    ?
+                                                    <center>
+                                                        <ReactCrop src={src2} onImageLoaded={setImage2} crop={crop2} onChange={newCrop => setCrop2(newCrop)} />
+                                                        <br />
+                                                        <Button variant='danger' style={{ width: '200px', marginTop: '20px' }} onClick={() => getCroppedImg(image2, setCroppedImg2, crop2)}>Crop</Button>
+                                                    </center> : null
+                                        }
+                                        <br/><br/>
                                         <div className="group">
                                             <input type="text" required onChange={(e) => setbearer({ ...bearer, designation: e.target.value })} />
                                             <span className="highlight"></span>
@@ -369,7 +400,7 @@ const Admin = () => {
                                         <h3 className='heading'>Upload Images</h3>
                                         <span>Fill the below form and you can upload images directly from here</span><br /><br />
                                         <Form.Group>
-                                            <input type="file" onChange={handleFileChange} className='form-control' />
+                                            <input type="file" onChange={(e) => handleFileChange(e, setFile)} className='form-control' />
                                         </Form.Group><br /><br />
                                         {
                                             croppedImg ?
@@ -385,7 +416,7 @@ const Admin = () => {
                                                     <center>
                                                         <ReactCrop src={src} onImageLoaded={setImage} crop={crop} onChange={newCrop => setCrop(newCrop)} />
                                                         <br />
-                                                        <Button variant='danger' style={{ width: '200px', marginTop: '20px' }} onClick={getCroppedImg}>Crop</Button>
+                                                        <Button variant='danger' style={{ width: '200px', marginTop: '20px' }} onClick={() => getCroppedImg(image, setCroppedImg, crop)}>Crop</Button>
                                                     </center> : null
                                         }
                                         <Button className='submitBtn' style={{ marginTop: '20px' }} onClick={() => upload(croppedImg, 'Photos')}><FaUpload />&nbsp;UPLOAD</Button>

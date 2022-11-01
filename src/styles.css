@@ -284,25 +284,27 @@ body .Home .Subscribe form .text-muted {
   font-family: "Poppins";
   padding: 10px;
   color: white;
+  margin-bottom: 20px;
 }
 .central-office-bearers .bearers,
 .gallery .bearers {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row !important;
   cursor: pointer;
   box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.1);
 }
-.central-office-bearers .bearers .bearers-inner,
-.gallery .bearers .bearers-inner {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+.central-office-bearers .bearers .discrp,
+.gallery .bearers .discrp {
+  margin: 40px;
+  margin-left: 60px;
 }
 .central-office-bearers .bearers .discrp h5,
 .gallery .bearers .discrp h5 {
   color: #000080;
   font-weight: bold;
   font-family: "Poppins";
-  margin-bottom: 15px;
+  margin-bottom: 35px;
 }
 .central-office-bearers .bearers .discrp p,
 .gallery .bearers .discrp p {

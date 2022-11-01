@@ -64,16 +64,20 @@ const Links = ({ title }) => {
             url: 'http://dir.railnet.gov.in/'
         },
         {
-            title: 'Information Under RTI',
-            url: 'https://medlineplus.gov/tutorials/'
-        },
-        {
-            title: 'Pensioners Portal',
-            url: 'https://pensionersportal.gov.in/'
-        },
-        {
             title: 'Government Websites',
             url: 'https://www.irtsa.net/Government_Websites.html'
+        },
+        {
+            title: 'IRCTC login Website for E-Pass/PTO reservation',
+            url: 'https://www.irctc.co.in/nget/train-search'
+        },
+        {
+            title: 'Online RTI website',
+            url: 'https://rtionline.gov.in/index.php'
+        },
+        {
+            title: 'Ecor portal login',
+            url: 'https://ecorportal.in/'
         }
     ]
 

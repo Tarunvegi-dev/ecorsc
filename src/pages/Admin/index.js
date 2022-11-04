@@ -336,7 +336,7 @@ const Admin = () => {
                                                         <Button variant='danger' style={{ width: '200px', marginTop: '20px' }} onClick={() => getCroppedImg(image2, setCroppedImg2, crop2)}>Crop</Button>
                                                     </center> : null
                                         }
-                                        <br/><br/>
+                                        <br /><br />
                                         <div className="group">
                                             <input type="text" required onChange={(e) => setbearer({ ...bearer, designation: e.target.value })} />
                                             <span className="highlight"></span>

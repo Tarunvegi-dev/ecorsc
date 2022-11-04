@@ -39,7 +39,7 @@ const CentralOfficeBearers = () => {
                         <Col sm={6} className="p-1" key={i}>
                             <Card className='bearers row'>
                                 <div className='col-sm-3' style={{ margin: '30px 10px' }}>
-                                    <Image src={bearer.image} height="220px" width="180px" alt="cob_img" />
+                                    <Image src={bearer.image} height="180px" width="150px" alt="cob_img" />
                                 </div>
                                 <div className='col-sm-6 discrp'>
                                     <h5>{bearer.name}</h5>

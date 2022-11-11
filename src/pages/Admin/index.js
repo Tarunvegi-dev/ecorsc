@@ -193,7 +193,7 @@ const Admin = () => {
             <Helmet>
                 <title>ECoRSC - Admin</title>
             </Helmet>
-            {user ? user.email !== 'naveen.amie@gmail.com' ?
+            {user ? user.email === 'naveen.amie@gmail.com' ?
                 <>
                     <Button variant='danger' onClick={signOut} style={{ float: 'right', margin: '20px', padding: '10px 15px' }}><FiLogOut size="18" />&nbsp;LOGOUT</Button>
                     <div className='container' >

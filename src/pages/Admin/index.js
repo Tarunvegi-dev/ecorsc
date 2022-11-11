@@ -16,7 +16,7 @@ const Admin = () => {
     const [circulars, setcirculars] = useState([]);
     const [bearers, setbearers] = useState([]);
     const [isLoading, setisLoading] = useState(false);
-
+    const [isUploading, setisUploading] = useState(false);
 
     const [src, setFile] = useState(null)
     const [image, setImage] = useState(null)
@@ -52,22 +52,24 @@ const Admin = () => {
             alert('Please fill all the fields')
             return;
         }
+        setisLoading(true)
         await firestore.collection('railway-board').doc().set(circular)
             .then(() => {
                 alert('Document Uploaded Successfully');
+                setisLoading(false)
                 window.location.reload(true)
             })
             .catch((err) => console.log(err))
     }
 
     const updateFile = (file) => {
-        setisLoading(true)
+        setisUploading(true)
         storage.ref(`/circulars/${file.name}`).put(file)
             .then(async () => {
                 await storage.ref("circulars").child(file.name).getDownloadURL()
                     .then((url) => {
                         setcircular({ ...circular, link: url })
-                        setisLoading(false)
+                        setisUploading(false)
                     })
                     .catch((err) => console.log(err))
             })
@@ -120,6 +122,7 @@ const Admin = () => {
             alert('Please fill all the fields')
             return;
         } else {
+            setisLoading(true)
             firestore.collection('office-bearers').doc().set({
                 name: bearer.name,
                 designation: bearer.designation,
@@ -128,6 +131,7 @@ const Admin = () => {
                 image: croppedImg2
             })
                 .then(() => {
+                    setisLoading(false)
                     alert('Document uploaded successfully!')
                     window.location.reload(true)
                 })
@@ -176,11 +180,13 @@ const Admin = () => {
         if (!url) {
             alert('Please Fill All Empty Fields')
         } else {
+            setisLoading(true)
             firestore.collection('photo-gallery').doc().set({
                 'url': url,
                 'time': Date.now(),
                 category: category
             }).then(() => {
+                setisLoading(false)
                 alert('Submitted Successfully')
                 window.location.reload(true);
             })
@@ -277,7 +283,7 @@ const Admin = () => {
                                             <input className="form-control" type="file" id="formFile" onChange={(e) => updateFile(e.target.files[0])} />
                                         </div>
                                         <div style={{ marginBottom: '50px' }}>
-                                            {isLoading ? <div style={{ color: 'tomato' }}>Uploading File...Please Wait...<br /><br /><Spinner animation='border' /></div> :
+                                            {isUploading ? <div style={{ color: 'tomato' }}>Uploading File...Please Wait...<br /><br /><Spinner animation='border' /></div> :
                                                 <Button className='submitBtn' onClick={uploadItems}><FaUpload />&nbsp;UPLOAD</Button>}
                                         </div>
                                     </Form>
@@ -355,7 +361,7 @@ const Admin = () => {
                                             <span className="bar"></span>
                                             <label>Mobile</label>
                                         </div><br /><br />
-                                        <Button className='submitBtn' onClick={addOfficeBearers} style={{ marginBottom: '70px' }}><FaUpload />&nbsp;UPLOAD</Button>
+                                        <Button className='submitBtn' onClick={addOfficeBearers} style={{ marginBottom: '70px', minWidth: '100px' }} disabled={isLoading}>{isLoading ? <Spinner animation="border" size='18' /> : <span><FaUpload />&nbsp;UPLOAD</span>}</Button>
                                     </Form>
                                 </div>
                             </Tab>
@@ -390,7 +396,7 @@ const Admin = () => {
                                             <span className="select-bar"></span>
                                             <label className="select-label">Branch</label>
                                         </div><br /><br />
-                                        <Button className='submitBtn' style={{ marginBottom: '50px' }}><RiSendPlaneFill />&nbsp;SEND</Button>
+                                        <Button className='submitBtn' style={{ marginBottom: '50px', minWidth: '100px' }} disabled={isLoading}>{isLoading ? <Spinner animation="border" size='18' /> : <span><RiSendPlaneFill />&nbsp;SEND</span>}</Button>
                                     </Form>
                                 </div>
                             </Tab>
@@ -419,7 +425,7 @@ const Admin = () => {
                                                         <Button variant='danger' style={{ width: '200px', marginTop: '20px' }} onClick={() => getCroppedImg(image, setCroppedImg, crop)}>Crop</Button>
                                                     </center> : null
                                         }
-                                        <Button className='submitBtn' style={{ marginTop: '20px' }} onClick={() => upload(croppedImg, 'Photos')}><FaUpload />&nbsp;UPLOAD</Button>
+                                        <Button className='submitBtn' style={{ marginTop: '20px', minWidth: '100px' }} disabled={isLoading} onClick={() => upload(croppedImg, 'Photos')}>{isLoading ? <Spinner animation="border" size='18' /> : <span><FaUpload />&nbsp;UPLOAD</span>}</Button>
                                         <br /><br />
                                         <h3 className='heading' style={{ margin: '40px 0px' }}>Upload Videos</h3>
                                         <div className="group">
@@ -428,7 +434,7 @@ const Admin = () => {
                                             <span className="bar"></span>
                                             <label>Youtube Link</label>
                                         </div>
-                                        <Button className='submitBtn' style={{ marginTop: '20px' }} onClick={() => upload(videoUrl, 'Videos')}><FaUpload />&nbsp;UPLOAD</Button>
+                                        <Button className='submitBtn' style={{ marginTop: '20px', minWidth: '100px' }} disabled={isLoading} onClick={() => upload(videoUrl, 'Videos')}>{isLoading ? <Spinner animation="border" size='18' /> : <span><FaUpload />&nbsp;UPLOAD</span>}</Button>
                                     </Form>
                                 </div>
                             </Tab>

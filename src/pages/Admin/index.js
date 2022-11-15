@@ -128,7 +128,8 @@ const Admin = () => {
                 designation: bearer.designation,
                 location: bearer.location,
                 mobile: bearer.mobile,
-                image: croppedImg2
+                image: croppedImg2,
+                time: Date.now(),
             })
                 .then(() => {
                     setisLoading(false)

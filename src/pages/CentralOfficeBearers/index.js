@@ -13,7 +13,7 @@ const CentralOfficeBearers = () => {
     const [bearers, setbearers] = useState([]);
 
     useEffect(() => {
-        firestore.collection('office-bearers').get()
+        firestore.collection('office-bearers').orderBy("time", "asc").get()
             .then((querySnapshot) => {
                 const data = querySnapshot.docs.map((doc) => {
                     return {

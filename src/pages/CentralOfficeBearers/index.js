@@ -35,7 +35,7 @@ const CentralOfficeBearers = () => {
                     Central Office Bearers
                 </h4>
                 <Row>
-                    {bearers.filter((b) => b.location === 'Central Office').map((bearer, i) =>
+                    {bearers.filter((b) => b.location === 'Central Office').sort((a, b) => a.time - b.time).map((bearer, i) =>
                         <Col sm={6} className="p-1" key={i}>
                             <Card className='bearers row'>
                                 <div className='col-sm-3' style={{ margin: '30px 10px' }}>

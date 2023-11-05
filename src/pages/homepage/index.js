@@ -41,7 +41,7 @@ const Homepage = (props) => {
                     <br />
                     <Row>
                         <Col sm={3}>
-                            <Links title="Important Links" />
+                            {/* <Links title="Important Links" /> */}
                             <ContactInfo />
                         </Col>
                         <Col sm={6}>

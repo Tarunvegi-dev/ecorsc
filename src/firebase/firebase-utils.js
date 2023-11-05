@@ -4,14 +4,15 @@ import 'firebase/storage'
 import 'firebase/auth'
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBRnES9c6-ZEdoB375qY9W3p5fQtVyaxYc",
-    authDomain: "ecorsc-v1.firebaseapp.com",
-    projectId: "ecorsc-v1",
-    storageBucket: "ecorsc-v1.appspot.com",
-    messagingSenderId: "1018061219977",
-    appId: "1:1018061219977:web:39d5af7150a0bab8dabe58",
-    measurementId: "G-EVD9MTP6T3"
+    apiKey: "AIzaSyDwgAmQhBtpj55a4E7jHIjWMzOaBTDS_ko",
+    authDomain: "ecorsc-900ec.firebaseapp.com",
+    projectId: "ecorsc-900ec",
+    storageBucket: "ecorsc-900ec.appspot.com",
+    messagingSenderId: "710006303721",
+    appId: "1:710006303721:web:1bf95cbc0114ba5c73b978",
+    measurementId: "G-50030ZJPNK"
 };
+
 
 firebase.initializeApp(firebaseConfig);
 
